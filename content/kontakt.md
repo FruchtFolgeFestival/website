@@ -1,6 +1,5 @@
 ---
 title: "Sag doch mal hallo!"
-linkTitle: "Kontakt"
 description: "So erreichst du das Fruchtfolge Festival: E-Mail, Postanschrift und Anfahrt."
 layout: kontakt
 ---

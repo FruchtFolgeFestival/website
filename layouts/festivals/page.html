@@ -12,7 +12,7 @@
 {{- $abschnitte := slice }}
 {{- /* Einleitung + Aftermovie */}}
 {{- $intro := strings.TrimSpace (string .Content) }}
-{{- $film := partial "festival/aftermovie.html" (dict "festival" .) | strings.TrimSpace }}
+{{- $film := partial "festival/aftermovie.html" (dict "festival" . "ebene" 2) | strings.TrimSpace }}
 {{- if or $intro $film }}
   {{- $abschnitte = $abschnitte | append (printf `<div class="wrap"><div class="prose">%s</div>%s</div>` $intro $film) }}
 {{- end }}

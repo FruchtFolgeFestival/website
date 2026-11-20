@@ -1,7 +1,6 @@
 ---
 title: "Allgemeine Geschäftsbedingungen (AGB)"
 description: "Allgemeine Geschäftsbedingungen für den Erwerb von Tickets und den Besuch des Fruchtfolgefestivals."
-rechtstext: true
 ---
 <!-- Rechtstext: Inhalt 1:1 von der alten Webseite übernommen (Stand Dezember 2025), nur die Formatierung wurde angepasst.
      Inhaltliche Änderungen bitte nur nach Abstimmung mit dem Vorstand. -->

@@ -1,8 +1,6 @@
 ---
 title: "Satzung des Fruchtfolgefestival Förderfreunde e.V."
-linkTitle: "Satzung"
 description: "Die Satzung des Fruchtfolgefestival Förderfreunde e.V."
-rechtstext: true
 ---
 <!-- Rechtstext: Inhalt 1:1 von der alten Webseite übernommen, nur die Formatierung wurde angepasst.
      Inhaltliche Änderungen nur nach Beschluss der Mitgliederversammlung (siehe § 8). -->

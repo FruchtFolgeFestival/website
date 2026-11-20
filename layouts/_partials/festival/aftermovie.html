@@ -1,10 +1,12 @@
-{{- /* Aftermovie als Link (kein eingebetteter Player: keine Verbindung zu YouTube beim Seitenaufruf) */ -}}
+{{- /* Aftermovie als Link (kein eingebetteter Player: keine Verbindung zu YouTube beim Seitenaufruf)
+     Aufruf: partial "festival/aftermovie.html" (dict "festival" $p "ebene" 3)  – "ebene" = Überschriften-Ebene */ -}}
 {{- $f := .festival }}
+{{- $ebene := .ebene | default 3 }}
 {{- with $f.Params.aftermovie }}
 <div class="film">
   <span class="play" aria-hidden="true"></span>
   <div>
-    <h3>Aftermovie {{ $f.Params.jahr }}</h3>
+    <h{{ $ebene }} class="film-titel">Aftermovie {{ $f.Params.jahr }}</h{{ $ebene }}>
     <p>Öffnet das Video auf {{ if or (strings.Contains . "youtu") }}YouTube{{ else }}einer externen Seite{{ end }}.</p>
   </div>
   <a class="btn btn-primary" href="{{ . }}" rel="noopener">Video ansehen<span class="visually-hidden"> (externe Seite)</span> ↗</a>

@@ -7,7 +7,7 @@
     <a class="more" href="{{ relref $ "/news" }}">Alle News</a>
   </div>
   <div class="news-grid">
-    {{- range . }}{{ partial "news-karte.html" . }}{{ end }}
+    {{- range . }}{{ partial "news-karte.html" (dict "seite" . "ebene" 3) }}{{ end }}
   </div>
 </div>
 {{- end }}

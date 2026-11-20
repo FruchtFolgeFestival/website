@@ -1,7 +1,7 @@
 {{- /* Sponsoring-Paket als Saatgut-Tüte. Aufruf: (dict "paket" … "nr" 1 "kurz" true) */ -}}
 {{- $p := .paket }}
 {{- $kurz := .kurz }}
-<div class="seed">
+<div class="seed{{ if eq $p.symbol "individuell" }} individuell{{ end }}">
   <span class="stufe">{{ if eq $p.symbol "individuell" }}Nach Maß{{ else }}Stufe {{ .nr }}{{ end }}</span>
   {{ partial "saat-symbol.html" $p.symbol }}
   <h3>{{ $p.name }}</h3>

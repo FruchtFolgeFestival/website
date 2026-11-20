@@ -140,7 +140,7 @@ h1, h2, h3, .display {
 }
 h1 { font-size: calc(var(--d-scale) * clamp(2.6rem, 7vw, 5.2rem)); }
 h2 { font-size: calc(var(--d-scale) * clamp(2.2rem, 5.5vw, 4rem)); }
-h3 { font-size: calc(var(--d-scale) * 1.6rem); line-height: 1.05; }
+h3, .karten-titel { font-size: calc(var(--d-scale) * 1.6rem); line-height: 1.05; }
 .eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 0; }
 .muted { color: var(--muted); }
 .sec { padding-block: clamp(40px, 6vw, 64px); }
@@ -285,7 +285,7 @@ h3 { font-size: calc(var(--d-scale) * 1.6rem); line-height: 1.05; }
 
 /* ---------- Galerie ---------- */
 .gal { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
-@media (min-width: 760px) { .gal { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 760px) { .gal { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .gal-teaser { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (min-width: 760px) { .gal-teaser { grid-template-columns: 2fr 1fr 1fr; } .gal-teaser li:first-child { grid-row: span 2; } }
 .gal-teaser li:first-child { grid-column: span 2; }
@@ -315,11 +315,12 @@ h3 { font-size: calc(var(--d-scale) * 1.6rem); line-height: 1.05; }
 @media (min-width: 640px) { .film { grid-template-columns: auto minmax(0, 1fr) auto; } }
 .play { width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
 .play::before { content: ""; border-left: 18px solid var(--accent-ink); border-block: 11px solid transparent; margin-left: 5px; }
-.film h3 { font-size: calc(var(--d-scale) * 1.7rem); }
+.film .film-titel { font-size: calc(var(--d-scale) * 1.7rem); line-height: 1.05; }
 .film p { margin: 2px 0 0; color: var(--muted); font-size: .93rem; }
 .film .btn { border-color: var(--accent); }
 
 /* ---------- Sponsoring: Saatgut-Tüten ---------- */
+.pakete-titel { margin: 40px 0 34px; }
 .seeds { display: grid; gap: 34px 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); }
 .seed { position: relative; background: var(--card); color: var(--ink); border: 3px solid var(--line); border-radius: var(--r-card); box-shadow: var(--shadow); padding: 40px 20px 22px; display: grid; gap: 8px; align-content: start; justify-items: start; }
 .seed::before { content: ""; position: absolute; left: 14px; right: 14px; top: 16px; border-top: 2px dashed currentColor; opacity: .4; }
@@ -329,6 +330,10 @@ h3 { font-size: calc(var(--d-scale) * 1.6rem); line-height: 1.05; }
 .seed ul { margin: 0; padding-left: 1.1em; font-size: .95rem; }
 .seed p { margin: 0; font-size: .95rem; }
 .seed svg { width: 42px; height: 42px; color: var(--second); }
+.seed.individuell { grid-column: 1 / -1; grid-template-columns: auto minmax(0, 1fr); column-gap: 18px; align-items: start; }
+.seed.individuell > * { grid-column: 2; }
+.seed.individuell > svg { grid-column: 1; grid-row: 1 / span 3; }
+.seed.individuell > .stufe { grid-column: auto; }
 
 /* ---------- Mitmachen ---------- */
 .join { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }

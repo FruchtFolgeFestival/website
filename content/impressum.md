@@ -1,7 +1,6 @@
 ---
 title: "Impressum"
 description: "Impressum des Fruchtfolgefestival Förderfreunde e.V."
-rechtstext: true
 ---
 <!-- Rechtstext: Inhalt 1:1 von der alten Webseite übernommen, nur die Formatierung wurde angepasst.
      Inhaltliche Änderungen bitte nur nach Abstimmung mit dem Vorstand. -->

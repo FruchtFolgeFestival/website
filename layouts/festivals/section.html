@@ -8,14 +8,15 @@
 {{- range $vorbei }}
   {{- $bild := "" }}
   {{- $titelbild := .Params.titelbild }}
-  {{- if not $titelbild }}{{ with .Params.galerie }}{{ $titelbild = (index . 0).bild }}{{ end }}{{ end }}
-  {{- with $titelbild }}{{ $bild = printf `<div class="media">%s</div>` (partial "bild.html" (dict "src" . "alt" "" "format" "4x3" "breiten" (slice 400 700) "sizes" "(min-width: 760px) 360px, 100vw")) }}{{ end }}
+  {{- $titelalt := .Params.titelbild_alt | default "" }}
+  {{- if not $titelbild }}{{ with .Params.galerie }}{{ $titelbild = (index . 0).bild }}{{ $titelalt = (index . 0).alt }}{{ end }}{{ end }}
+  {{- with $titelbild }}{{ $bild = printf `<div class="media">%s</div>` (partial "bild.html" (dict "src" . "alt" $titelalt "format" "4x3" "breiten" (slice 400 700) "sizes" "(min-width: 760px) 360px, 100vw")) }}{{ end }}
   {{- $acts := len (where (.Params.lineup | default slice) "art" "!=" "programmpunkt") }}
   {{- $zeile := slice }}
   {{- with partial "datum.html" (dict "von" .Params.datum_von "bis" .Params.datum_bis) }}{{ $zeile = $zeile | append . }}{{ end }}
   {{- if $acts }}{{ $zeile = $zeile | append (printf "%d Acts" $acts) }}{{ end }}
   {{- with .Params.galerie }}{{ $zeile = $zeile | append (printf "%d Fotos" (len .)) }}{{ end }}
-  {{- $karten = printf `%s<article class="card">%s<div class="card-body"><span class="jahr">%v</span><h3><a class="stretch" href="%s">%s</a></h3>%s%s</div></article>`
+  {{- $karten = printf `%s<article class="card">%s<div class="card-body"><span class="jahr">%v</span><h2 class="karten-titel"><a class="stretch" href="%s">%s</a></h2>%s%s</div></article>`
       $karten $bild .Params.jahr .RelPermalink (htmlEscape .Title)
       (cond (ne .Params.untertitel nil) (printf `<p class="muted">%s</p>` (htmlEscape (.Params.untertitel | default ""))) "")
       (cond (gt (len $zeile) 0) (printf `<p class="genre">%s</p>` (delimit $zeile " · ")) "") }}

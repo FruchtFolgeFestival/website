@@ -1,6 +1,5 @@
 ---
 title: "Über das Fruchtfolge Festival"
-linkTitle: "Über uns"
 description: "Wie aus einem spontanen Sommerabend auf Joes Hof ein Festival wurde, wofür wir stehen und wer der Verein dahinter ist."
 ---
 

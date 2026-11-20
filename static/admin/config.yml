@@ -85,7 +85,6 @@ collections:
               - { name: ueberschrift, label: Überschrift, widget: string, hint: "Große Überschrift ganz oben, z. B. „Nach dem Festival ist vor dem Festival“." }
               - { name: text, label: Text, widget: markdown, minimal: true, buttons: [bold, italic, link], editor_components: [], required: false, hint: "Ein bis zwei Sätze unter der Überschrift. **Fett** für das Datum." }
               - { name: titelbild, label: Hintergrundfoto, widget: image, required: false, hint: "Querformat. Wird automatisch eingefärbt. Nur Fotos, auf denen erkennbare Personen einverstanden sind." }
-              - { name: titelbild_alt, label: Bildbeschreibung (Alt-Text), widget: string, required: false, hint: "Was ist auf dem Foto zu sehen? Für Menschen, die das Bild nicht sehen können." }
           - name: tickets
             label: "Tickets"
             widget: object

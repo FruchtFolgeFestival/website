@@ -12,7 +12,7 @@
         (htmlEscape (.Params.untertitel | default .Title))
         (cond (gt (len $credits) 0) (printf ` · Fotos: %s` (htmlEscape (delimit (uniq $credits) ", "))) "")
         (len .Params.galerie)
-        (partial "festival/galerie.html" (dict "festival" .)) }}
+        (partial "festival/galerie.html" (dict "festival" . "sofort" (cond (eq $gruppen "") 1 0))) }}
   {{- end }}
 {{- end }}
 {{- if not $gruppen }}{{ $gruppen = `<p class="empty">Noch keine Fotos. Bald gibt es hier was zu sehen!</p>` }}{{ end }}

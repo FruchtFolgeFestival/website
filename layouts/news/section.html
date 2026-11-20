@@ -3,7 +3,7 @@
 {{ partial "seitenkopf.html" (dict "seite" . "text" .Description) }}
 {{- $pager := .Paginate .Pages.ByDate.Reverse }}
 {{- $karten := "" }}
-{{- range $pager.Pages }}{{ $karten = printf "%s%s" $karten (partial "news-karte.html" .) }}{{ end }}
+{{- range $pager.Pages }}{{ $karten = printf "%s%s" $karten (partial "news-karte.html" (dict "seite" . "ebene" 2)) }}{{ end }}
 {{- $inhalt := "" }}
 {{- if $karten }}
   {{- $inhalt = printf `<div class="wrap"><div class="news-grid">%s</div>%s</div>` $karten (partial "pager.html" $pager) }}

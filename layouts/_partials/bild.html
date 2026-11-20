@@ -6,7 +6,8 @@
        "sizes"   "(min-width: 900px) 33vw, 100vw"  optional
        "format"  "4x3"                 optional: zuschneiden (z. B. "4x3", "1x1", "16x9")
        "klasse"  "…"                   optional
-       "eager"   true                  optional: sofort laden (z. B. großes Bild oben)
+       "eager"   true                  optional: sofort und mit Vorrang laden (großes Bild ganz oben)
+       "sofort"  true                  optional: sofort laden, ohne Vorrang (z. B. erste Galeriebilder)
      )
      Fehlt das Bild: Produktion bricht mit Fehlermeldung ab, Vorschau zeigt einen roten Hinweis. */ -}}
 {{- $src := .src | default "" }}
@@ -51,5 +52,5 @@
     {{- end }}
     {{- $set = slice (printf "%s %dw" $fallback.RelPermalink $fallback.Width) }}
   {{- end }}
-<img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $set ", " }}" sizes="{{ $sizes }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" alt="{{ $alt }}"{{ with .klasse }} class="{{ . }}"{{ end }}{{ if .eager }} fetchpriority="high"{{ else }} loading="lazy"{{ end }} decoding="async">
+<img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $set ", " }}" sizes="{{ $sizes }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" alt="{{ $alt }}"{{ with .klasse }} class="{{ . }}"{{ end }}{{ if .eager }} fetchpriority="high"{{ else if not .sofort }} loading="lazy"{{ end }} decoding="async">
 {{- end -}}

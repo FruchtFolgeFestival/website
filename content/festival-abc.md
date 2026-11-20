@@ -1,6 +1,5 @@
 ---
 title: "Das Fruchtfolge-ABC"
-linkTitle: "Festival-ABC"
 description: "Alles Wichtige zum Fruchtfolge Festival von A bis Z: Anreise, Camping, Tickets, Essen, Awareness und mehr."
 layout: abc
 # Text nach der Liste

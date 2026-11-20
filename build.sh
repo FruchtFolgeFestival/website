@@ -92,13 +92,16 @@ hugo "${HUGO_ARGS[@]}"
 # --- Zusätzliche Header für die Vorschau ---------------------------------------
 # Cloudflare setzt auf workers.dev-Vorschauen schon "X-Robots-Tag: noindex".
 # Wir setzen es zusätzlich selbst, falls die Vorschau einmal unter einer anderen Adresse läuft.
+# Wichtig: in den BESTEHENDEN "/*"-Block einfügen. Ein zweiter "/*"-Block würde den ersten
+# (mit CSP und Sicherheits-Headern) ersetzen.
 if [ "${HUGO_ENVIRONMENT}" != "production" ]; then
-  {
-    echo ""
-    echo "# Nur Vorschau (von build.sh ergänzt): nicht indexieren"
-    echo "/*"
-    echo "  X-Robots-Tag: noindex, nofollow"
-  } >> public/_headers
+  if ! grep -qx '/\*' public/_headers; then
+    rot "FEHLER: public/_headers enthält keinen Block '/*' (static/_headers prüfen)."
+    exit 1
+  fi
+  awk '{ print } $0 == "/*" && !erledigt { print "  X-Robots-Tag: noindex, nofollow"; erledigt = 1 }' \
+    public/_headers > public/_headers.neu
+  mv public/_headers.neu public/_headers
 fi
 
 info "Fertig: $(find public -type f | wc -l | tr -d ' ') Dateien in public/"
