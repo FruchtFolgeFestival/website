@@ -1,0 +1,11 @@
+{{- /* Normale Seite: dunkler Seitenkopf + Fließtext (Markdown) */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "text" .Description) }}
+{{- $inhalt := "" }}
+{{- $hinweis := "" }}
+{{- if and .Params.entwurf (not hugo.IsProduction) }}
+  {{- $hinweis = `<p class="hinweis">ENTWURF – vor dem Livegang vom Vorstand prüfen lassen. Solange „entwurf: true“ gesetzt ist, lässt sich die Seite nicht veröffentlichen.</p>` }}
+{{- end }}
+{{- $inhalt = printf `<div class="wrap"><div class="prose">%s%s</div></div>` $hinweis .Content }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" (slice $inhalt)) }}
+{{ end }}

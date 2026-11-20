@@ -1,0 +1,12 @@
+{{- /* Nur in Vorschau-Builds: Banner bleibt oben stehen und zeigt den Stand des Builds */ -}}
+{{- $p := site.Params }}
+<div class="preview-banner" role="note">
+  <p>
+    <span>{{ if hugo.IsServer }}Lokale Entwicklung{{ else }}Vorschau{{ end }} – nicht die echte Seite</span>
+    <small>
+      {{- with $p.buildzeit }}Stand: {{ . }}{{ else }}Stand: {{ now | time.Format "02.01.2006, 15:04" }}{{ end }}
+      {{- with $p.buildbranch }} · Branch {{ . }}{{ end }}
+      {{- with $p.buildcommit }} · {{ . }}{{ end }}
+    </small>
+  </p>
+</div>

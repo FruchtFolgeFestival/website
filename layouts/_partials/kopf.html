@@ -1,0 +1,27 @@
+{{- /* Kopfzeile mit Logo, Hauptmenü (aus hugo.toml) und Hell/Dunkel-Knopf */ -}}
+{{- $seite := . }}
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="{{ site.Home.RelPermalink }}"{{ if .IsHome }} aria-current="page"{{ end }}>
+      {{- with resources.Get "images/marke/logo.png" }}{{ with .Process "resize 96x webp q85" }}
+      <img src="{{ .RelPermalink }}" width="44" height="44" alt="">
+      {{- end }}{{ end }}
+      <span>Fruchtfolge<br>Festival</span>
+    </a>
+    <span class="spacer"></span>
+    <nav class="nav" id="hauptmenue" aria-label="Hauptmenü">
+      <ul>
+        {{- range site.Menus.main }}
+        {{- $aktiv := or ($seite.IsMenuCurrent "main" .) ($seite.HasMenuCurrent "main" .) }}
+        {{- if and .Page (not $seite.IsHome) (eq .Page.Section $seite.Section) (ne .Page.Section "") }}{{ $aktiv = true }}{{ end }}
+        <li><a href="{{ .URL }}"{{ if $aktiv }} class="aktiv"{{ end }}{{ if $seite.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+    <button class="icon-btn" type="button" id="theme-knopf" aria-label="Dunkles Design einschalten" title="Hell/Dunkel umschalten">
+      <svg class="ic-mond" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
+      <svg class="ic-sonne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" hidden><circle cx="12" cy="12" r="4.5" fill="currentColor" stroke="none"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+    </button>
+    <button class="menu-btn" type="button" id="menue-knopf" aria-expanded="false" aria-controls="hauptmenue">Menü</button>
+  </div>
+</header>

@@ -1,0 +1,4 @@
+{{- /* Wellen-Trenner zwischen zwei Abschnitten.
+     Aufruf: partial "trenner.html" (dict "von" "bg|alt|hero" "nach" "bg|alt|dark") */ -}}
+{{- $klasse := printf "d-%s-%s" .von .nach -}}
+<div class="divider {{ $klasse }}" aria-hidden="true"><i></i><i></i><i></i><i></i></div>

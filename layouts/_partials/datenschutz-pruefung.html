@@ -1,0 +1,10 @@
+{{- /* Sicherheitsnetz: In Produktion darf die Datenschutzerklärung kein Entwurf mehr sein.
+     (build.sh prüft das zusätzlich vor dem Build mit einer verständlichen Meldung.)
+     Wird nur einmal ausgeführt (auf der Startseite). */ -}}
+{{- if and .IsHome hugo.IsProduction }}
+  {{- with site.GetPage "/datenschutz" }}
+    {{- if .Params.entwurf }}
+      {{- errorf "Die Datenschutzerklärung (content/datenschutz.md) ist noch ein ENTWURF (entwurf: true). Produktion wird erst gebaut, wenn der Vorstand sie freigegeben hat und entwurf auf false steht." }}
+    {{- end }}
+  {{- end }}
+{{- end -}}

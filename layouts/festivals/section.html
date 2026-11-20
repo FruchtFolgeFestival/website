@@ -1,0 +1,35 @@
+{{- /* Archiv (/archiv/): alle Jahrgänge mit Status "vorbei", neueste zuerst */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "text" .Description) }}
+{{- $vorbei := ((where .Pages "Params.status" "vorbei").ByParam "jahr").Reverse }}
+{{- $geplant := where .Pages "Params.status" "geplant" }}
+{{- $abschnitte := slice }}
+{{- $karten := "" }}
+{{- range $vorbei }}
+  {{- $bild := "" }}
+  {{- $titelbild := .Params.titelbild }}
+  {{- if not $titelbild }}{{ with .Params.galerie }}{{ $titelbild = (index . 0).bild }}{{ end }}{{ end }}
+  {{- with $titelbild }}{{ $bild = printf `<div class="media">%s</div>` (partial "bild.html" (dict "src" . "alt" "" "format" "4x3" "breiten" (slice 400 700) "sizes" "(min-width: 760px) 360px, 100vw")) }}{{ end }}
+  {{- $acts := len (where (.Params.lineup | default slice) "art" "!=" "programmpunkt") }}
+  {{- $zeile := slice }}
+  {{- with partial "datum.html" (dict "von" .Params.datum_von "bis" .Params.datum_bis) }}{{ $zeile = $zeile | append . }}{{ end }}
+  {{- if $acts }}{{ $zeile = $zeile | append (printf "%d Acts" $acts) }}{{ end }}
+  {{- with .Params.galerie }}{{ $zeile = $zeile | append (printf "%d Fotos" (len .)) }}{{ end }}
+  {{- $karten = printf `%s<article class="card">%s<div class="card-body"><span class="jahr">%v</span><h3><a class="stretch" href="%s">%s</a></h3>%s%s</div></article>`
+      $karten $bild .Params.jahr .RelPermalink (htmlEscape .Title)
+      (cond (ne .Params.untertitel nil) (printf `<p class="muted">%s</p>` (htmlEscape (.Params.untertitel | default ""))) "")
+      (cond (gt (len $zeile) 0) (printf `<p class="genre">%s</p>` (delimit $zeile " · ")) "") }}
+{{- end }}
+{{- $kopf := printf `<div class="wrap"><div class="prose">%s</div>` .Content }}
+{{- if $karten }}
+  {{- $abschnitte = $abschnitte | append (printf `%s<div class="archiv">%s</div></div>` $kopf $karten) }}
+{{- else }}
+  {{- $abschnitte = $abschnitte | append (printf `%s<p class="empty">Noch keine vergangenen Jahrgänge.</p></div>` $kopf) }}
+{{- end }}
+{{- with $geplant }}
+  {{- $links := "" }}
+  {{- range . }}{{ $links = printf `%s<li><a href="%s">%s</a> · %s</li>` $links .RelPermalink (htmlEscape .Title) (partial "datum.html" (dict "von" .Params.datum_von "bis" .Params.datum_bis)) }}{{ end }}
+  {{- $abschnitte = $abschnitte | append (printf `<div class="wrap"><div class="sec-head"><h2 id="demnaechst">Demnächst</h2></div><ul class="presse">%s</ul></div>` $links) }}
+{{- end }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" $abschnitte) }}
+{{ end }}

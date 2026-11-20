@@ -1,0 +1,49 @@
+{{- /* Startseite: Startbereich + Abschnitte, die sich automatisch an den aktuellen Stand anpassen.
+     Leere Abschnitte (z. B. noch keine News) werden ausgeblendet. */ -}}
+{{ define "main" }}
+{{- $aktuell := partial "festival/aktuell.html" . }}
+{{- $letzter := partial "festival/letzter.html" . }}
+{{ partial "start/hero.html" (dict "seite" . "festival" $aktuell "letzter" $letzter) }}
+
+{{- $abschnitte := slice }}
+
+{{- /* 1. Neuigkeiten (die 3 neuesten) */}}
+{{- with partial "start/news.html" . | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}
+
+{{- /* 2. Line-up: aktueller Jahrgang, sonst Rückblick auf den letzten */}}
+{{- $programm := $aktuell }}
+{{- $rueckblick := false }}
+{{- $aktuellHatActs := false }}
+{{- with $aktuell }}{{ with where (.Params.lineup | default slice) "art" "!=" "programmpunkt" }}{{ $aktuellHatActs = true }}{{ end }}{{ end }}
+{{- if and (not $aktuellHatActs) $letzter (ne $letzter $aktuell) }}
+  {{- $programm = $letzter }}{{ $rueckblick = true }}
+{{- end }}
+{{- with $programm }}
+  {{- $ueber := cond $rueckblick (printf "Rückblick · Jahrgang %v" .Params.jahr) (printf "%v · %s" .Params.jahr (.Params.ort | default "")) }}
+  {{- $html := partial "festival/lineup.html" (dict "festival" . "ueberzeile" $ueber "link" true) }}
+  {{- if and $rueckblick $aktuell }}
+    {{- $html = printf `<div class="wrap"><p class="empty"><strong>Das Line-up %v wird bald bekanntgegeben.</strong> Bis dahin: So war es %v.</p></div><div class="abstand"></div>%s` $aktuell.Params.jahr .Params.jahr $html }}
+  {{- end }}
+  {{- $abschnitte = $abschnitte | append $html }}
+  {{- /* 3. Timetable desselben Jahrgangs */}}
+  {{- with partial "festival/timetable.html" (dict "festival" .) | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}
+{{- end }}
+
+{{- /* 4. Galerie-Ausschnitt + Aftermovie */}}
+{{- with partial "start/galerie.html" . | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}
+
+{{- /* 5. Sponsoring */}}
+{{- with partial "start/sponsoring.html" . | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}
+
+{{- /* 6. Mitmachen */}}
+{{- with partial "start/mitmachen.html" . | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}
+
+{{- /* 7. Unterstützer: aktueller Jahrgang, sonst der letzte */}}
+{{- $mitUnterstuetzern := $aktuell }}
+{{- if not (and $aktuell $aktuell.Params.unterstuetzer) }}{{ $mitUnterstuetzern = $letzter }}{{ end }}
+{{- with $mitUnterstuetzern }}
+  {{- with partial "festival/unterstuetzer.html" (dict "festival" .) | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}
+{{- end }}
+
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" $abschnitte) }}
+{{ end }}

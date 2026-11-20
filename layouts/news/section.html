@@ -1,0 +1,14 @@
+{{- /* News-Übersicht mit Seitennummerierung */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "text" .Description) }}
+{{- $pager := .Paginate .Pages.ByDate.Reverse }}
+{{- $karten := "" }}
+{{- range $pager.Pages }}{{ $karten = printf "%s%s" $karten (partial "news-karte.html" .) }}{{ end }}
+{{- $inhalt := "" }}
+{{- if $karten }}
+  {{- $inhalt = printf `<div class="wrap"><div class="news-grid">%s</div>%s</div>` $karten (partial "pager.html" $pager) }}
+{{- else }}
+  {{- $inhalt = `<div class="wrap"><p class="empty">Gerade gibt es noch keine Neuigkeiten. Schau bald wieder vorbei!</p></div>` }}
+{{- end }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" (slice $inhalt)) }}
+{{ end }}

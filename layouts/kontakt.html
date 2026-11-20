@@ -1,0 +1,21 @@
+{{- /* Kontakt: Text aus content/kontakt.md, Adressen aus den Einstellungen. Kein Formular. */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "ueberzeile" "Kontakt" "text" "") }}
+{{- $d := (hugo.Data).festival }}
+{{- $k := $d.kontakt }}
+{{- $karte := "" }}
+{{- with $d.anfahrt.karten_link }}{{ $karte = printf `<p><a href="%s" rel="noopener">%s</a></p>` . (htmlEscape ($d.anfahrt.karten_link_text | default "Karte öffnen")) }}{{ end }}
+{{- $social := slice }}
+{{- with $d.social.instagram }}{{ $social = $social | append (printf `<a href="%s" rel="noopener">Instagram</a>` .) }}{{ end }}
+{{- with $d.social.youtube }}{{ $social = $social | append (printf `<a href="%s" rel="noopener">YouTube</a>` .) }}{{ end }}
+{{- with $d.social.facebook }}{{ $social = $social | append (printf `<a href="%s" rel="noopener">Facebook</a>` .) }}{{ end }}
+{{- $inhalt := printf `<div class="wrap"><div class="prose">%s
+<h2 id="mail">Mail</h2><p><a href="mailto:%s">%s</a></p>
+<h2 id="post">Postanschrift</h2><p>%s<br>%s<br>%s</p>
+<h2 id="anfahrt">Anfahrt</h2>%s%s
+%s</div></div>`
+  .Content $k.email $k.email (htmlEscape $k.verein) (htmlEscape $k.strasse) (htmlEscape $k.ort)
+  ($d.anfahrt.text | markdownify | printf "<p>%s</p>") $karte
+  (cond (gt (len $social) 0) (printf `<h2 id="social">Social Media</h2><p class="act-links">%s</p>` (delimit $social " ")) "") }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" (slice $inhalt)) }}
+{{ end }}

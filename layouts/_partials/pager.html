@@ -1,0 +1,17 @@
+{{- /* Seitennummerierung. Gibt HTML als Zeichenkette zurück. */ -}}
+{{- $p := . }}
+{{- $html := "" }}
+{{- if gt $p.TotalPages 1 }}
+  {{- $html = `<nav aria-label="Seiten"><ul class="pager">` }}
+  {{- with $p.Prev }}{{ $html = printf `%s<li><a href="%s" rel="prev">← Neuer</a></li>` $html .URL }}{{ end }}
+  {{- range $p.Pagers }}
+    {{- if eq .PageNumber $p.PageNumber }}
+      {{- $html = printf `%s<li><span aria-current="page">%d</span></li>` $html .PageNumber }}
+    {{- else }}
+      {{- $html = printf `%s<li><a href="%s">%d</a></li>` $html .URL .PageNumber }}
+    {{- end }}
+  {{- end }}
+  {{- with $p.Next }}{{ $html = printf `%s<li><a href="%s" rel="next">Älter →</a></li>` $html .URL }}{{ end }}
+  {{- $html = printf `%s</ul></nav>` $html }}
+{{- end }}
+{{- return $html -}}

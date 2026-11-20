@@ -1,0 +1,12 @@
+{{- /* Aftermovie als Link (kein eingebetteter Player: keine Verbindung zu YouTube beim Seitenaufruf) */ -}}
+{{- $f := .festival }}
+{{- with $f.Params.aftermovie }}
+<div class="film">
+  <span class="play" aria-hidden="true"></span>
+  <div>
+    <h3>Aftermovie {{ $f.Params.jahr }}</h3>
+    <p>Öffnet das Video auf {{ if or (strings.Contains . "youtu") }}YouTube{{ else }}einer externen Seite{{ end }}.</p>
+  </div>
+  <a class="btn btn-primary" href="{{ . }}" rel="noopener">Video ansehen<span class="visually-hidden"> (externe Seite)</span> ↗</a>
+</div>
+{{- end }}

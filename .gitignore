@@ -1,0 +1,11 @@
+# Build-Ergebnisse und Caches
+public/
+resources/_gen/
+.hugo_build.lock
+node_modules/
+.wrangler/
+.dev.vars*
+# Betriebssystem/Editor
+.DS_Store
+Thumbs.db
+*.swp

@@ -1,0 +1,5 @@
+{{- /* Meta-Beschreibung: Front Matter "description", sonst Kurztext, sonst Standard aus den Einstellungen */ -}}
+{{- $d := .Description -}}
+{{- if not $d }}{{ $d = .Params.kurztext }}{{ end -}}
+{{- if not $d }}{{ $d = (hugo.Data).festival.beschreibung }}{{ end -}}
+{{- return ($d | plainify | strings.TrimSpace) -}}

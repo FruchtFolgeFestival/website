@@ -1,0 +1,12 @@
+{{- /* Bild für die Vorschau beim Teilen (1200 × 630). Gibt eine Bild-Ressource oder nichts zurück. */ -}}
+{{- $pfad := or .Params.bild .Params.titelbild -}}
+{{- if not $pfad }}{{ $pfad = (hugo.Data).festival.startseite.titelbild }}{{ end -}}
+{{- $ergebnis := false -}}
+{{- with $pfad }}
+  {{- with resources.Get (strings.TrimPrefix "/" .) }}
+    {{- if ne .MediaType.SubType "svg" }}
+      {{- $ergebnis = .Process "fill 1200x630 jpg q78 Smart" }}
+    {{- end }}
+  {{- end }}
+{{- end -}}
+{{- return $ergebnis -}}

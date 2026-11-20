@@ -1,0 +1,17 @@
+{{- /* Unterstützer-Logos eines Jahrgangs
+     Aufruf: partial "festival/unterstuetzer.html" (dict "festival" $p "titel" "…") */ -}}
+{{- $f := .festival }}
+{{- with $f.Params.unterstuetzer }}
+<div class="wrap">
+  <div class="sec-head"><h2 id="unterstuetzer-{{ $f.Params.jahr }}">{{ $.titel | default (printf "Unterstützt %v von" $f.Params.jahr) }}</h2></div>
+  <ul class="logos">
+    {{- range . }}
+    <li>
+      {{- if .link }}<a href="{{ .link }}" rel="noopener" title="{{ .name }}">{{ else }}<span class="kachel" title="{{ .name }}">{{ end }}
+        {{- partial "bild.html" (dict "src" .logo "alt" .name "breiten" (slice 320) "sizes" "160px") }}
+      {{- if .link }}</a>{{ else }}</span>{{ end }}
+    </li>
+    {{- end }}
+  </ul>
+</div>
+{{- end }}

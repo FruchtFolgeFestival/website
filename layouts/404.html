@@ -1,0 +1,8 @@
+{{- /* Eigene 404-Seite (wird von Cloudflare über not_found_handling = "404-page" ausgeliefert) */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "ueberzeile" "Fehler 404" "titel" "Hier wächst nichts.") }}
+{{- $links := slice }}
+{{- range site.Menus.main }}{{ $links = $links | append (printf `<li><a href="%s">%s</a></li>` .URL .Name) }}{{ end }}
+{{- $inhalt := printf `<div class="wrap nf"><p class="gross" aria-hidden="true">404</p><div class="prose"><p>Diese Seite gibt es nicht (mehr). Vielleicht wurde sie umgepflügt, als wir die neue Webseite gesät haben.</p><p>Hier geht es weiter:</p><ul>%s</ul></div></div>` (delimit $links "") }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" (slice $inhalt)) }}
+{{ end }}

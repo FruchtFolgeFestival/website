@@ -1,0 +1,8 @@
+{{- /* Allgemeine Listenseite (Fallback) */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "text" .Description) }}
+{{- $liste := "" }}
+{{- range .Pages }}{{ $liste = printf `%s<li><a href="%s">%s</a></li>` $liste .RelPermalink (htmlEscape .Title) }}{{ end }}
+{{- $inhalt := printf `<div class="wrap"><div class="prose">%s<ul>%s</ul></div></div>` .Content $liste }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" (slice $inhalt)) }}
+{{ end }}

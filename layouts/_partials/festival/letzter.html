@@ -1,0 +1,6 @@
+{{- /* Der neueste vergangene Jahrgang mit art "festival" (für den Rückblick auf der Startseite) */ -}}
+{{- $p := false }}
+{{- $alle := where (where site.RegularPages "Section" "festivals") "Params.status" "vorbei" }}
+{{- $alle = where $alle "Params.art" "!=" "vorgeschichte" }}
+{{- with ($alle.ByParam "jahr").Reverse }}{{ $p = index . 0 }}{{ end }}
+{{- return $p -}}

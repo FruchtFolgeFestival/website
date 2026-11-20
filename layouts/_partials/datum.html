@@ -1,0 +1,31 @@
+{{- /* Datum oder Zeitraum lesbar auf Deutsch.
+     Aufruf: partial "datum.html" (dict "von" … "bis" … "kurz" false)
+     Ergebnis z. B. "28.–29. August 2026" oder "3.–4.9.2027" (kurz) */ -}}
+{{- $ergebnis := "" }}
+{{- if .von }}
+  {{- $von := time.AsTime .von }}
+  {{- $bis := false }}
+  {{- with .bis }}{{ $bis = time.AsTime . }}{{ end }}
+  {{- if .kurz }}
+    {{- if and $bis (ne ($von.Format "2006-01-02") ($bis.Format "2006-01-02")) }}
+      {{- if eq $von.Month $bis.Month }}
+        {{- $ergebnis = printf "%s–%s" ($von | time.Format "2.") ($bis | time.Format "2.1.2006") }}
+      {{- else }}
+        {{- $ergebnis = printf "%s–%s" ($von | time.Format "2.1.") ($bis | time.Format "2.1.2006") }}
+      {{- end }}
+    {{- else }}
+      {{- $ergebnis = $von | time.Format "2.1.2006" }}
+    {{- end }}
+  {{- else }}
+    {{- if and $bis (ne ($von.Format "2006-01-02") ($bis.Format "2006-01-02")) }}
+      {{- if eq $von.Month $bis.Month }}
+        {{- $ergebnis = printf "%s–%s" ($von | time.Format "2.") ($bis | time.Format "2. January 2006") }}
+      {{- else }}
+        {{- $ergebnis = printf "%s – %s" ($von | time.Format "2. January") ($bis | time.Format "2. January 2006") }}
+      {{- end }}
+    {{- else }}
+      {{- $ergebnis = $von | time.Format "2. January 2006" }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- return $ergebnis -}}

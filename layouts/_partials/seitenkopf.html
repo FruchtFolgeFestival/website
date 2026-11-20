@@ -1,0 +1,11 @@
+{{- /* Dunkler Kopf für Unterseiten: Überzeile, Titel, Beschreibung
+     Aufruf: partial "seitenkopf.html" (dict "seite" . "ueberzeile" "…" "titel" "…" "text" "…") */ -}}
+{{- $titel := .titel | default .seite.Title }}
+<div class="page-head">
+  <div class="wrap">
+    {{- with .ueberzeile }}<p class="eyebrow">{{ . }}</p>{{ end }}
+    <h1>{{ $titel }}</h1>
+    {{- with .text }}<p class="beschreibung">{{ . }}</p>{{ end }}
+    {{- with .zusatz }}{{ . }}{{ end }}
+  </div>
+</div>

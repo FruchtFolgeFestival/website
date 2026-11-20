@@ -1,0 +1,126 @@
+# Hugo-Konfiguration der Fruchtfolge-Webseite
+# --------------------------------------------
+# Hier steht nur Technik. Inhalte (Termine, Kontakt, Links …) stehen in
+# data/festival.yaml und content/ und werden über das CMS (/admin) gepflegt.
+#
+# baseURL wird beim Build von build.sh überschrieben:
+#   Produktion (Branch main): Build-Variable SITE_URL (Standard https://fruchtfolge.live/)
+#   Vorschau (alle anderen Branches): "/"
+
+baseURL = "https://fruchtfolge.live/"
+title = "Fruchtfolge Festival"
+# "locale" ersetzt seit Hugo 0.158 das veraltete "languageCode" (siehe docs/entscheidungen.md).
+locale = "de-DE"
+defaultContentLanguage = "de"
+timeZone = "Europe/Berlin"
+enableRobotsTXT = true
+# Keine Schlagwort-/Kategorieseiten: brauchen wir nicht.
+disableKinds = ["taxonomy", "term"]
+# Seiten ohne Datum sollen nicht als "Zukunft" behandelt werden.
+buildFuture = true
+
+# RSS gibt es nur für die News (siehe content/news/_index.md).
+[outputs]
+  home = ["html"]
+  section = ["html"]
+  page = ["html"]
+
+[pagination]
+  pagerSize = 9
+  path = "seite"
+
+[permalinks]
+  [permalinks.page]
+    news = "/news/:slug/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # Kein rohes HTML in Markdown-Texten (Sicherheit, sauberes Layout).
+      unsafe = false
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = false
+        title = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[imaging]
+  resampleFilter = "CatmullRom"
+  anchor = "Smart"
+  [imaging.webp]
+    quality = 78
+  [imaging.jpeg]
+    quality = 80
+
+[sitemap]
+  changeFreq = "weekly"
+  filename = "sitemap.xml"
+
+[params]
+  # Diese Werte werden beim Build von build.sh gefüllt und im Vorschau-Banner gezeigt.
+  buildbranch = ""
+  buildcommit = ""
+  buildzeit = ""
+
+# Hauptmenü (Reihenfolge über weight)
+[menus]
+  [[menus.main]]
+    name = "Festival"
+    pageRef = "/"
+    weight = 10
+  [[menus.main]]
+    name = "News"
+    pageRef = "/news"
+    weight = 20
+  [[menus.main]]
+    name = "Archiv"
+    pageRef = "/festivals"
+    weight = 30
+  [[menus.main]]
+    name = "Galerie"
+    pageRef = "/galerie"
+    weight = 40
+  [[menus.main]]
+    name = "Festival-ABC"
+    pageRef = "/festival-abc"
+    weight = 50
+  [[menus.main]]
+    name = "Mitmachen"
+    pageRef = "/mitmachen"
+    weight = 60
+  [[menus.main]]
+    name = "Sponsoring"
+    pageRef = "/sponsoring"
+    weight = 70
+  [[menus.main]]
+    name = "Kontakt"
+    pageRef = "/kontakt"
+    weight = 80
+
+  # Fußzeile
+  [[menus.footer]]
+    name = "Impressum"
+    pageRef = "/impressum"
+    weight = 10
+  [[menus.footer]]
+    name = "Datenschutz"
+    pageRef = "/datenschutz"
+    weight = 20
+  [[menus.footer]]
+    name = "AGB"
+    pageRef = "/agb"
+    weight = 30
+  [[menus.footer]]
+    name = "Satzung"
+    pageRef = "/satzung"
+    weight = 40
+  [[menus.footer]]
+    name = "Kontakt"
+    pageRef = "/kontakt"
+    weight = 50
+  [[menus.footer]]
+    name = "Über uns"
+    pageRef = "/ueber-uns"
+    weight = 60

@@ -1,0 +1,36 @@
+{{- /* Seite eines Festival-Jahrgangs: /festivals/<jahr>/ */ -}}
+{{ define "main" }}
+{{- $f := . }}
+{{- $fakten := "" }}
+{{- with partial "datum.html" (dict "von" .Params.datum_von "bis" .Params.datum_bis) }}{{ $fakten = printf `%s<li><span>Datum</span> %s</li>` $fakten . }}{{ end }}
+{{- with .Params.ort }}{{ $fakten = printf `%s<li><span>Ort</span> %s</li>` $fakten (htmlEscape .) }}{{ end }}
+{{- $status := cond (eq .Params.status "geplant") "Kommt noch" "Vorbei" }}
+{{- if eq .Params.art "vorgeschichte" }}{{ $status = "Vorgeschichte" }}{{ end }}
+{{- $fakten = printf `%s<li><span>Status</span> %s</li>` $fakten $status }}
+{{ partial "seitenkopf.html" (dict "seite" . "ueberzeile" (printf "Jahrgang %v" .Params.jahr) "text" .Params.untertitel "zusatz" (printf `<ul class="fakten">%s</ul>` $fakten | safeHTML)) }}
+
+{{- $abschnitte := slice }}
+{{- /* Einleitung + Aftermovie */}}
+{{- $intro := strings.TrimSpace (string .Content) }}
+{{- $film := partial "festival/aftermovie.html" (dict "festival" .) | strings.TrimSpace }}
+{{- if or $intro $film }}
+  {{- $abschnitte = $abschnitte | append (printf `<div class="wrap"><div class="prose">%s</div>%s</div>` $intro $film) }}
+{{- end }}
+{{- /* Line-up (bei geplanten Jahrgängen auch leer mit Hinweis) */}}
+{{- $acts := where (.Params.lineup | default slice) "art" "!=" "programmpunkt" }}
+{{- if or $acts (eq .Params.status "geplant") }}
+  {{- $abschnitte = $abschnitte | append (partial "festival/lineup.html" (dict "festival" .)) }}
+{{- end }}
+{{- with partial "festival/timetable.html" (dict "festival" .) | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}
+{{- with .Params.galerie }}
+  {{- $credits := slice }}
+  {{- range . }}{{ with .credit }}{{ $credits = $credits | append . }}{{ end }}{{ end }}
+  {{- $abschnitte = $abschnitte | append (printf `<div class="wrap"><div class="sec-head"><h2 id="fotos">Fotos</h2><p>Ein Klick öffnet die große Ansicht.</p></div>%s%s</div>`
+      (partial "festival/galerie.html" (dict "festival" $f))
+      (cond (gt (len $credits) 0) (printf `<p class="gal-note"><span>Fotos: %s</span></p>` (delimit (uniq $credits) ", ")) "")) }}
+{{- end }}
+{{- with partial "festival/presse.html" (dict "festival" .) | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}
+{{- with partial "festival/unterstuetzer.html" (dict "festival" .) | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}
+{{- $abschnitte = $abschnitte | append (printf `<div class="wrap"><p><a class="more" href="%s">← Alle Jahrgänge im Archiv</a></p></div>` (relref . "/festivals")) }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" $abschnitte) }}
+{{ end }}

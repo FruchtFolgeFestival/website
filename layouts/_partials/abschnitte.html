@@ -1,0 +1,14 @@
+{{- /* Rendert eine Liste von Abschnitten mit abwechselnden Hintergründen (hell/etwas dunkler)
+     und den passenden Wellen-Trennern dazwischen.
+     Aufruf: partial "abschnitte.html" (dict "seite" . "abschnitte" (slice html1 html2 …))
+     Leere Abschnitte (z. B. keine News) werden vorher weggelassen, die Abfolge bleibt trotzdem sauber. */ -}}
+{{- $vorher := "hero" }}
+{{- range $i, $html := .abschnitte }}
+  {{- $bg := cond (modBool $i 2) "bg" "alt" }}
+  {{- partial "trenner.html" (dict "von" $vorher "nach" $bg) }}
+  <section class="sec{{ if eq $bg "alt" }} alt{{ end }}">
+    {{ $html | safeHTML }}
+  </section>
+  {{- $vorher = $bg }}
+{{- end }}
+{{- .seite.Store.Set "letzterHintergrund" $vorher }}

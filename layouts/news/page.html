@@ -1,0 +1,9 @@
+{{- /* Einzelner News-Beitrag */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "ueberzeile" (printf "Neuigkeit vom %s" (.Date | time.Format "2. January 2006")) "text" .Params.kurztext) }}
+{{- $bild := "" }}
+{{- with .Params.bild }}{{ $bild = printf `<figure>%s</figure>` (partial "bild.html" (dict "src" . "alt" ($.Params.bild_alt | default "") "breiten" (slice 600 1000 1400) "sizes" "(min-width: 800px) 70ch, 100vw")) }}{{ end }}
+{{- $entwurf := cond .Draft `<p class="hinweis">Entwurf – dieser Beitrag erscheint nur in der Vorschau.</p>` "" }}
+{{- $inhalt := printf `<div class="wrap"><div class="prose">%s%s%s<p><a class="more" href="%s">← Alle News</a></p></div></div>` $entwurf $bild .Content (relref . "/news") }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" (slice $inhalt)) }}
+{{ end }}

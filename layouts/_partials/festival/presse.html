@@ -1,0 +1,16 @@
+{{- /* Presseartikel zu einem Jahrgang (aus data/presse.yaml) */ -}}
+{{- $jahr := string .festival.Params.jahr }}
+{{- $artikel := where ((hugo.Data).presse.artikel | default slice) "jahrgang" $jahr }}
+{{- with $artikel }}
+<div class="wrap">
+  <div class="sec-head"><h2 id="presse-{{ $jahr }}">Presse</h2></div>
+  <ul class="presse">
+    {{- range sort . "datum" "desc" }}
+    <li>
+      <a href="{{ .link }}" rel="noopener">{{ .titel }}</a>
+      <small>{{ .medium }}{{ with .datum }} · {{ time.AsTime . | time.Format "2.1.2006" }}{{ end }}</small>
+    </li>
+    {{- end }}
+  </ul>
+</div>
+{{- end }}

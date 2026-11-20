@@ -1,0 +1,34 @@
+{{- /* Festival-ABC: Einträge aus data/abc.yaml, alphabetisch mit Sprungmarken A–Z */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "text" .Description) }}
+{{- $eintraege := (hugo.Data).abc.eintraege | default slice }}
+{{- /* Sortierschlüssel: Kleinbuchstaben, Umlaute wie Grundbuchstaben */}}
+{{- $mitSchluessel := slice }}
+{{- range $eintraege }}
+  {{- $key := lower .begriff | replaceRE "ä" "a" | replaceRE "ö" "o" | replaceRE "ü" "u" | replaceRE "ß" "ss" }}
+  {{- $buchstabe := upper (substr $key 0 1) }}
+  {{- $mitSchluessel = $mitSchluessel | append (dict "key" $key "buchstabe" $buchstabe "begriff" .begriff "text" .text) }}
+{{- end }}
+{{- $mitSchluessel = sort $mitSchluessel "key" }}
+{{- $vorhanden := slice }}
+{{- range $mitSchluessel }}{{ if not (in $vorhanden .buchstabe) }}{{ $vorhanden = $vorhanden | append .buchstabe }}{{ end }}{{ end }}
+
+{{- $nav := "" }}
+{{- range split "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "" }}
+  {{- if in $vorhanden . }}{{ $nav = printf `%s<li><a href="#%s">%s</a></li>` $nav (lower .) . }}{{ else }}{{ $nav = printf `%s<li><span aria-hidden="true">%s</span></li>` $nav . }}{{ end }}
+{{- end }}
+{{- $liste := "" }}
+{{- range $vorhanden }}
+  {{- $b := . }}
+  {{- $html := "" }}
+  {{- range where $mitSchluessel "buchstabe" $b }}
+    {{- $id := printf "%s-%s" (lower $b) (anchorize .begriff) }}
+    {{- $html = printf `%s<div class="abc-eintrag" id="%s"><h3>%s wie %s</h3><div class="prose">%s</div></div>` $html $id $b (htmlEscape .begriff) (.text | markdownify) }}
+  {{- end }}
+  {{- $liste = printf `%s<div class="abc-buchstabe" id="%s"><h2>%s</h2><div>%s</div></div>` $liste (lower $b) $b $html }}
+{{- end }}
+{{- $schluss := "" }}
+{{- with .Params.schluss }}{{ $schluss = printf `<div class="prose abc-schluss">%s</div>` (. | markdownify) }}{{ end }}
+{{- $inhalt := printf `<div class="wrap"><div class="prose">%s</div><nav aria-label="Buchstaben"><ul class="abc-nav">%s</ul></nav>%s%s</div>` .Content $nav $liste $schluss }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" (slice $inhalt)) }}
+{{ end }}

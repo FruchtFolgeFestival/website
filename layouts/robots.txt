@@ -1,0 +1,12 @@
+{{- if hugo.IsProduction -}}
+# Fruchtfolge Festival – Produktion: Indexierung erlaubt
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: {{ "sitemap.xml" | absURL }}
+{{- else -}}
+# Vorschau/Entwicklung: bitte nicht indexieren
+User-agent: *
+Disallow: /
+{{- end }}

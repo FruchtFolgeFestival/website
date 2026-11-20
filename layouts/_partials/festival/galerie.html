@@ -1,0 +1,18 @@
+{{- /* Bildergalerie eines Jahrgangs mit Lightbox (assets/js/site.js).
+     Aufruf: partial "festival/galerie.html" (dict "festival" $p "max" 0 "teaser" false) */ -}}
+{{- $bilder := .festival.Params.galerie | default slice }}
+{{- if gt (.max | default 0) 0 }}{{ $bilder = first .max $bilder }}{{ end }}
+{{- $teaser := .teaser }}
+{{- with $bilder }}
+<ul class="gal{{ if $teaser }} gal-teaser{{ end }}" data-galerie>
+  {{- range $i, $b := . }}
+  {{- $gross := "" }}
+  {{- with resources.Get (strings.TrimPrefix "/" $b.bild) }}{{ $gross = (.Process "resize 1800x webp q80").RelPermalink }}{{ end }}
+  <li>
+    <a href="{{ $gross | default $b.bild }}" data-lightbox data-credit="{{ with $b.credit }}Foto: {{ . }}{{ end }}">
+      {{- partial "bild.html" (dict "src" $b.bild "alt" $b.alt "format" (cond (and $teaser (eq $i 0)) "" "1x1") "breiten" (cond (and $teaser (eq $i 0)) (slice 600 900) (slice 300 500)) "sizes" (cond (and $teaser (eq $i 0)) "(min-width: 760px) 50vw, 100vw" "(min-width: 760px) 25vw, 50vw")) }}
+    </a>
+  </li>
+  {{- end }}
+</ul>
+{{- end }}

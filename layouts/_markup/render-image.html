@@ -1,0 +1,9 @@
+{{- /* Bilder in Markdown-Texten: über Hugo Image Processing ausliefern, wenn sie unter assets/ liegen */ -}}
+{{- $u := urls.Parse .Destination }}
+{{- if and (not $u.IsAbs) (resources.Get (strings.TrimPrefix "/" $u.Path)) }}
+  {{- if .Title }}<figure>{{ end }}
+  {{- partial "bild.html" (dict "src" $u.Path "alt" .PlainText "breiten" (slice 600 1000 1400) "sizes" "(min-width: 800px) 70ch, 100vw") }}
+  {{- with .Title }}<figcaption>{{ . }}</figcaption></figure>{{ end }}
+{{- else -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}" loading="lazy" decoding="async">
+{{- end -}}

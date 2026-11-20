@@ -1,0 +1,13 @@
+{{- /* Sponsoring-Paket als Saatgut-Tüte. Aufruf: (dict "paket" … "nr" 1 "kurz" true) */ -}}
+{{- $p := .paket }}
+{{- $kurz := .kurz }}
+<div class="seed">
+  <span class="stufe">{{ if eq $p.symbol "individuell" }}Nach Maß{{ else }}Stufe {{ .nr }}{{ end }}</span>
+  {{ partial "saat-symbol.html" $p.symbol }}
+  <h3>{{ $p.name }}</h3>
+  <p class="preis">{{ $p.preis }}</p>
+  {{- with $p.leistungen }}
+  <ul>{{ range (cond $kurz (first 3 .) .) }}<li>{{ . }}</li>{{ end }}{{ if and $kurz (gt (len .) 3) }}<li>und mehr</li>{{ end }}</ul>
+  {{- end }}
+  {{- if not $kurz }}{{ with $p.kurz }}<p>{{ . }}</p>{{ end }}{{ end }}
+</div>

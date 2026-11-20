@@ -1,0 +1,21 @@
+{{- /* Galerie: Fotos aller Jahrgänge, nach Jahr gruppiert (neueste zuerst) */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "text" .Description) }}
+{{- $jahrgaenge := ((where site.RegularPages "Section" "festivals").ByParam "jahr").Reverse }}
+{{- $gruppen := "" }}
+{{- range $jahrgaenge }}
+  {{- if .Params.galerie }}
+    {{- $credits := slice }}
+    {{- range .Params.galerie }}{{ with .credit }}{{ $credits = $credits | append . }}{{ end }}{{ end }}
+    {{- $gruppen = printf `%s<div class="gal-jahr"><h2 id="jahr-%v"><a href="%s">%v</a></h2><p class="gal-note"><span>%s%s</span><span>%d Fotos</span></p>%s</div>`
+        $gruppen .Params.jahr .RelPermalink .Params.jahr
+        (htmlEscape (.Params.untertitel | default .Title))
+        (cond (gt (len $credits) 0) (printf ` · Fotos: %s` (htmlEscape (delimit (uniq $credits) ", "))) "")
+        (len .Params.galerie)
+        (partial "festival/galerie.html" (dict "festival" .)) }}
+  {{- end }}
+{{- end }}
+{{- if not $gruppen }}{{ $gruppen = `<p class="empty">Noch keine Fotos. Bald gibt es hier was zu sehen!</p>` }}{{ end }}
+{{- $inhalt := printf `<div class="wrap"><div class="prose">%s</div>%s</div>` .Content $gruppen }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" (slice $inhalt)) }}
+{{ end }}

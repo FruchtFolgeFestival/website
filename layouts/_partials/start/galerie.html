@@ -1,0 +1,19 @@
+{{- /* Galerie-Ausschnitt (neuester Jahrgang mit Fotos) und neuestes Aftermovie */ -}}
+{{- $alle := ((where site.RegularPages "Section" "festivals").ByParam "jahr").Reverse }}
+{{- $mitFotos := false }}
+{{- range $alle }}{{ if and (not $mitFotos) .Params.galerie }}{{ $mitFotos = . }}{{ end }}{{ end }}
+{{- $mitFilm := false }}
+{{- range $alle }}{{ if and (not $mitFilm) .Params.aftermovie }}{{ $mitFilm = . }}{{ end }}{{ end }}
+{{- if or $mitFotos $mitFilm }}
+<div class="wrap">
+  <div class="sec-head">
+    <div>
+      {{- with $mitFotos }}<p class="eyebrow">{{ .Params.jahr }}{{ with .Params.untertitel }} · {{ . }}{{ end }}</p>{{ end }}
+      <h2 id="galerie">Galerie</h2>
+    </div>
+    <a class="more" href="{{ relref $ "/galerie" }}">Zur Galerie</a>
+  </div>
+  {{- with $mitFotos }}{{ partial "festival/galerie.html" (dict "festival" . "max" 5 "teaser" true) }}{{ end }}
+  {{- with $mitFilm }}{{ partial "festival/aftermovie.html" (dict "festival" .) }}{{ end }}
+</div>
+{{- end }}

@@ -1,0 +1,13 @@
+{{- /* Die 3 neuesten News für die Startseite (in der Vorschau inkl. Entwürfe) */ -}}
+{{- $news := (where site.RegularPages "Section" "news").ByDate.Reverse }}
+{{- with first 3 $news }}
+<div class="wrap">
+  <div class="sec-head">
+    <h2 id="neuigkeiten">Neuigkeiten</h2>
+    <a class="more" href="{{ relref $ "/news" }}">Alle News</a>
+  </div>
+  <div class="news-grid">
+    {{- range . }}{{ partial "news-karte.html" . }}{{ end }}
+  </div>
+</div>
+{{- end }}

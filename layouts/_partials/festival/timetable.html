@@ -1,0 +1,48 @@
+{{- /* Timetable eines Jahrgangs, nach Tagen gruppiert und nach Uhrzeit sortiert.
+     Nutzt dieselbe Liste wie das Line-up (Feld "lineup"). Einträge ohne Tag/Uhrzeit werden ausgelassen.
+     Aufruf: partial "festival/timetable.html" (dict "festival" $p "titel" "…") */ -}}
+{{- $f := .festival }}
+{{- $eintraege := slice }}
+{{- range $f.Params.lineup | default slice }}
+  {{- if and .tag .von }}
+    {{- $tag := time.AsTime .tag }}
+    {{- $von := substr (string .von) 0 5 }}
+    {{- $eintraege = $eintraege | append (dict "sortierung" (printf "%s %s" ($tag.Format "2006-01-02") $von) "tagkey" ($tag.Format "2006-01-02") "tag" $tag "von" $von "bis" (substr (string (.bis | default "")) 0 5) "eintrag" .) }}
+  {{- end }}
+{{- end }}
+{{- if $eintraege }}
+{{- $eintraege = sort $eintraege "sortierung" }}
+{{- $tage := slice }}
+{{- range $eintraege }}{{ if not (in $tage .tagkey) }}{{ $tage = $tage | append .tagkey }}{{ end }}{{ end }}
+<div class="wrap">
+  <div class="sec-head">
+    <h2 id="timetable-{{ $f.Params.jahr }}">{{ .titel | default (printf "Timetable %v" $f.Params.jahr) }}</h2>
+  </div>
+  <div class="tt">
+    {{- range $tage }}
+    {{- $key := . }}
+    {{- $slots := where $eintraege "tagkey" $key }}
+    {{- $erster := index $slots 0 }}
+    <div class="day">
+      <h3>{{ $erster.tag | time.Format "Monday" }} <span>{{ $erster.tag | time.Format "02.01.2006" }}</span></h3>
+      {{- range $slots }}
+      {{- $e := .eintrag }}
+      <div class="slot{{ if eq $e.art "programmpunkt" }} info{{ end }}">
+        <time datetime="{{ .tagkey }}T{{ .von }}">{{ .von }}</time>
+        <div>
+          <b>{{ $e.name }}</b>
+          {{- $zeile := slice }}
+          {{- with $e.genre }}{{ $zeile = $zeile | append . }}{{ end }}
+          {{- with $e.herkunft }}{{ $zeile = $zeile | append (delimit . "/") }}{{ end }}
+          {{- with .bis }}{{ $zeile = $zeile | append (printf "bis %s" .) }}{{ end }}
+          {{- with $e.buehne }}{{ $zeile = $zeile | append . }}{{ end }}
+          {{- if and (eq $e.art "programmpunkt") $e.beschreibung }}{{ $zeile = $zeile | append $e.beschreibung }}{{ end }}
+          {{- with $zeile }}<small>{{ delimit . " · " }}</small>{{ end }}
+        </div>
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</div>
+{{- end }}

@@ -1,0 +1,19 @@
+{{- /* Mitmachen-Ausschnitt mit den Kurztexten aus content/mitmachen.md */ -}}
+{{- with site.GetPage "/mitmachen" }}
+{{- $email := (hugo.Data).festival.kontakt.email }}
+<div class="wrap">
+  <div class="sec-head"><h2 id="mitmachen">Mitmachen</h2><p>Das Festival lebt vom Ehrenamt.</p></div>
+  <div class="join">
+    <article class="card"><div class="card-body">
+      <h3>Helfer:in werden</h3>
+      <p>{{ .Params.helfer_teaser | markdownify }}</p>
+      <p><a class="more" href="{{ .RelPermalink }}#helferin-werden">Mehr erfahren</a></p>
+    </div></article>
+    <article class="card"><div class="card-body">
+      <h3>Mitglied werden</h3>
+      <p>{{ .Params.mitglied_teaser | markdownify }}</p>
+      <p><a class="more" href="{{ .RelPermalink }}#mitglied-werden">Mehr erfahren</a></p>
+    </div></article>
+  </div>
+</div>
+{{- end }}

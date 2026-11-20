@@ -1,0 +1,14 @@
+{{- /* Sponsoring-Ausschnitt: die Pakete mit Preis als Saatgut-Tüten */ -}}
+{{- $sp := (hugo.Data).sponsoring }}
+{{- $pakete := where ($sp.pakete | default slice) "leistungen" "!=" nil }}
+{{- with $pakete }}
+<div class="wrap">
+  <div class="sec-head">
+    <h2 id="sponsoring">Sponsoring</h2>
+    <p>Von der ersten Saat bis zum schattenspendenden Baum. Als gemeinnütziger Verein stellen wir eine Spendenquittung aus. <a href="{{ relref $ "/sponsoring" }}">Alle Pakete ansehen</a></p>
+  </div>
+  <div class="seeds">
+    {{- range $i, $p := . }}{{ if $p.leistungen }}{{ partial "saat-karte.html" (dict "paket" $p "nr" (add $i 1) "kurz" true) }}{{ end }}{{ end }}
+  </div>
+</div>
+{{- end }}

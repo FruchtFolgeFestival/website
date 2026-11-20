@@ -1,0 +1,12 @@
+{{- /* Karte für einen News-Beitrag */ -}}
+<article class="card">
+  {{- with .Params.bild }}
+  <div class="media">{{ partial "bild.html" (dict "src" . "alt" ($.Params.bild_alt | default "") "format" "4x3" "breiten" (slice 400 700) "sizes" "(min-width: 900px) 360px, 100vw") }}</div>
+  {{- end }}
+  <div class="card-body">
+    <time class="date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "02.01.2006" }}</time>
+    <h3><a class="stretch" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{- with .Params.kurztext }}<p class="muted">{{ . }}</p>{{ end }}
+    {{- if .Draft }}<span><span class="tag tag-entwurf">Entwurf – nur in der Vorschau</span></span>{{ end }}
+  </div>
+</article>

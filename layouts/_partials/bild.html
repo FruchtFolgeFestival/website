@@ -1,0 +1,55 @@
+{{- /* Responsives Bild über Hugo Image Processing (WebP, mehrere Größen, lazy, Breite/Höhe gesetzt).
+     Aufruf: partial "bild.html" (dict
+       "src"     "/images/uploads/…"   Pfad wie im CMS (Ordner assets/images/…)
+       "alt"     "Bildbeschreibung"    Pflicht (leer nur für reine Deko)
+       "breiten" (slice 400 800 1200)  optional
+       "sizes"   "(min-width: 900px) 33vw, 100vw"  optional
+       "format"  "4x3"                 optional: zuschneiden (z. B. "4x3", "1x1", "16x9")
+       "klasse"  "…"                   optional
+       "eager"   true                  optional: sofort laden (z. B. großes Bild oben)
+     )
+     Fehlt das Bild: Produktion bricht mit Fehlermeldung ab, Vorschau zeigt einen roten Hinweis. */ -}}
+{{- $src := .src | default "" }}
+{{- $alt := .alt | default "" }}
+{{- $breiten := .breiten | default (slice 480 800 1200) }}
+{{- $sizes := .sizes | default "100vw" }}
+{{- $img := false }}
+{{- with $src }}{{ $img = resources.Get (strings.TrimPrefix "/" .) }}{{ end }}
+{{- if not $img }}
+  {{- if hugo.IsProduction }}
+    {{- errorf "Bild nicht gefunden: %q. Liegt die Datei unter assets/images/…? (Pfad im CMS prüfen)" $src }}
+  {{- else }}
+<span class="bild-fehlt">Bild fehlt: {{ $src }}</span>
+  {{- end }}
+{{- else if eq $img.MediaType.SubType "svg" }}
+<img src="{{ $img.RelPermalink }}" alt="{{ $alt }}"{{ with .klasse }} class="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- else }}
+  {{- $verh := "" }}
+  {{- with .format }}{{ $verh = split . "x" }}{{ end }}
+  {{- $set := slice }}
+  {{- $fallback := false }}
+  {{- range $breiten }}
+    {{- $w := . }}
+    {{- if le $w $img.Width }}
+      {{- $r := false }}
+      {{- if $verh }}
+        {{- $h := math.Round (div (mul (float $w) (float (index $verh 1))) (float (index $verh 0))) | int }}
+        {{- $r = $img.Process (printf "fill %dx%d webp q78 Smart" $w $h) }}
+      {{- else }}
+        {{- $r = $img.Process (printf "resize %dx webp q78" $w) }}
+      {{- end }}
+      {{- $set = $set | append (printf "%s %dw" $r.RelPermalink $r.Width) }}
+      {{- $fallback = $r }}
+    {{- end }}
+  {{- end }}
+  {{- if not $fallback }}
+    {{- /* Bild ist kleiner als die kleinste Breite: Originalgröße als WebP */}}
+    {{- $fallback = $img.Process "webp q80" }}
+    {{- if $verh }}
+      {{- $h := math.Round (div (mul (float $img.Width) (float (index $verh 1))) (float (index $verh 0))) | int }}
+      {{- $fallback = $img.Process (printf "fill %dx%d webp q80 Smart" $img.Width $h) }}
+    {{- end }}
+    {{- $set = slice (printf "%s %dw" $fallback.RelPermalink $fallback.Width) }}
+  {{- end }}
+<img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $set ", " }}" sizes="{{ $sizes }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" alt="{{ $alt }}"{{ with .klasse }} class="{{ . }}"{{ end }}{{ if .eager }} fetchpriority="high"{{ else }} loading="lazy"{{ end }} decoding="async">
+{{- end -}}

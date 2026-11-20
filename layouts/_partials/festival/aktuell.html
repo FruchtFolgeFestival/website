@@ -1,0 +1,9 @@
+{{- /* Der in den Einstellungen gewählte aktuelle Jahrgang (oder der neueste, falls nicht gefunden) */ -}}
+{{- $jahr := (hugo.Data).festival.aktueller_jahrgang | default "" | string }}
+{{- $p := site.GetPage (printf "/festivals/%s" $jahr) }}
+{{- if not $p }}
+  {{- $alle := where site.RegularPages "Section" "festivals" }}
+  {{- with ($alle.ByParam "jahr").Reverse }}{{ $p = index . 0 }}{{ end }}
+  {{- if $jahr }}{{ warnf "Einstellungen: aktueller_jahrgang %q gibt es nicht in content/festivals/." $jahr }}{{ end }}
+{{- end }}
+{{- return $p -}}

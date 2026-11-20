@@ -1,0 +1,9 @@
+{{- /* Mitmachen: Text aus content/mitmachen.md + zwei E-Mail-Knöpfe. Kein Formular. */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "text" .Description) }}
+{{- $email := (hugo.Data).festival.kontakt.email }}
+{{- $knoepfe := printf `<div class="cta"><a class="btn btn-primary" href="mailto:%s?subject=%s">Als Helfer:in melden</a><a class="btn btn-ghost" href="mailto:%s?subject=%s">Mitglied werden</a></div><p class="muted">Die Knöpfe öffnen dein E-Mail-Programm. Du kannst auch direkt an <a href="mailto:%s">%s</a> schreiben.</p>`
+    $email (urlquery (.Params.helfer_betreff | default "Mithelfen")) $email (urlquery (.Params.mitglied_betreff | default "Mitgliedschaft")) $email $email }}
+{{- $inhalt := printf `<div class="wrap"><div class="prose">%s%s</div></div>` .Content $knoepfe }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" (slice $inhalt)) }}
+{{ end }}

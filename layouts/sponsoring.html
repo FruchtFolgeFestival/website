@@ -1,0 +1,19 @@
+{{- /* Sponsoring: Einleitung (Markdown), Pakete (data/sponsoring.yaml), PDF, Kontakt, Unterstützer */ -}}
+{{ define "main" }}
+{{ partial "seitenkopf.html" (dict "seite" . "text" .Description) }}
+{{- $sp := (hugo.Data).sponsoring }}
+{{- $email := (hugo.Data).festival.kontakt.email }}
+{{- $karten := "" }}
+{{- range $i, $p := $sp.pakete }}{{ $karten = printf "%s%s" $karten (partial "saat-karte.html" (dict "paket" $p "nr" (add $i 1) "kurz" false)) }}{{ end }}
+{{- $pdf := "" }}
+{{- with $sp.pdf }}{{ $pdf = printf `<a class="btn btn-ghost" href="%s" download>%s (PDF)</a>` . (htmlEscape ($sp.pdf_titel | default "Übersicht herunterladen")) }}{{ end }}
+{{- $mail := printf `<a class="btn btn-primary" href="mailto:%s?subject=%s">Kontaktieren Sie uns</a>` $email (urlquery ($sp.mail_betreff | default "Sponsoring")) }}
+{{- $teil1 := printf `<div class="wrap"><div class="prose">%s</div><div class="seeds">%s</div><div class="cta sponsor-cta">%s%s</div></div>` .Content $karten $mail $pdf }}
+{{- $abschnitte := slice $teil1 }}
+{{- $aktuell := partial "festival/aktuell.html" . }}
+{{- $letzter := partial "festival/letzter.html" . }}
+{{- $mitU := $aktuell }}
+{{- if not (and $aktuell $aktuell.Params.unterstuetzer) }}{{ $mitU = $letzter }}{{ end }}
+{{- with $mitU }}{{ with partial "festival/unterstuetzer.html" (dict "festival" .) | strings.TrimSpace }}{{ $abschnitte = $abschnitte | append . }}{{ end }}{{ end }}
+{{ partial "abschnitte.html" (dict "seite" . "abschnitte" $abschnitte) }}
+{{ end }}

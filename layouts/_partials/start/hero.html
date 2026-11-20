@@ -1,0 +1,48 @@
+{{- /* Startbereich der Startseite. Texte und Foto aus den Einstellungen (data/festival.yaml).
+     Der Sticker zeigt das Datum des aktuellen Jahrgangs, wenn er noch geplant ist. */ -}}
+{{- $d := (hugo.Data).festival }}
+{{- $f := .festival }}
+{{- $s := $d.startseite }}
+<section class="hero" aria-labelledby="hero-titel">
+  {{- with $s.titelbild }}
+  <div class="hero-photo">{{ partial "bild.html" (dict "src" . "alt" "" "breiten" (slice 800 1400 2000) "sizes" "100vw" "eager" true) }}</div>
+  {{- end }}
+  {{- if not hugo.IsProduction }}
+  {{- /* Nur für die Design-Werkstatt (Startbereich-Varianten "Logo groß" und "Riesen-Typo") */}}
+  {{- with resources.Get "images/marke/logo.png" }}{{ with .Process "resize 520x webp q85" }}
+  <img class="hero-giant" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+  {{- end }}{{ end }}
+  {{- end }}
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Fruchtfolge Festival{{ with $f }}{{ with .Params.ort }} · {{ . }}{{ end }}{{ end }}</p>
+      <h1 id="hero-titel">{{ $s.ueberschrift | default "Fruchtfolge Festival" }}</h1>
+      {{- with $s.text }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+      <div class="cta">
+        {{- $t := $d.tickets }}
+        {{- if and (eq $t.status "verfuegbar") $t.url }}
+        <a class="btn btn-primary" href="{{ $t.url }}" rel="noopener">Tickets kaufen ↗</a>
+        {{- else if and $f (eq $f.Params.status "geplant") .letzter }}
+        <a class="btn btn-primary" href="{{ .letzter.RelPermalink }}">Rückblick {{ .letzter.Params.jahr }}</a>
+        {{- else }}{{ with $f }}
+        <a class="btn btn-primary" href="{{ .RelPermalink }}">Zum Jahrgang {{ .Params.jahr }}</a>
+        {{- end }}{{ end }}
+        <a class="btn btn-ghost" href="{{ relref .seite "/mitmachen" }}">Mitmachen</a>
+        {{- with $t.status }}
+        <span class="ticket">Tickets{{ with $f }} {{ .Params.jahr }}{{ end }}: <b>{{ index (dict "bald" "bald" "verfuegbar" "jetzt erhältlich" "ausverkauft" "ausverkauft" "keine" "nicht nötig") . | default . }}</b></span>
+        {{- end }}
+      </div>
+      {{- with $t.hinweis }}<p class="ticket">{{ . }}</p>{{ end }}
+    </div>
+    {{- with $f }}{{ if and (eq .Params.status "geplant") .Params.datum_von }}
+    <div class="hero-art">
+      {{- if not hugo.IsProduction }}
+      {{- with resources.Get "images/marke/logo.png" }}{{ with .Process "resize 760x webp q85" }}
+      <img class="hero-logo" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="Logo des Fruchtfolge Festivals: Rotklee mit den Buchstaben FFF und Wurzeln">
+      {{- end }}{{ end }}
+      {{- end }}
+      <p class="sticker"><span>{{ partial "datum.html" (dict "von" .Params.datum_von "bis" .Params.datum_bis "kurz" true) | replaceRE `\d{4}$` "" }}</span><span class="jahr">{{ .Params.jahr }}</span></p>
+    </div>
+    {{- end }}{{ end }}
+  </div>
+</section>

@@ -1,0 +1,42 @@
+{{- /* Fußzeile: Verein, Kontakt, Social Media, rechtliche Links (Menü "footer" in hugo.toml) */ -}}
+{{- $d := (hugo.Data).festival }}
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        {{- with resources.Get "images/marke/logo.png" }}{{ with .Process "resize 144x webp q85" }}
+        <img src="{{ .RelPermalink }}" width="72" height="72" alt="" loading="lazy">
+        {{- end }}{{ end }}
+        <div>
+          <p class="display">Fruchtfolge Festival</p>
+          <p class="small">{{ $d.kontakt.verein }}<br>{{ $d.kontakt.strasse }} · {{ $d.kontakt.ort }}</p>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Kontakt</p>
+        <ul>
+          <li><a href="mailto:{{ $d.kontakt.email }}">{{ $d.kontakt.email }}</a></li>
+          {{- with $d.anfahrt.karten_link }}<li><a href="{{ . }}" rel="noopener">Anfahrt (Karte öffnen)</a></li>{{ end }}
+          <li><a href="{{ relref . "/kontakt" }}">Alle Kontaktinfos</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Folgen</p>
+        <ul>
+          {{- with $d.social.instagram }}<li><a href="{{ . }}" rel="noopener">Instagram</a></li>{{ end }}
+          {{- with $d.social.youtube }}<li><a href="{{ . }}" rel="noopener">YouTube</a></li>{{ end }}
+          {{- with $d.social.facebook }}<li><a href="{{ . }}" rel="noopener">Facebook</a></li>{{ end }}
+          {{- with site.GetPage "/news" }}{{ with .OutputFormats.Get "rss" }}<li><a href="{{ .RelPermalink }}">RSS-Feed (News)</a></li>{{ end }}{{ end }}
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <ul>
+        {{- range site.Menus.footer }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+      <p class="small">Mit <span class="heart">&lt;3</span> von euren Fruchtfliegen</p>
+    </div>
+  </div>
+</footer>

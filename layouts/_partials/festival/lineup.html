@@ -1,0 +1,51 @@
+{{- /* Line-up eines Jahrgangs: Karten für Acts mit Bild, darunter alle weiteren Acts als Liste.
+     Aufruf: partial "festival/lineup.html" (dict "festival" $p "ueberzeile" "…" "titel" "…" "link" true) */ -}}
+{{- $f := .festival }}
+{{- $alle := $f.Params.lineup | default slice }}
+{{- $acts := where $alle "art" "!=" "programmpunkt" }}
+{{- $laender := (hugo.Data).laender }}
+{{- $linktexte := dict "spotify" "Spotify" "youtube" "YouTube" "instagram" "Instagram" "bandcamp" "Bandcamp" "facebook" "Facebook" "website" "Website" "sonstiges" "Link" }}
+<div class="wrap">
+  <div class="sec-head">
+    <div>
+      {{- with .ueberzeile }}<p class="eyebrow">{{ . }}</p>{{ end }}
+      <h2 id="lineup-{{ $f.Params.jahr }}">{{ .titel | default (printf "Line-up %v" $f.Params.jahr) }}</h2>
+    </div>
+    {{- with $acts }}
+    {{- $herkunft := slice }}
+    {{- range . }}{{ range .herkunft }}{{ $herkunft = $herkunft | append (index $laender . | default .) }}{{ end }}{{ end }}
+    <p>{{ len . }} Acts{{ with uniq $herkunft }} aus {{ delimit (sort .) ", " " und " }}{{ end }}.{{ if $.link }} Alle Infos auf der <a href="{{ $f.RelPermalink }}">Seite zum Jahrgang {{ $f.Params.jahr }}</a>.{{ end }}</p>
+    {{- end }}
+  </div>
+  {{- if not $acts }}
+  <p class="empty"><strong>Das Line-up {{ $f.Params.jahr }} wird bald bekanntgegeben.</strong> Schau wieder vorbei oder folge uns auf Instagram.</p>
+  {{- else }}
+  {{- $mitBild := where $acts "bild" "!=" nil }}
+  {{- $mitBild = where $mitBild "bild" "!=" "" }}
+  {{- $ohneBild := slice }}
+  {{- range $acts }}{{ if not .bild }}{{ $ohneBild = $ohneBild | append . }}{{ end }}{{ end }}
+  {{- if $mitBild }}
+  <div class="lineup">
+    {{- range $mitBild }}
+    <article class="card">
+      <div class="media">{{ partial "bild.html" (dict "src" .bild "alt" (.bild_alt | default .name) "format" "4x3" "breiten" (slice 360 560 760) "sizes" "(min-width: 900px) 360px, (min-width: 560px) 50vw, 100vw") }}</div>
+      <div class="card-body">
+        {{- with .herkunft }}<div class="flags">{{ range . }}<span class="flag" title="{{ index $laender . | default . }}">{{ . }}</span>{{ end }}</div>{{ end }}
+        <h3>{{ .name }}</h3>
+        {{- with .genre }}<p class="genre">{{ . }}</p>{{ end }}
+        {{- with .beschreibung }}<p>{{ . }}</p>{{ end }}
+        {{- with .links }}
+        <p class="act-links">{{ range . }}<a href="{{ .url }}" rel="noopener">{{ index $linktexte .typ | default "Link" }}<span class="visually-hidden"> von {{ $.festival.Title }}</span></a>{{ end }}</p>
+        {{- end }}
+        {{- with .bild_credit }}<p class="credit">Foto: {{ . }}</p>{{ end }}
+      </div>
+    </article>
+    {{- end }}
+  </div>
+  {{- end }}
+  {{- with $ohneBild }}
+  <p class="weitere"><strong>{{ if $mitBild }}Außerdem dabei:{{ else }}Mit dabei:{{ end }}</strong>
+    {{ range $i, $a := . }}{{ if $i }} · {{ end }}{{ $a.name }}{{ with $a.herkunft }} ({{ delimit . "/" }}){{ end }}{{ end }}</p>
+  {{- end }}
+  {{- end }}
+</div>

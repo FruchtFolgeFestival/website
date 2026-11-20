@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale | default "de-DE" }}" class="no-js">
+<head>
+{{ partial "head.html" . }}
+</head>
+<body>
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+<div class="page">
+  {{- if not hugo.IsProduction }}{{ partial "vorschau-banner.html" . }}{{ end }}
+  {{ partial "kopf.html" . }}
+  <main id="inhalt" tabindex="-1">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{- $letzter := .Store.Get "letzterHintergrund" | default "bg" }}
+  {{- if ne $letzter "hero" }}{{ partial "trenner.html" (dict "von" $letzter "nach" "dark") }}{{ end }}
+  {{ partial "fuss.html" . }}
+</div>
+{{- partial "datenschutz-pruefung.html" . }}
+</body>
+</html>
