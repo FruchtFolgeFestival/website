@@ -19,7 +19,7 @@ jobs:
     name: Vorschau bauen und prüfen
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Hugo installieren (Version aus .hugo-version)
         run: |
@@ -37,6 +37,7 @@ jobs:
         with:
           args: >-
             --offline --no-progress --include-fragments
+            --index-files index.html
             --root-dir "${{ github.workspace }}/public"
             'public/**/*.html'
           fail: true
@@ -57,7 +58,7 @@ jobs:
     if: github.event_name == 'pull_request' && github.base_ref == 'main'
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Hugo installieren (Version aus .hugo-version)
         run: |
           V="$(tr -d '[:space:]' < .hugo-version)"
