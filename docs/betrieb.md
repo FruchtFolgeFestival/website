@@ -36,24 +36,26 @@ Diese Seite beschreibt, **wie die Webseite läuft**, **wo was eingestellt ist** 
 
 ## Workers-Builds-Einstellungen (Cloudflare)
 
-**Wo:** Cloudflare-Dashboard → **Workers & Pages** → **fruchtfolge** → **Settings** → **Build**
+**Wo:** Cloudflare-Dashboard → **Workers & Pages** → **fruchtfolge** → **Settings** → rechte Leiste **Builds**.
+Der Bereich hat **zwei Reiter: „Production“ und „Previews Base“**. Einstellungen und Variablen gelten jeweils nur für den gewählten Reiter.
 
-| Feld | Wert |
-|---|---|
-| Git repository | `FruchtFolgeFestival/website` |
-| Production branch | `main` |
-| Build command | `./build.sh` |
-| Deploy command | `npx wrangler deploy` |
-| Preview command | `npx wrangler preview` |
-| Root directory | `/` (leer lassen) |
-| Enable Preview Builds (unter *Branch control*) | **an** |
-
-**Build-Variablen** (unter *Build* → *Variables and secrets*):
-
-| Name | Wert | Bemerkung |
+| Feld | Reiter | Wert |
 |---|---|---|
-| `HUGO_VERSION` | `0.170.1` | muss genau dem Inhalt von `.hugo-version` entsprechen, sonst bricht `build.sh` mit klarer Meldung ab |
-| `SITE_URL` | bis zum DNS-Umzug: `https://fruchtfolge.technik-7e1.workers.dev/`, danach `https://fruchtfolge.live/` | nur für die Produktion relevant; Standard in `build.sh` ist `https://fruchtfolge.live/` |
+| Git repository | beide | `FruchtFolgeFestival/website` |
+| Production branch (Branch control) | Production | `main` |
+| Build command | beide | `./build.sh` |
+| Deploy command | Production | `npx wrangler deploy` |
+| Preview command | Previews Base | `npx wrangler preview` |
+| Root directory | beide | `/` |
+| Builds for Preview branches | Previews Base | **an** (und „Preview URLs“ aktiviert) |
+| Build watch paths | beide | Include `*`, Exclude leer (Standard) |
+
+**Build-Variablen** (jeweils unter *Variables and secrets* im Reiter; **nicht** unter „Runtime variables and secrets“):
+
+| Name | Reiter | Wert | Bemerkung |
+|---|---|---|---|
+| `HUGO_VERSION` | **Production und Previews Base** | `0.170.1` | muss genau dem Inhalt von `.hugo-version` entsprechen, sonst bricht `build.sh` mit klarer Meldung ab |
+| `SITE_URL` | Production | bis zum DNS-Umzug: `https://fruchtfolge.technik-7e1.workers.dev/`, danach `https://fruchtfolge.live/` | Standard in `build.sh` ist `https://fruchtfolge.live/` |
 
 Node.js: Das Build-Image liest `.node-version` (24). Eine Variable `NODE_VERSION` ist nicht nötig.
 
@@ -130,7 +132,7 @@ Grundregel: Versionen ändern sich nur an den dokumentierten Stellen. Jede Aktua
 1. Neue Version nachsehen: <https://github.com/gohugoio/hugo/releases> (Release Notes auf **Breaking Changes** und **Deprecations** lesen).
 2. Branch `update/hugo-X.Y.Z` erstellen und `.hugo-version` auf die neue Version setzen.
 3. Lokal mit der neuen Hugo-Version `./build.sh` und `BUILD_BRANCH=main ./build.sh` laufen lassen (Letzteres nur möglich, wenn die Datenschutzerklärung freigegeben ist). Wegen `--panicOnWarning` fallen veraltete Template-Funktionen sofort auf. Dann Templates anpassen.
-4. Pushen, PR nach `dev`. **Gleichzeitig** in Cloudflare die Build-Variable `HUGO_VERSION` auf die neue Version setzen (sie gilt für alle Branches). Tipp: Erst die Variable ändern, wenn der PR bereit ist. Ein Build mit nicht passender Version bricht mit klarer Meldung ab und ändert nichts an der laufenden Seite.
+4. Pushen, PR nach `dev`. **Gleichzeitig** in Cloudflare die Build-Variable `HUGO_VERSION` auf die neue Version setzen, und zwar in **beiden** Reitern (Production und Previews Base). Tipp: Erst die Variable ändern, wenn der PR bereit ist. Ein Build mit nicht passender Version bricht mit klarer Meldung ab und ändert nichts an der laufenden Seite.
 5. Vorschau prüfen, dann `dev → main`.
 
 ### Wrangler aktualisieren
@@ -198,7 +200,7 @@ In allen Vorschau-Builds (und lokal) gibt es unten rechts den Knopf **„Design-
 
 | Problem | Ursache / Lösung |
 |---|---|
-| **Build rot** in Cloudflare | Cloudflare → Workers & Pages → fruchtfolge → **Deployments** → fehlgeschlagener Build → **View build log**. Häufige Ursachen: <br>• „Falsche Hugo-Version“ → Build-Variable `HUGO_VERSION` an `.hugo-version` anpassen. <br>• „Datenschutzerklärung ist noch ein ENTWURF“ → nur auf `main`, siehe oben. <br>• „Bild nicht gefunden“ → ein Bild wurde gelöscht/umbenannt, das noch verwendet wird. Pfad im CMS korrigieren. <br>• Hugo-`WARN`/`ERROR` → durch `--panicOnWarning` ist jede Warnung ein Fehler. Meldung lesen, Template oder Inhalt korrigieren. <br>• YAML-Fehler („yaml: line …“) → meist ein Tippfehler in einer Datei, die außerhalb des CMS bearbeitet wurde. |
+| **Build rot** in Cloudflare | Cloudflare → Workers & Pages → fruchtfolge → **Deployments** → fehlgeschlagener Build → **View build log**. Häufige Ursachen: <br>• „Falsche Hugo-Version“ → Build-Variable `HUGO_VERSION` an `.hugo-version` anpassen (in beiden Reitern, Production und Previews Base). <br>• Build läuft für den falschen Branch als Produktion → Production branch muss `main` sein (Settings → Builds → Reiter Production). <br>• „Datenschutzerklärung ist noch ein ENTWURF“ → nur auf `main`, siehe oben. <br>• „Bild nicht gefunden“ → ein Bild wurde gelöscht/umbenannt, das noch verwendet wird. Pfad im CMS korrigieren. <br>• Hugo-`WARN`/`ERROR` → durch `--panicOnWarning` ist jede Warnung ein Fehler. Meldung lesen, Template oder Inhalt korrigieren. <br>• YAML-Fehler („yaml: line …“) → meist ein Tippfehler in einer Datei, die außerhalb des CMS bearbeitet wurde. |
 | **Vorschau zeigt alten Stand** | 1. Hart neu laden (`Strg+Umschalt+R`). 2. Stand im Vorschau-Banner ansehen. 3. In Cloudflare unter *Deployments* prüfen, ob der Build für `dev` gelaufen und grün ist. 4. Läuft ein anderer Build gerade? (Free: nur 1 gleichzeitig, Builds warten in der Schlange.) 5. Notfalls im Dashboard **Retry build**. |
 | **CMS-Login schlägt fehl** | • Fenster geht auf und gleich wieder zu bzw. „Not allowed“ → Domain fehlt in `ALLOWED_DOMAINS` des Login-Workers (genau diese drei: `fruchtfolge.live`, `fruchtfolge.technik-7e1.workers.dev`, `dev-fruchtfolge.technik-7e1.workers.dev`). <br>• „redirect_uri mismatch“ → in der GitHub App muss die Callback-URL `https://sveltia-cms-auth.technik-7e1.workers.dev/callback` sein. <br>• „Bad credentials“ → `GITHUB_CLIENT_SECRET` im Login-Worker erneuern (GitHub App → *Generate a new client secret*). <br>• Login klappt, aber Speichern geht nicht → Person hat kein Schreibrecht (Team `redaktion`) oder die GitHub App ist nicht auf dem Repo installiert. <br>• CSP-Fehler in der Browser-Konsole unter `/admin` → `static/_headers` (Abschnitt `/admin/*`) anpassen, wenn sich die Adresse des Login-Workers geändert hat. |
 | **Seite 404** | • Adresse falsch geschrieben? Alte WordPress-Adressen werden über `static/_redirects` umgeleitet. Fehlende Weiterleitung dort ergänzen. <br>• Seite ist ein Entwurf (`draft: true`) → erscheint nur in der Vorschau. <br>• Ganze Domain zeigt Cloudflare-Fehler → Custom Domain am Worker prüfen (Workers & Pages → fruchtfolge → Settings → Domains & Routes). |

@@ -61,16 +61,30 @@ Der Branch-Schutz folgt in Schritt 9, wenn alles läuft.
 | Preview command (*Non-production branch deploy command*) | `npx wrangler preview` |
 | Root directory | `/` |
 
-- [ ] **Build-Variablen** (Advanced settings → Build variables):
+- [ ] **Enable Preview builds**: an. **Protect with Cloudflare Access**: aus (siehe Schritt 10).
+- [ ] **Deploy** starten. *(Der erste Build darf fehlschlagen, siehe unten.)*
+- [ ] **Achtung, Production branch prüfen:** Cloudflare übernimmt als Production branch den **Default branch von GitHub**. Der muss `main` sein (GitHub → Repository → Settings → General → *Default branch*). Sonst hier korrigieren.
 
-| Name | Wert |
-|---|---|
-| `HUGO_VERSION` | `0.170.1` (genau der Inhalt von `.hugo-version`) |
-| `SITE_URL` | `https://fruchtfolge.technik-7e1.workers.dev/` (bis zum DNS-Umzug, siehe Schritt 8) |
+**Danach in den Worker-Einstellungen nacharbeiten:** Worker `fruchtfolge` → **Settings** → in der rechten Leiste **Builds**. Dieser Bereich hat **zwei Reiter, „Production“ und „Previews Base“**. Die Einstellungen und **Variablen gelten jeweils nur für den gewählten Reiter.**
 
-- [ ] **Deploy** starten.
-- [ ] Danach: Worker → **Settings** → **Build** → **Branch control** → **Enable Preview Builds** einschalten. *(Hinweis: Cloudflare kann das nicht auf `dev` beschränken. Jeder Nicht-`main`-Branch bekommt eine Vorschau. Das ist harmlos, weil alle Vorschauen `noindex` sind.)*
+- [ ] Reiter **„Production“**:
+  - [ ] **Production branch** (Branch control) = `main`
+  - [ ] **Deploy command** = `npx wrangler deploy`
+  - [ ] **Variables and secrets** → **Add** (Typ *Text*):
+
+    | Name | Wert |
+    |---|---|
+    | `HUGO_VERSION` | `0.170.1` (genau der Inhalt von `.hugo-version`) |
+    | `SITE_URL` | `https://fruchtfolge.technik-7e1.workers.dev/` (bis zum DNS-Umzug, siehe Schritt 8) |
+
+- [ ] Reiter **„Previews Base“**:
+  - [ ] **Builds for Preview branches**: an. *(Cloudflare kann das nicht auf `dev` beschränken. Jeder Nicht-`main`-Branch bekommt eine Vorschau. Das ist harmlos, weil alle Vorschauen `noindex` sind.)*
+  - [ ] Steht dort „Preview URLs are disabled“: **Enable Preview URLs** klicken.
+  - [ ] **Preview command** = `npx wrangler preview`
+  - [ ] **Variables and secrets** → **Add** (Typ *Text*): `HUGO_VERSION` = `0.170.1`
+- [ ] **Nicht verwechseln:** Die Abschnitte **„Runtime variables and secrets“** weiter oben auf der Settings-Seite sind Laufzeit-Variablen. Die sieht `build.sh` nicht.
 - [ ] Falls der Worker schon vor September 2026 mit Builds verbunden war: Im Banner **„Set up Worker Previews“** einmalig auf **Set up** → **Switch to Worker Previews** klicken.
+- [ ] Die zwei Einträge „Manually deployed“ unter **Deployments** sind der Platzhalter-Worker, den Cloudflare beim Anlegen erzeugt. Sie werden beim ersten erfolgreichen Deploy ersetzt.
 
 > **Achtung beim ersten Produktions-Build:** Solange die Datenschutzerklärung noch ein Entwurf ist (`entwurf: true` in `content/datenschutz.md`), **bricht der Build von `main` absichtlich ab**. Das ist gewollt: Die Seite geht erst live, wenn der Vorstand die Datenschutzerklärung freigegeben hat. Die Vorschau (`dev`) funktioniert trotzdem.
 
