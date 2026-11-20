@@ -1,0 +1,165 @@
+/* =====================================================================
+   Design-Werkstatt – NUR in der Vorschau (dev) und lokal, nie in Produktion.
+   Schaltet Design-Varianten über Attribute an <html> um (data-w-…).
+   Ohne Attribut gilt das freigegebene Design aus main.css.
+   Gesteuert von assets/js/werkstatt.js. Siehe docs/betrieb.md.
+   ===================================================================== */
+
+/* ---------- Zusätzliche Schriften (nur für die Werkstatt) ---------- */
+@font-face { font-family: "Big Shoulders Display"; font-weight: 900; font-display: swap; src: url("/fonts/werkstatt/big-shoulders-display-latin-900-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Big Shoulders Display"; font-weight: 900; font-display: swap; src: url("/fonts/werkstatt/big-shoulders-display-latin-ext-900-normal.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Anton"; font-weight: 400; font-display: swap; src: url("/fonts/werkstatt/anton-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Anton"; font-weight: 400; font-display: swap; src: url("/fonts/werkstatt/anton-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Work Sans"; font-weight: 400; font-display: swap; src: url("/fonts/werkstatt/work-sans-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Work Sans"; font-weight: 700; font-display: swap; src: url("/fonts/werkstatt/work-sans-latin-700-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Bricolage Grotesque"; font-weight: 800; font-display: swap; src: url("/fonts/werkstatt/bricolage-grotesque-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Bricolage Grotesque"; font-weight: 800; font-display: swap; src: url("/fonts/werkstatt/bricolage-grotesque-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF; }
+
+/* ---------- Dunkle Mischungen (Standard: Zwielicht) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root[data-w-dark="glut"]:not([data-theme="light"]) {
+    --bg: #16110d; --bg2: #211912; --card: #2a2018; --ink: #f3e8d4; --muted: #c2b39b;
+    --accent: #ff8f3f; --accent-ink: #16110d; --second: #b892ea; --root: #d39a62; --stripe3: #7cff3a;
+    --dark: #0c0907; --on-dark: #f3e8d4; --on-dark-muted: #c2b39b; --pop: #7cff3a; --line: #f3e8d4;
+  }
+  :root[data-w-dark="aubergine"]:not([data-theme="light"]) {
+    --bg: #1a1020; --bg2: #25162c; --card: #2f1d38; --ink: #f7e7d6; --muted: #cdb5c9;
+    --accent: #ef6aae; --accent-ink: #1a1020; --second: #ffa53d; --root: #d39a62; --stripe3: #7cff3a;
+    --dark: #0f0913; --on-dark: #f7e7d6; --on-dark-muted: #cdb5c9; --pop: #7cff3a; --line: #f7e7d6;
+  }
+}
+:root[data-w-dark="glut"][data-theme="dark"] {
+  --bg: #16110d; --bg2: #211912; --card: #2a2018; --ink: #f3e8d4; --muted: #c2b39b;
+  --accent: #ff8f3f; --accent-ink: #16110d; --second: #b892ea; --root: #d39a62; --stripe3: #7cff3a;
+  --dark: #0c0907; --on-dark: #f3e8d4; --on-dark-muted: #c2b39b; --pop: #7cff3a; --line: #f3e8d4;
+}
+:root[data-w-dark="aubergine"][data-theme="dark"] {
+  --bg: #1a1020; --bg2: #25162c; --card: #2f1d38; --ink: #f7e7d6; --muted: #cdb5c9;
+  --accent: #ef6aae; --accent-ink: #1a1020; --second: #ffa53d; --root: #d39a62; --stripe3: #7cff3a;
+  --dark: #0f0913; --on-dark: #f7e7d6; --on-dark-muted: #cdb5c9; --pop: #7cff3a; --line: #f7e7d6;
+}
+
+/* ---------- Schriftpaare (Standard: Psych 70s) ---------- */
+:root[data-w-font="plakat"] { --f-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif; --d-case: uppercase; --d-weight: 900; --d-track: .01em; --d-scale: 1; --d-lh: .92; }
+:root[data-w-font="punk"] { --f-display: "Anton", Impact, "Arial Narrow", sans-serif; --f-text: "Work Sans", system-ui, sans-serif; --d-case: uppercase; --d-weight: 400; --d-scale: .9; --d-track: .005em; --d-lh: .98; }
+:root[data-w-font="hof"] { --f-display: "Bricolage Grotesque", system-ui, sans-serif; --d-case: none; --d-weight: 800; --d-track: -.025em; --d-scale: .84; --d-lh: .95; }
+
+/* ---------- Ecken (Standard: Lavalampe) ---------- */
+:root[data-w-corners="eckig"] { --r-card: 0; --r-btn: 0; --r-small: 0; --r-box: 0; --r-tile: 0; }
+:root[data-w-corners="rund"] { --r-card: 16px; --r-btn: 10px; --r-small: 6px; --r-box: 16px; --r-tile: 12px; }
+:root[data-w-corners="bogen"] { --r-card: 999px 999px 14px 14px; --r-btn: 999px; --r-small: 999px; --r-box: 120px 120px 16px 16px; --r-tile: 999px 999px 8px 8px; }
+:root[data-w-corners="bogen"] .join .card { border-radius: var(--r-box); }
+:root[data-w-corners="bogen"] .join .card-body { padding: 48px 28px 24px; text-align: center; justify-items: center; }
+:root[data-w-corners="bogen"] .seed { justify-items: center; text-align: center; padding-top: 56px; }
+:root[data-w-corners="bogen"] .seed::before { display: none; }
+:root[data-w-corners="bogen"] .seed .stufe { left: 50%; transform: translateX(-50%); top: 14px; }
+:root[data-w-corners="bogen"] .seed ul { text-align: left; }
+
+/* ---------- Schatten (Standard: Regenbogen-Stapel) ---------- */
+:root[data-w-shadow="flach"] { --shadow: none; }
+:root[data-w-shadow="versatz"] { --shadow: 6px 6px 0 var(--line); }
+:root[data-w-shadow="versatz"] .hero .btn-primary { box-shadow: 5px 5px 0 var(--pop); }
+:root[data-w-shadow="neon"] { --shadow: 0 0 0 3px var(--accent), 0 0 28px 2px color-mix(in srgb, var(--accent) 55%, transparent); }
+
+/* ---------- Details ---------- */
+:root[data-w-grain="aus"] .page::after { display: none; }
+:root[data-w-tilt="gerade"] { --tilt: 0deg; }
+:root[data-w-photos="duoton"] .media img, :root[data-w-photos="duoton"] .gal img { filter: grayscale(1) contrast(1.15); mix-blend-mode: multiply; }
+:root[data-w-photos="duoton"] .gal a { background: var(--second); }
+
+/* ---------- Startbereich: Logo groß ---------- */
+:root[data-w-hero="logo"] .hero-photo { display: none; }
+:root[data-w-hero="logo"] .hero-art { order: -1; justify-self: center; width: min(320px, 72%); }
+:root[data-w-hero="logo"] .hero-logo { display: block; width: 100%; height: auto; aspect-ratio: 1; filter: drop-shadow(0 10px 30px rgba(0,0,0,.35)); }
+:root[data-w-hero="logo"] .sticker { position: absolute; right: -14px; top: -4px; width: 104px; height: 104px; }
+@media (min-width: 760px) {
+  :root[data-w-hero="logo"] .hero-inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; }
+  :root[data-w-hero="logo"] .hero-art { width: 100%; max-width: 380px; }
+  :root[data-w-hero="logo"] .sticker { width: 140px; height: 140px; }
+}
+/* ---------- Startbereich: Riesen-Typo ---------- */
+:root[data-w-hero="typo"] { --hero-bg: var(--accent); }
+:root[data-w-hero="typo"] .hero, :root[data-w-hero="typo"] .top, :root[data-w-hero="typo"] .page-head { color: var(--accent-ink); }
+:root[data-w-hero="typo"] .hero-photo { display: none; }
+:root[data-w-hero="typo"] .hero h1 { font-size: calc(var(--d-scale) * clamp(3.4rem, 11vw, 9rem)); max-width: none; }
+:root[data-w-hero="typo"] .hero .eyebrow, :root[data-w-hero="typo"] .page-head .eyebrow,
+:root[data-w-hero="typo"] .ticket, :root[data-w-hero="typo"] .ticket b,
+:root[data-w-hero="typo"] .lead, :root[data-w-hero="typo"] .lead strong,
+:root[data-w-hero="typo"] .page-head p.beschreibung, :root[data-w-hero="typo"] .fakten, :root[data-w-hero="typo"] .fakten span { color: var(--accent-ink); }
+:root[data-w-hero="typo"] .hero .btn-primary { background: var(--dark); color: var(--on-dark); border-color: var(--dark); }
+:root[data-w-hero="typo"] .hero .btn-ghost { color: var(--accent-ink); border-color: var(--accent-ink); }
+:root[data-w-hero="typo"] .hero-giant { display: block; position: absolute; right: -4vw; bottom: -6vw; width: 42vw; max-width: 560px; height: auto; opacity: .16; z-index: 1; filter: grayscale(1) contrast(1.4); mix-blend-mode: multiply; }
+
+/* ---------- Trenner (Standard: Welle) ---------- */
+:root {
+  --hill-far: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 50' preserveAspectRatio='none'><path d='M0 30C120 8 260 4 380 22S620 46 760 20S1040 6 1200 26V50H0Z'/></svg>");
+  --hill-near: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 46' preserveAspectRatio='none'><path d='M0 22C160 40 300 44 440 26S700 0 860 18S1100 40 1200 20V46H0Z'/></svg>");
+  --torn: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 18' preserveAspectRatio='none'><path d='M0 10L7 6L13 11L22 4L29 9L37 3L44 10L55 6L61 12L72 4L80 8L89 5L98 11L107 6L115 10L124 3L133 9L141 6L150 12L158 5L167 9L176 4L185 11L194 6L203 10L211 7L220 10V18H0Z'/></svg>");
+  --zigzag: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 11' preserveAspectRatio='none'><path d='M0 11L11 0L22 11Z'/></svg>");
+}
+:root[data-w-divider] .divider i { display: none; }
+/* Doppelwelle */
+:root[data-w-divider="doppel"] .divider { --dh: 44px; }
+:root[data-w-divider="doppel"] .divider i:nth-child(1) { display: block; background: var(--second); --m: var(--wave-line); --mw: 240px; --mh: 44px; --t: -21px; --below: linear-gradient(transparent 0 0); }
+:root[data-w-divider="doppel"] .divider i:nth-child(2) { display: block; background: var(--accent); --m: var(--wave-line); --mw: 240px; --mh: 44px; --t: -11px; --below: linear-gradient(transparent 0 0); }
+:root[data-w-divider="doppel"] .divider i:nth-child(4) { display: block; background: var(--to); --m: var(--wave-fill); --mw: 240px; --mh: 44px; }
+/* Psych-Schichten */
+:root[data-w-divider="schichten"] .divider { --dh: 86px; }
+:root[data-w-divider="schichten"] .divider i { display: block; --m: var(--wave-fill); --mw: 240px; --mh: 44px; --below: linear-gradient(#000 0 0); }
+:root[data-w-divider="schichten"] .divider i:nth-child(1) { background: var(--accent); --t: 0px; --mx: 0px; }
+:root[data-w-divider="schichten"] .divider i:nth-child(2) { background: var(--second); --t: 14px; --mx: -40px; }
+:root[data-w-divider="schichten"] .divider i:nth-child(3) { background: var(--stripe3); --t: 28px; --mx: -80px; }
+:root[data-w-divider="schichten"] .divider i:nth-child(4) { background: var(--to); --t: 42px; --mx: -120px; }
+/* Hügel */
+:root[data-w-divider="huegel"] .divider { --dh: 64px; }
+:root[data-w-divider="huegel"] .divider i:nth-child(3) { display: block; background: color-mix(in srgb, var(--second) 60%, var(--from)); --m: var(--hill-far); --mw: 100%; --mh: 50px; }
+:root[data-w-divider="huegel"] .divider i:nth-child(4) { display: block; background: var(--to); --m: var(--hill-near); --mw: 100%; --mh: 46px; --t: 18px; }
+/* Gerissenes Papier */
+:root[data-w-divider="papier"] .divider { --dh: 26px; }
+:root[data-w-divider="papier"] .divider i:nth-child(3) { display: block; background: color-mix(in srgb, var(--line) 30%, var(--from)); --m: var(--torn); --mw: 220px; --mh: 18px; }
+:root[data-w-divider="papier"] .divider i:nth-child(4) { display: block; background: var(--to); --m: var(--torn); --mw: 220px; --mh: 18px; --t: 4px; --mx: -4px; }
+/* Zackenschere */
+:root[data-w-divider="zacken"] .divider { --dh: 20px; }
+:root[data-w-divider="zacken"] .divider i:nth-child(3) { display: block; background: var(--accent); --m: var(--zigzag); --mw: 22px; --mh: 11px; }
+:root[data-w-divider="zacken"] .divider i:nth-child(4) { display: block; background: var(--to); --m: var(--zigzag); --mw: 22px; --mh: 11px; --t: 7px; --mx: 11px; }
+/* Ackerfurchen */
+:root[data-w-divider="furchen"] .divider { --dh: 22px; background-image: repeating-linear-gradient(100deg, var(--root) 0 5px, transparent 5px 15px); background-color: var(--bg2); border-block: 3px solid var(--line); }
+/* Schlicht */
+:root[data-w-divider="schlicht"] .divider { --dh: 0px; border-top: 3px solid var(--line); }
+
+/* =====================================================================
+   Die Werkstatt-Leiste selbst (feste Farben, unabhängig vom Design)
+   ===================================================================== */
+.ws-start {
+  position: fixed; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); z-index: 200;
+  font: 700 15px/1.2 "Atkinson Hyperlegible Next", system-ui, sans-serif; color: #14110e; background: #7cff3a;
+  border: 2px solid #14110e; border-radius: 999px; padding: 11px 16px; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+.ws-start:focus-visible, .ws-panel :focus-visible { outline: 3px solid #7cff3a; outline-offset: 2px; }
+.ws-panel {
+  position: fixed; z-index: 210; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px));
+  width: min(380px, calc(100vw - 28px)); max-height: min(80vh, 760px); overflow: auto; overscroll-behavior: contain;
+  background: #1e1914; color: #efe6d4; border: 1px solid #3b3229; border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,.5);
+  font: 400 14px/1.45 "Atkinson Hyperlegible Next", system-ui, sans-serif; color-scheme: dark;
+}
+.ws-panel[hidden] { display: none; }
+.ws-head { position: sticky; top: 0; background: #1e1914; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border-bottom: 1px solid #3b3229; z-index: 1; }
+.ws-head strong { font: 900 20px/1 "Big Shoulders Display", "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: .03em; }
+.ws-body { padding: 12px 14px 16px; display: grid; gap: 14px; }
+.ws-form { display: grid; gap: 14px; }
+.ws-intro { margin: 0; color: #a99b85; font-size: 13px; }
+.ws-panel fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.ws-panel legend { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #a99b85; padding: 0; margin-bottom: 6px; font-weight: 700; }
+.ws-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ws-chips input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.ws-chips label { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border-radius: 7px; background: #29221b; border: 1px solid #3b3229; cursor: pointer; font-size: 13px; color: #efe6d4; }
+.ws-chips label:hover { border-color: #a99b85; }
+.ws-chips input:checked + label { border-color: #7cff3a; box-shadow: inset 0 0 0 1px #7cff3a; background: #2f2a1c; }
+.ws-chips input:focus-visible + label { outline: 2px solid #7cff3a; outline-offset: 2px; }
+.ws-chips .ws-star { color: #7cff3a; font-size: 11px; }
+.ws-panel textarea { width: 100%; min-height: 110px; resize: vertical; background: #120f0c; color: #efe6d4; border: 1px dashed #3b3229; border-radius: 8px; padding: 8px; font: 12px/1.4 ui-monospace, Menlo, Consolas, monospace; }
+.ws-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.ws-btn { font: 700 13px/1.2 "Atkinson Hyperlegible Next", system-ui, sans-serif; padding: 8px 11px; border-radius: 7px; border: 1px solid #3b3229; background: #29221b; color: #efe6d4; cursor: pointer; }
+.ws-btn.ws-primary { background: #7cff3a; color: #14110e; border-color: #7cff3a; }
+.ws-status { margin: 0; min-height: 1.2em; color: #7cff3a; font-size: 12px; }
+@media print { .ws-start, .ws-panel { display: none !important; } }
