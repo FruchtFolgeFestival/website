@@ -1,0 +1,21 @@
+# Presseberichte
+# Im CMS unter "Presse" bearbeitbar.
+# jahrgang: zu welchem Festivaljahr der Artikel gehört (die Jahrgangsseite zeigt ihre Presse)
+# datum: Erscheinungsdatum im Format JJJJ-MM-TT (leer lassen, wenn unbekannt)
+
+artikel:
+  - titel: "Biobauer plant Open-Air-Festival: Veranstaltung rund um München wohl einmalig"
+    medium: "Merkur"
+    datum: ""
+    jahrgang: "2026"
+    link: "https://www.merkur.de/lokales/fuerstenfeldbruck/fuerstenfeldbruck-ort65548/biobauer-plant-open-air-festival-veranstaltung-rund-um-muenchen-wohl-einmalig-94160100.html"
+  - titel: "Fruchtfolge-Festival zwischen Augsburg und München: Termin, Line-up und Infos"
+    medium: "Augsburger Allgemeine"
+    datum: ""
+    jahrgang: "2026"
+    link: "https://www.augsburger-allgemeine.de/bayern/fruchtfolge-festival-zwischen-augsburg-und-muenchen-termin-line-up-und-infos-113408630"
+  - titel: "Festival-Acker: Fruchtfolge plötzlich rockt"
+    medium: "Bayerisches Landwirtschaftliches Wochenblatt"
+    datum: ""
+    jahrgang: "2026"
+    link: "https://www.wochenblatt-dlv.de/regionen/oberbayern/festival-acker-fruchtfolge-ploetzlich-rockt-584198"

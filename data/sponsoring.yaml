@@ -1,0 +1,58 @@
+# Sponsoring-Pakete
+# Im CMS unter "Sponsoring" bearbeitbar.
+# Reihenfolge hier = Reihenfolge auf der Webseite.
+# symbol: samen | keimling | setzling | baum | individuell (kleine Zeichnung auf der Karte)
+
+pakete:
+  - name: "Samen"
+    preis: "100 €"
+    symbol: samen
+    kurz: "Die Basis für eine fruchtbare Zusammenarbeit. Perfekt für lokale Unterstützer und kleinere Unternehmen, die ein Zeichen setzen wollen. Sie werden auf unserer Website und vor Ort sichtbar platziert."
+    leistungen:
+      - "Logo auf der Webseite"
+      - "Bannerplatzierung"
+      - "Textuelle Nennung im offiziellen Programm"
+  - name: "Keimling"
+    preis: "500 €"
+    symbol: keimling
+    kurz: "Hier bricht die Kooperation bereits kraftvoll auf. Mit Bannerplatzierungen vor Ort und gezielter Social-Media-Präsenz fangen Sie an, im Bewusstsein unserer Festivalbesucher und der Community in der Region Fürstenfeldbruck/München festen Halt zu finden."
+    leistungen:
+      - "Logo auf der Webseite"
+      - "Bannerplatzierung"
+      - "Logo Platzierung im offiziellen Programm"
+      - "Logo auf Flyern & Plakaten"
+      - "2 Tickets für euch"
+  - name: "Setzling"
+    preis: "1000 €"
+    symbol: setzling
+    kurz: "Eine starke, etablierte Partnerschaft. Als Setzling prägen Sie das Festivalbild aktiv mit – sei es durch prominente Logoplatzierungen auf den Druckmedien oder durch die Option eines eigenen kleinen Infostandes auf dem ländlichen Festivalgelände."
+    leistungen:
+      - "Logo auf der Webseite"
+      - "Bannerplatzierung (2x) und kleiner Stand"
+      - "Logo + Kurzbeschreibung Platzierung im offiziellen Programm"
+      - "Logo auf Flyern & Plakaten"
+      - "5 Tickets für euch"
+      - "Exkluivpost auf unseren Social Media Kanälen"
+  - name: "Baum"
+    preis: "2000 €"
+    symbol: baum
+    kurz: "Ein mächtiger Hauptpartner, unter dessen Krone das Festival gedeiht. Sie genießen maximale Sichtbarkeit auf der Hauptbühne, umfassende Crossmedia-Präsenz vor und während des Festivals sowie ein großes Ticketkontingent für Mitarbeiter und Kunden inklusive exklusiver Backstage-Einblicke."
+    leistungen:
+      - "Logo auf der Webseite"
+      - "Großer eigener Stand + Hauptbühnen-Banner"
+      - "Ganzseitiges Profil Premium"
+      - "Logo auf Flyern & Plakaten"
+      - "10 Tickets"
+      - "2 * AAA-Zugang (Backstage Access)"
+      - "Laufende Begleitung + Storys"
+  - name: "Anpassbar"
+    preis: "nach Absprache"
+    symbol: individuell
+    kurz: "Gerne passen wir die Pakete auch individuell an Ihre Marketingziele an. Kontaktieren Sie uns, um gemeinsam die perfekte Fruchtfolge für Ihr Sponsoring zu planen!"
+    leistungen: []
+
+# PDF zum Herunterladen (liegt in static/dokumente/). Leer lassen, wenn es keins gibt.
+pdf: "/dokumente/sponsoring-fruchtfolgefestival-2026.pdf"
+pdf_titel: "Übersicht Sponsoringangebot – Fruchtfolgefestival 2026"
+# Betreff für den E-Mail-Knopf
+mail_betreff: "Ihre Sponsoringanfrage"

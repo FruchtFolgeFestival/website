@@ -1,0 +1,52 @@
+# 301-Weiterleitungen von der alten WordPress-Seite auf die neuen Adressen.
+# Format: alte-Adresse  neue-Adresse  301
+# Jede Adresse steht mit und ohne Schrägstrich am Ende, damit beide Schreibweisen funktionieren.
+# Details und Begründung: docs/migration.md
+
+# Seiten, die es weiterhin gibt (neue Adresse)
+/about/                   /ueber-uns/       301
+/about                    /ueber-uns/       301
+/abc/                     /festival-abc/    301
+/abc                      /festival-abc/    301
+/contact/                 /kontakt/         301
+/contact                  /kontakt/         301
+/terms-and-conditions/    /agb/             301
+/terms-and-conditions     /agb/             301
+/elementor-seite-5802/    /satzung/         301
+/elementor-seite-5802     /satzung/         301
+/datenschutzerklaerung/   /datenschutz/     301
+/datenschutzerklaerung    /datenschutz/     301
+/datenschutz-tools/       /datenschutz/     301
+/datenschutz-tools        /datenschutz/     301
+
+# Neue Struktur: Jahrgangs-Übersicht liegt unter /archiv/
+/festivals/               /archiv/          301
+/festivals                /archiv/          301
+
+# Sponsoring-PDF hat eine neue Adresse
+/wp-content/uploads/2026/06/Uebersicht-Sponsoringangebot-Fruchtfolgefestival-2026.pdf   /dokumente/sponsoring-fruchtfolgefestival-2026.pdf   301
+
+# Alter RSS-Feed von WordPress
+/feed/                    /news/index.xml   301
+/feed                     /news/index.xml   301
+
+# Demo-Inhalte der alten Seite (nicht übernommen) -> Startseite
+/blog/                    /                 301
+/blog                     /                 301
+/faq/                     /                 301
+/faq                      /                 301
+/speakers/                /                 301
+/speakers                 /                 301
+/hello-world/             /                 301
+/hello-world              /                 301
+/professional-tips-for-quality-photos/   /   301
+/building-your-own-business-network/     /   301
+/new-space-for-all-your-work-needs/      /   301
+/10-tips-for-higher-productivity/        /   301
+/the-importance-of-social-interactions/  /   301
+/tech-conferences-you-must-visit/        /   301
+
+# WordPress-Verwaltung gibt es nicht mehr; das neue CMS liegt unter /admin/
+/wp-admin/*               /admin/           301
+/wp-admin                 /admin/           301
+/wp-login.php             /admin/           301

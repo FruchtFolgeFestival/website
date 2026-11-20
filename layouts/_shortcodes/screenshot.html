@@ -1,0 +1,19 @@
+{{- /* Hohe Ganzseiten-Screenshots: zeigt einen Ausschnitt von oben, Klick öffnet die ganze Seite.
+     Verwendung in Markdown:
+       {{< screenshot src="/images/uploads/2026/alte-webseite-desktop.jpg" alt="…" titel="Desktop" >}}
+     Mehrere Screenshots nebeneinander: in {{< screenshots >}} … {{< /screenshots >}} einpacken. */ -}}
+{{- $src := .Get "src" }}
+{{- $alt := .Get "alt" }}
+{{- with resources.Get (strings.TrimPrefix "/" $src) }}
+  {{- $breite := cond (gt .Width 1000) 1440 (math.Min .Width 440 | int) }}
+  {{- $gross := .Process (printf "resize %dx webp q76" $breite) }}
+  {{- $klein := .Process "fill 600x750 webp q76 Top" }}
+<figure class="screenshot">
+  <a href="{{ $gross.RelPermalink }}" data-lightbox>
+    <img src="{{ $klein.RelPermalink }}" width="{{ $klein.Width }}" height="{{ $klein.Height }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  </a>
+  {{- with $.Get "titel" }}<figcaption>{{ . }} – Klick zeigt die ganze Seite</figcaption>{{ end }}
+</figure>
+{{- else }}
+  {{- errorf "Screenshot nicht gefunden: %q" $src }}
+{{- end }}

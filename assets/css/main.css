@@ -407,6 +407,12 @@ h3 { font-size: calc(var(--d-scale) * 1.6rem); line-height: 1.05; }
 .legal ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .heart { color: var(--pop); }
 
+/* ---------- Screenshots (z. B. alte Webseite im Archiv) ---------- */
+.screenshots { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); margin: 1.4em 0; max-width: 640px; }
+.screenshot { margin: 0; }
+.screenshot a { display: block; border: 3px solid var(--line); border-radius: var(--r-tile); overflow: hidden; box-shadow: var(--shadow); }
+.screenshot img { display: block; width: 100%; height: auto; border-radius: 0; }
+
 /* ---------- Kleinkram ---------- */
 .abstand { height: 34px; }
 .sponsor-cta { margin-top: 40px; }

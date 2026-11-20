@@ -1,0 +1,291 @@
+# Festival-ABC
+# Im CMS unter "Festival-ABC" bearbeitbar.
+# Jeder Eintrag: begriff (ohne "A wie …", der Buchstabe wird automatisch ergänzt) und text (Markdown).
+# Die Seite sortiert die Einträge selbst alphabetisch und baut die Sprungmarken A–Z.
+# Hinweis: Einige Texte stammen vom Festival 2026 (Baustellen, Preise, Line-up) und
+# müssen vor dem nächsten Festival geprüft werden (siehe docs/migration.md).
+eintraege:
+- begriff: App
+  text: |
+    **Sie ist fertig!** Unsere Festival-App gibt’s ab jetzt hier:
+
+    👉 [app.fruchtfolge.live](https://app.fruchtfolge.live)
+
+    Einfach draufgehen, herunterladen, installieren, fertig. Kein Appstore, kein Konto, keine Anmeldung mit Blutprobe.
+
+    Drin sind Timetable, Infos und alles, was ihr sonst über den Acker hinweg brüllen müsstet. Am schlauesten installiert ihr sie **vor** der Anreise, dann habt ihr sie schon, wenn ihr sie braucht.
+- begriff: Anreise mit dem Auto
+  text: |
+    Ihr wollt zu **Lindach 4, 82256 Fürstenfeldbruck**. Oder ihr klickt einfach hier: [Google Maps](https://maps.app.goo.gl/KjAxBuE5DELEcLXU8)
+
+    **Achtung, Baustelle!** Die **B471 ist von Inning her (also von der A96 kommend) bis Fürstenfeldbruck gesperrt**. Wer aus dem Süden anrollt, plant bitte um. Aus **nördlicher Richtung (Dachau, A8) kommt ihr ganz normal durch**. Aktuelle Infos zur Sperrung gibt’s [hier bei der Stadt Fürstenfeldbruck](https://www.fuerstenfeldbruck.de/ffb/web.nsf/id/li_sperrung-b471.html).
+- begriff: Anreise mit Bus & Bahn
+  text: |
+    Wir lieben Menschen, die uns die Wiese nicht zuparken. Deshalb: **Wer öffentlich anreist, bekommt gegen Nachweis einen kleegrünen Welcome-Pfeffi.** Einfach das Öffi-Ticket am Einlass herzeigen und minzig begrüßt werden.
+
+    **Aus München:** Mit der **S3 bis Maisach**, dort in den **Bus 873 Richtung Fürstenfeldbruck**, aussteigen an der Haltestelle **„Lindach, Abzw.”**. Ab da einfach den Schildern folgen, verlaufen kann man sich eigentlich nur, wenn man’s drauf anlegt.
+
+    **Aus Fürstenfeldbruck:** Ebenfalls der **Bus 873**, nur in die andere Richtung (nach Maisach). Auch hier: **„Lindach, Abzw.”**
+
+    **Wichtig: Bitte NICHT die S4 nach Fürstenfeldbruck nehmen!** An genau dem Wochenende ist die Strecke gesperrt, der Bahnhof Fürstenfeldbruck wird nicht von der S-Bahn angefahren, es gibt Schienenersatzverkehr. Alle Details dazu bei der [S-Bahn München](https://www.s-bahn-muenchen.de/de/fahren/baustellen/s4). Nehmt lieber die S3 über Maisach.
+- begriff: Abendkasse
+  text: |
+    Ehrliche Antwort: **vielleicht.** Wenn nach dem Vorverkauf noch Restkarten übrig sind, machen wir eine Abendkasse auf, aber garantieren können wir das nicht. Und weil unsere Buchhaltung auch ein Herz aus Ackerkrume hat: **Karten an der Abendkasse sind teurer.**
+
+    Kurzum: Schlagt im Vorverkauf zu. Spart Geld, spart Nerven!
+- begriff: Awareness
+  text: |
+    Unser gesamtes Team ist Awareness-Team. **Alle Helfer:innen erkennt ihr an Badges und Crew-Shirts**, dazu kommen die offiziellen Ordner:innen in Uniform. Alle sind geschult, alle sind ansprechbar, und alle können jederzeit unsere Hauptansprechpartnerin dazuholen.
+
+    Neu und nicht zu übersehen: Wir haben dieses Jahr **dedizierte Awareness-Leute, die den ganzen Abend nichts anderes tun, als auf euch zu achten**. Erkennen könnt ihr sie an einem **eindeutigen Haarreif** — man kann sie schlicht nicht verwechseln. Wenn ihr Hilfe braucht, haltet einfach Ausschau nach dem Kopfschmuck.
+
+    Und es bleibt dabei: **Ihr könnt jede Person mit Crew-Shirt oder Badge ansprechen**, egal ob mit oder ohne Haarreif. Wir kümmern uns dann sofort darum.
+
+    Wenn euch etwas komisch vorkommt, wenn sich jemand daneben benimmt, wenn ihr euch unwohl fühlt oder wenn ihr einfach jemanden braucht: **Sprecht uns an.** Egal wie klein euch die Sache vorkommt. Dafür sind wir da.
+- begriff: Barrierefreiheit
+  text: |
+    Ganz ehrlich und ohne Beschönigung: **Wir sind auf einem Feld.** Acker, Wiese, Naturboden, kein Asphalt. Das heißt, unser Gelände ist derzeit **leider nicht barrierefrei**, weder die Wege noch die Sanitäranlagen.
+
+    Das tut uns aufrichtig leid, und wir bitten um Verständnis. Wir arbeiten daran, das in den kommenden Jahren besser hinzubekommen. Wenn ihr trotzdem kommen wollt und wissen möchtet, was vor Ort geht: **schreibt uns vorher**, dann schauen wir gemeinsam, was sich machen lässt.
+- begriff: Bändchen
+  text: |
+    Beim ersten Einlass wird euer Ticket gescannt und entwertet, im Tausch gibt’s euer **Festivalbändchen**. Das kommt ans Handgelenk und bleibt da. Das ganze Wochenende.
+
+    **Kaputt oder abgemacht = ungültig.** Dann kommt ihr weder aufs Gelände noch auf den Campingplatz zurück. Also: nicht dran rumzupfen, auch wenn’s juckt.
+- begriff: Bargeld (und Karte!)
+  text: |
+    Gute Nachricht für alle, die es beim Abheben vergessen haben: **Wir haben jetzt auch Kartenzahlung.** An der Kasse am Einlass, an der Bar, beim Essen und am Merch-Stand könnt ihr ganz normal mit Karte zahlen.
+
+    Eine kleine Bitte trotzdem: **Bargeld ist uns lieber.** Bei jeder Kartenzahlung gehen Gebühren ab, und die fehlen uns dann an anderer Stelle — beim Line-up, beim Klee, beim Pfeffi. Wer also ohnehin Scheine dabei hat: immer gern.
+
+    Zwei Dinge noch:
+
+    - **Es gibt keinen Geldautomaten auf dem Gelände.** Hebt lieber vorher ab.
+    - **Die Spenden an der Zanzibar gehen ausschließlich in Bargeld.** Dort steht kein Kartenlesegerät, dort steht Bärwurz. Also: ein paar Münzen einstecken (siehe **Z wie Zanzibar**).
+- begriff: Camping
+  text: |
+    **Im 2-Tagesticket ist der Campingplatz inklusive.** Kein Aufpreis, kein Extra-Ticket, keine Geheimgebühr.
+
+    - **Ab Freitag 14:00 Uhr** könnt ihr euer Wohnzimmer aufbauen.
+    - **Bis Sonntag 14:00 Uhr** muss der Platz wieder geräumt sein. Danach gehört die Wiese wieder dem Klee.
+    - Einen bestimmten Platz können wir nicht reservieren: unser Einweisungsteam sagt euch, wo’s hingeht.
+
+    **Wichtig:** Der Campingplatz ist nur für Leute mit **2-Tagesticket**. Mit einer Tageskarte kommt ihr leider nicht in den Campinggenuss, auch nicht eine Nacht.
+- begriff: Cannabis
+  text: |
+    Kurz und klar: **Cannabis ist in Deutschland legal, und unser Festival ist ohnehin ab 18.** Ihr müsst also nicht heimlich hinterm Dixi verschwinden.
+
+    Ein paar Dinge, die uns trotzdem am Herzen liegen:
+
+    - **Es bleibt bei den gesetzlichen Grenzen.** Erlaubt ist, was erlaubt ist. Weitergabe, Verkauf oder Handel auf dem Gelände sind es nicht. Wer dealt, fliegt.
+    - **Alles andere bleibt verboten.** Illegale Substanzen sind bei uns weiterhin tabu, daran ändert die Legalisierung nichts.
+    - **Denkt an eure Nachbarn.** Nicht alle mögen den Geruch, manche vertragen ihn schlecht. Ein bisschen Rücksicht auf der Wiese kostet nichts.
+    - **Und ganz wichtig: Wir stehen auf einem knochentrockenen Feld.** Was für Grills und Fackeln gilt, gilt auch für Kippen und Joints. **Glut gehört ausgedrückt, nicht weggeschnippt.** Bringt einen Taschenaschenbecher mit oder nutzt unsere Behälter. Ein brennender Acker wäre das unlustigste Late Night Special der Festivalgeschichte.
+    - **Wer fährt, fährt nüchtern.** Auch das ändert sich durch die Legalisierung nicht. Siehe **R wie Ruftaxi**.
+- begriff: Duschen & Dixies
+  text: |
+    Ja, es gibt beides! **Duschen mit Waschbereich** und **ausreichend Dixi-Toiletten**. Ihr müsst also weder verwahrlosen noch in die Ackerkrume sch\*\*\*en.
+- begriff: Einlass & Einlasszeiten
+  text: |
+    - **Freitag:** Camping ab 14:00 Uhr, Festivalgelände ab 16:00 Uhr
+    - **Samstag:** Festivalgelände ab 12:00 Uhr
+    - **Schluss:** an **beiden** Tagen jeweils um **00:00 Uhr**
+
+    Ja, auch am Freitag ist um Mitternacht Feierabend auf der Bühne. Das ist keine Schikane, sondern der Lärmschutz — und der ist auf dem Land ein besonders lichtempfindliches Pflänzchen. Rundherum wohnen Menschen, die morgens die Kühe nicht auf „später” stellen können. Wir wollen nächstes Jahr wiederkommen, und dafür halten wir uns brav an die Uhr.
+
+    Die guten Nachrichten: Bis dahin geben wir alles. Und danach ist auf dem Campingplatz noch lange nicht Schluss — nur eben in **Gesprächslautstärke** (siehe **N wie Nachtruhe**).
+
+    Am Einlass braucht ihr euer gültiges Ticket — digital auf dem Handy oder ausgedruckt, aber bitte **unentwertet und nicht zerknüllt**.
+- begriff: Erste Hilfe
+  text: |
+    Wir haben eine **Ersthelferin vor Ort** und **Verbandskästen am Eingang**. Für alles Ernsthafte gilt wie überall: **112**.
+
+    Kleiner Hinweis von euren Fruchtfliegen: Trinkt Wasser. Esst was. Schlaft ein bisschen. Die meisten Notfälle auf Festivals sind eigentlich nur schlecht getarnte Dehydrierung.
+- begriff: Essen
+  text: |
+    Kein Mensch soll bei uns hungrig durch die Reihen wanken. Es gibt:
+
+    - **Gegrilltes**
+    - **Hot Dogs**
+    - **Pommes**
+    - **Falafel**
+
+    **Alles auch vegetarisch und vegan**: bei uns muss keiner traurig am Salatblatt knabbern. Preislich bewegen wir uns zwischen **3 und 6 Euro**.
+
+    **Allergien?** Fragt einfach beim Personal am Stand nach, die wissen Bescheid und helfen euch gerne weiter.
+- begriff: Fahrrad
+  text: |
+    Radler:innen sind bei uns Ehrengäste. Es gibt für euch **ein Welcome-Radler** obendrauf.
+
+    Aber: **Wir haben keine Fahrradständer.** Bringt bitte ein Schloss mit und lehnt euer Radl irgendwo Sinnvolles an.
+- begriff: Feuer
+  text: |
+    **Kein offenes Feuer, keine Grills, keine Fackeln.** Es ist trocken, wir stehen auf einem Feld, und ein abgefackelter Acker wäre für die Fruchtfolge dann doch etwas zu radikal.
+
+    Kleine **Campinggaskocher sind erlaubt**, Kaffee am Samstagmorgen muss sein. Sollte die Feuerwehr uns aber empfehlen, auch die einzuschränken, tun wir das kurzfristig. Bitte habt dafür Verständnis.
+- begriff: Fotos
+  text: |
+    **Fotografieren ist ausdrücklich erwünscht** auch mit richtiger Kameraausrüstung. Macht schöne Bilder, verlinkt uns, taggt uns.
+
+    Umgekehrt gilt: Mit dem Betreten des Geländes stimmt ihr zu, dass ihr auf unseren Fotos und Videos landen könnt und wir diese für Website, Social Media und Presse verwenden dürfen.
+- begriff: Gehörschutz
+  text: |
+    **Bringt welchen mit.** Wirklich. Euer Gehör wächst nicht nach wie Klee.
+
+    Wer’s vergisst: Wir haben **Gehörschutz gegen eine kleine Spende** dabei.
+- begriff: Glas
+  text: |
+    **Glas ist erlaubt bei uns**, auch im Infield, weil ihr alle verantwortungsvolle Menschen seid. Wir erlauben jedoch nicht das Mitbringen von Getränken ins Infield. Gebt eure Spenden für die Zanzibar (siehe weiter unten) am Eingang ab, sie erwarten euch in all ihrer Enzianigen Schrecklichkeit an der Zanzibar wieder.
+- begriff: Hunde
+  text: |
+    Hunde dürfen mit, **wenn sie durchgehend an der Leine geführt werden**.
+
+    Aber ganz im Ernst, von Herzen: **Lasst eure Hunde lieber daheim.** Ein Musikfestival ist für Tiere richtig, richtig viel Stress. Lärm, Menschenmassen, fremde Gerüche, kein Rückzugsort. Eurem Vierbeiner ist mit einem ruhigen Wochenende bei Oma deutlich mehr geholfen. Bei auffälligem Verhalten müssen wir leider einen Platzverweis aussprechen.
+- begriff: Handynetz
+  text: |
+    **Netz ist da.** Ihr könnt also posten, streamen, eure Freunde herbeirufen. Und zum Laden stellen wir euch **Steckdosen** zur Verfügung.
+- begriff: Infield
+  text: |
+    So nennen wir den eigentlichen Festivalbereich vor der Bühne. Dort gilt:
+
+    - **Keine eigenen Getränke** — die gibt’s bei uns, und zwar günstig (siehe unten).
+    - **Taschen bis zur Größe eines kleinen Rucksacks** dürfen mit rein. Alles, was eher nach Umzugskarton aussieht, bleibt draußen.
+    - **Unser Security-Personal schaut in die Taschen rein** und sucht nach verbotenen Gegenständen (siehe **V wie Verbotene Gegenstände**). Das geht schnell, das tut nicht weh, und es ist einfach Fürsorge für alle. Wer vorher grob aufräumt, kommt schneller durch.
+    - **Kostenloses Trinkwasser** steht bereit.
+- begriff: Jugendschutz
+  text: |
+    **Das Fruchtfolgefestival ist ab 18.** Ohne Ausnahme, ohne Muttizettel, ohne “aber ich bin fast 18”. Der Ticketkauf und der Einlass sind erst ab 18 Jahren möglich. Bringt bitte einen Ausweis mit.
+- begriff: Klee
+  text: |
+    Nach dem Hopfen kommt der Klee — so will es die Fruchtfolge, so will es Joe, und so wollen es die Regeln der Landwirtschaft.
+
+    Klee ist übrigens die perfekte Feldfrucht für ein Festival wie unseres: Er bindet Stickstoff, macht den Boden für alle danach besser und wächst am liebsten im Verbund. Kommt euch bekannt vor? Uns auch.
+
+    Und wenn ihr ein vierblättriges findet: behaltet es. Ihr habt es euch verdient.
+- begriff: Kartenzahlung
+  text: |
+    **Gibt’s jetzt!** An Einlass, Bar, Essensstand und Merch könnt ihr mit Karte zahlen.
+
+    Nur an der **Zanzibar** bleibt es beim Bargeld, dort läuft alles über frei gewählte Spenden.
+
+    Und ganz leise gesagt: **Über Bargeld freuen wir uns mehr**, weil dann keine Gebühren abgehen. Aber niemand muss deswegen hungrig oder durstig bleiben — siehe **B wie Bargeld (und Karte!)**.
+- begriff: Line-up
+  text: |
+    **Freitag, 28.08.** Heckspoiler (AT) · Wuolja (ES) · AKaRinde · Powasser & Moskau78 · Fritz Sauerkraut Late Night Special: **DNVZ**
+
+    **Samstag, 29.08.** Skraeckoedlan (SE) · Poolhead · Señorez Cabronez (ES) · Odysseus · Dessert Oracle · Fromage vom Arsch · Träsh · Räckler · Orchid Tribe Late Night Special: **Mad Mother**
+
+    Die genauen Spielzeiten findet ihr im **Timetable auf unserer Startseite, bei Instagram oder auf unserer App**.
+- begriff: Merch
+  text: |
+    Bandmerch? Selbstverständlich. Direkt von den Künstler:innen, direkt in eure Sammlung.
+
+    Und von uns? Sagen wir mal so: **Es könnte sein, dass da noch das eine oder andere fruchtige Gimmick am Stand liegt.** Mehr verraten wir nicht. Guckt einfach vorbei, bevor es weg ist. (Denkt an **B wie Bargeld**.)
+- begriff: Nachtruhe
+  text: |
+    Auf dem Campingplatz gilt **von 00:00 bis 08:00 Uhr Nachtruhe**. Musik bitte nur in **Gesprächslautstärke** — die Bluetooth-Box darf mit, aber nicht auf Anschlag.
+
+    Wir wohnen hier nicht allein: rundherum sind Nachbarn, Tiere und Menschen, die morgens raus müssen. Und ehrlich, ein bisschen Schlaf tut euch am Samstag auch ganz gut.
+- begriff: Notfall
+  text: |
+    **112.** Und danach direkt jemanden aus dem Team ansprechen, damit wir helfen und die Rettung einweisen können.
+- begriff: Parken
+  text: |
+    **Kostenlos und ohne Anmeldung.** Einfach kommen, unser Team weist euch ein.
+
+    Und nochmal: **Camping gibt’s nur mit dem 2-Tagesticket.**
+- begriff: Pavillon
+  text: |
+    **Pavillons sind erlaubt**. Schatten und Regenschutz sind auf einem Feld Gold wert.
+
+    **Nicht erlaubt:** motorbetriebene **Stromaggregate**. Die sind laut, stinken und passen ungefähr so gut zu einem Kleefeld wie ein Presslufthammer zur Meditation.
+- begriff: Pfeffi
+  text: |
+    Ein Euro. **Ein Euro.**
+- begriff: Ruftaxi
+  text: |
+    Ihr wollt nachts noch heim, aber der Bus fährt nicht mehr? Nach Betriebsschluss könnt ihr ein **Ruftaxi zum MVG-Tarif** bestellen. Alle Infos, Zeiten und die Nummer findet ihr in der [Ruftaxi-Broschüre des Landkreises Fürstenfeldbruck (PDF)](https://www.lra-ffb.de/fileadmin/user_upload/lra-ffb/pdf/OEPNV/2022_RufTaxi8000_L.pdf).
+
+    Speichert euch das lieber vorher ab. Um zwei Uhr nachts ein PDF suchen macht keinen Spaß.
+- begriff: Sicherheitskontrolle
+  text: |
+    Am Einlass und auf dem Gelände darf unser Sicherheitspersonal **Taschen kontrollieren und Leibesvisitationen** durchführen. Das ist kein Misstrauen, das ist einfach Fürsorge für alle.
+
+    Da wir auch ein bisschen auf unseren leckeren Getränkekonsum angewiesen sind, von euch und zu fairen Preisen von uns, sind keine mitgebrachten Getränke im Infield erlaubt. Aber wir wären nicht die Fruchtfolge, wenn es auch nicht da eine Ausnahme gäbe, siehe **Z wie Zanzibar.**
+
+    Wer die Kontrolle verweigert, kommt nicht rein und bekommt kein Geld zurück. Gleiches gilt für Menschen, die schon vor dem Tor komplett neben der Spur stehen.
+- begriff: Tickets
+  text: |
+    Tickets gibt’s bei **Eventfrog**:
+
+    - **2-Tagesticket inkl. Camping:** 50,48 € (Gesamtpreis inkl. Gebühren)
+    - **Tageskarte Freitag:** 28,75 € (Gesamtpreis inkl. Gebühren)
+    - **Tageskarte Samstag:** 37,03 € (Gesamtpreis inkl. Gebühren)
+
+    **Der Online-Verkauf endet am Donnerstag, 27.08.2026 um 18:00 Uhr.**
+- begriff: Trinkwasser
+  text: |
+    **Kostenlos, auf dem ganzen Gelände.** Bringt eine Flasche mit und füllt euch nach. Euer Kopf am Sonntag wird es euch danken.
+- begriff: Verbotene Gegenstände
+  text: |
+    Bitte lasst zuhause:
+
+    - **Waffen** jeder Art
+    - **Illegale Drogen**
+    - **Pyrotechnik und Fackeln**
+    - **Verbotene politische oder diskriminierende Symbole**
+    - **Motorbetriebene Stromaggregate**
+    - **Grills und offenes Feuer**
+
+    Das gilt auf dem **gesamten Gelände inklusive Campingplatz**. Wer damit erwischt wird, fliegt ohne Erstattung.
+- begriff: Vielfalt
+  text: |
+    Das ist uns wichtig genug für einen eigenen Buchstaben:
+
+    So wie ein Acker nur aufblüht, wenn verschiedene Feldfrüchte wachsen dürfen, lebt auch unser Festival von Vielfalt. Egal wo du herkommst, wen du liebst, wie du aussiehst, wie du dich fühlst oder wie du dein Leben lebst **du bist hier willkommen.**
+
+    Und genauso klar: **Diskriminierung hat bei uns keinen Platz. Rechtsextremismus hat bei uns nichts verloren.** Wer das nicht mitträgt, ist auf dem falschen Feld.
+- begriff: Verpflegung selbst mitbringen
+  text: |
+    **Auf dem Campingplatz:** klar, selbstverständlich, bringt mit was ihr braucht.
+
+    **Im Infield:** eigene Getränke bleiben draußen. Dafür sind unsere Preise auch keine Frechheit (siehe **W wie Was kostet ein Bier**).
+- begriff: Was kostet ein Bier?
+  text: |
+    Setzt euch:
+
+    | Getränk | Preis |
+    | --- | --- |
+    | Leitungswasser | **kostenlos** |
+    | Pfeffi | **1 €** |
+    | Sprudelwasser | **2 €** |
+    | Softdrinks, Radler, alkoholfreies Bier | **3 €** |
+    | Bier | **4 €** |
+    | Weinschorle | **5 €** |
+    | Diskoschorle | **6 €** |
+    | Longdrinks | **7 €** |
+- begriff: Wetter
+  text: |
+    **Wir spielen bei jedem Wetter.** Regen ist nur flüssiger Sonnenschein, und auf einem Acker gehört Matsch zum Konzept.
+
+    Nur wenn es wirklich gefährlich wird, schweres Unwetter, Sturm, Hagel, müssen wir unterbrechen oder abbrechen. Sicherheit geht vor Setlist.
+
+    Was das für euch heißt: **Gummistiefel, Regenjacke, warme Klamotten für die Nacht.** Und Sonnencreme, denn Ende August kann auch das Gegenteil passieren.
+- begriff: Wiedereinlass
+  text: |
+    Kein Problem, **solange euer Bändchen unbeschädigt am Handgelenk sitzt**. Ihr könnt zwischen Gelände und Campingplatz hin- und herwandern, so oft ihr wollt.
+- begriff: Zanzibar
+  text: |
+    Kennt ihr das? Ganz hinten im Schrank steht seit dem letzten Geburtstag noch ein Fingerbreit Obstler. Daneben ein Norgerl Kräuterlikör, das keiner mehr anfasst. Genau die meinen wir.
+
+    Bringt eure Schnapsnorgerl mit und spendet sie unserer Zanzibar! Dort werden die gesammelten Restbestände gegen eine frei gewählte Spende ausgeschenkt, ihr entscheidet, was es euch wert ist. Was reinkommt, bleibt im Festival.
+
+    Eine kleine Einschränkung müssen wir uns leider erlauben: Wir behalten uns vor zu sortieren. Kistenweise Gin werden wir an der Zanzibar nicht sehen, den gibt’s ordentlich an der Bar. Aber ein Bärwurz aus der Steinflasche, ein rätselhafter Selbstgebrannter von Onkel Sepp, ein Likör mit handgeschriebenem Etikett? Her damit. Genau dafür wurde die Zanzibar erfunden.
+- begriff: Zelt
+  text: |
+    Bringt eins mit, wenn ihr bleibt. **Heringe, die auch in trockenen Boden gehen**, sind übrigens die beste Investition eures Wochenendes.
+- begriff: Zusammenkehren
+  text: |
+    Wir bitten euch von Herzen: **Nehmt euren Müll wieder mit.** Der Acker hier ist kein Festivalgelände, sondern ein Feld, auf dem nächstes Jahr wieder etwas wachsen soll. Was ihr liegen lasst, liegt buchstäblich im Boden.
+
+    Zeltleichen, Campingstühle, Kartons alles, was ihr herbringt, könnt ihr auch wieder mitnehmen. Wir danken euch unglaublich dafür!

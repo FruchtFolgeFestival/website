@@ -1,0 +1,43 @@
+# Allgemeine Einstellungen der Webseite
+# Im CMS unter "Einstellungen" bearbeitbar.
+
+# Welcher Jahrgang ist "aktuell"? Dateiname aus content/festivals/ ohne ".md", z. B. "2027".
+# Die Startseite zeigt Termin, Line-up und Unterstützer dieses Jahrgangs.
+aktueller_jahrgang: "2027"
+
+# Startbereich der Startseite
+startseite:
+  ueberschrift: "Nach dem Festival ist vor dem Festival"
+  text: "Danke für 2026! Das nächste Fruchtfolge Festival steigt am **Freitag, 3. und Samstag, 4. September 2027** auf dem Acker in Lindach."
+  # Hintergrundfoto (wird automatisch eingefärbt). Pfad aus dem CMS-Bildupload.
+  titelbild: /images/uploads/2025/geburtstag-2025-01.jpg
+  titelbild_alt: "Gäste sitzen zwischen Zelten und Bauwagen auf der Festivalwiese"
+
+# Tickets
+tickets:
+  # Erlaubte Werte: "bald", "verfuegbar", "ausverkauft", "keine"
+  status: "bald"
+  url: ""
+  hinweis: "Einlass ab 18 Jahren."
+
+# Anfahrt
+anfahrt:
+  text: "Das Festival findet auf einem Hof in Lindach bei Fürstenfeldbruck statt. Wie du am besten hinkommst, steht im [Festival-ABC](/festival-abc/#a)."
+  karten_link: "https://maps.app.goo.gl/dMN7zeuuZekBt48T6"
+  karten_link_text: "Lindach 4, 82256 Fürstenfeldbruck (Karte öffnen)"
+
+# Kontakt und Verein
+kontakt:
+  verein: "Fruchtfolgefestival Förderfreunde e.V."
+  strasse: "Lindach 4"
+  ort: "82256 Fürstenfeldbruck"
+  email: "info@fruchtfolge.live"
+
+# Social Media (leer lassen, wenn es den Kanal nicht gibt)
+social:
+  instagram: "https://www.instagram.com/fruchtfolgefestival/"
+  youtube: "https://youtube.com/@fruchtfolgefestival"
+  facebook: "https://www.facebook.com/share/1EEioCVDHU/"
+
+# Kurzbeschreibung für Suchmaschinen (ca. 150 Zeichen)
+beschreibung: "Fruchtfolge Festival: Stoner, Psych und Punk auf dem Acker in Lindach bei Fürstenfeldbruck. Veranstaltet vom Fruchtfolgefestival Förderfreunde e.V."

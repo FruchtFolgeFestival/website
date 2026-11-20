@@ -1,0 +1,2019 @@
+[
+ {
+  "id": 1,
+  "date": "2026-01-27T17:30:29",
+  "date_gmt": "2026-01-27T17:30:29",
+  "guid": {
+   "rendered": "http://sh00781/?p=1"
+  },
+  "modified": "2026-01-27T17:30:29",
+  "modified_gmt": "2026-01-27T17:30:29",
+  "slug": "hello-world",
+  "status": "publish",
+  "type": "post",
+  "link": "https://fruchtfolge.live/hello-world/",
+  "title": {
+   "rendered": "Hello world!"
+  },
+  "content": {
+   "rendered": "\n<p class=\"wp-block-paragraph\">Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>\n",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+   "nf_dc_page": "",
+   "content-type": "",
+   "_monsterinsights_skip_tracking": false,
+   "nfd_image_url": "",
+   "nfd_onboarding_generated": "",
+   "footnotes": ""
+  },
+  "categories": [
+   1
+  ],
+  "tags": [],
+  "class_list": [
+   "post-1",
+   "post",
+   "type-post",
+   "status-publish",
+   "format-standard",
+   "hentry",
+   "category-uncategorized"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.9 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Hello world! - Fruchtfolgefestival</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://fruchtfolge.live/hello-world/\" />\n<meta property=\"og:locale\" content=\"de_DE\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Hello world! - Fruchtfolgefestival\" />\n<meta property=\"og:description\" content=\"Welcome to WordPress. This is your first post. Edit or delete it, then start writing!\" />\n<meta property=\"og:url\" content=\"https://fruchtfolge.live/hello-world/\" />\n<meta property=\"og:site_name\" content=\"Fruchtfolgefestival\" />\n<meta property=\"article:published_time\" content=\"2026-01-27T17:30:29+00:00\" />\n<meta name=\"author\" content=\"Johannes\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Verfasst von\" />\n\t<meta name=\"twitter:data1\" content=\"Johannes\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/hello-world\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/hello-world\\/\"},\"author\":{\"name\":\"Johannes\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\"},\"headline\":\"Hello world!\",\"datePublished\":\"2026-01-27T17:30:29+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/hello-world\\/\"},\"wordCount\":17,\"commentCount\":1,\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"articleSection\":[\"Uncategorized\"],\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/hello-world\\/#respond\"]}]},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/hello-world\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/hello-world\\/\",\"name\":\"Hello world! - Fruchtfolgefestival\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\"},\"datePublished\":\"2026-01-27T17:30:29+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/hello-world\\/#breadcrumb\"},\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/hello-world\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/hello-world\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/fruchtfolge.live\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Hello world!\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"name\":\"Fruchtfolgefestival\",\"description\":\"28.\\/29.08.2026 - Lindach \\/ Fürstenfeldbruck\",\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/fruchtfolge.live\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"de\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\",\"name\":\"Fruchtfolgefestival\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"contentUrl\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"width\":512,\"height\":512,\"caption\":\"Fruchtfolgefestival\"},\"image\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\"}},{\"@type\":\"Person\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\",\"name\":\"Johannes\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"url\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"contentUrl\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"caption\":\"Johannes\"},\"url\":\"https:\\/\\/fruchtfolge.live\\/author\\/johannes\\/\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Hello world! - Fruchtfolgefestival",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://fruchtfolge.live/hello-world/",
+   "og_locale": "de_DE",
+   "og_type": "article",
+   "og_title": "Hello world! - Fruchtfolgefestival",
+   "og_description": "Welcome to WordPress. This is your first post. Edit or delete it, then start writing!",
+   "og_url": "https://fruchtfolge.live/hello-world/",
+   "og_site_name": "Fruchtfolgefestival",
+   "article_published_time": "2026-01-27T17:30:29+00:00",
+   "author": "Johannes",
+   "twitter_card": "summary_large_image",
+   "twitter_misc": {
+    "Verfasst von": "Johannes"
+   },
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://fruchtfolge.live/hello-world/#article",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/hello-world/"
+      },
+      "author": {
+       "name": "Johannes",
+       "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622"
+      },
+      "headline": "Hello world!",
+      "datePublished": "2026-01-27T17:30:29+00:00",
+      "mainEntityOfPage": {
+       "@id": "https://fruchtfolge.live/hello-world/"
+      },
+      "wordCount": 17,
+      "commentCount": 1,
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "articleSection": [
+       "Uncategorized"
+      ],
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "CommentAction",
+        "name": "Comment",
+        "target": [
+         "https://fruchtfolge.live/hello-world/#respond"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://fruchtfolge.live/hello-world/",
+      "url": "https://fruchtfolge.live/hello-world/",
+      "name": "Hello world! - Fruchtfolgefestival",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/#website"
+      },
+      "datePublished": "2026-01-27T17:30:29+00:00",
+      "breadcrumb": {
+       "@id": "https://fruchtfolge.live/hello-world/#breadcrumb"
+      },
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://fruchtfolge.live/hello-world/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://fruchtfolge.live/hello-world/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://fruchtfolge.live/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Hello world!"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://fruchtfolge.live/#website",
+      "url": "https://fruchtfolge.live/",
+      "name": "Fruchtfolgefestival",
+      "description": "28./29.08.2026 - Lindach / Fürstenfeldbruck",
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://fruchtfolge.live/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "de"
+     },
+     {
+      "@type": "Organization",
+      "@id": "https://fruchtfolge.live/#organization",
+      "name": "Fruchtfolgefestival",
+      "url": "https://fruchtfolge.live/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/",
+       "url": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "contentUrl": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "width": 512,
+       "height": 512,
+       "caption": "Fruchtfolgefestival"
+      },
+      "image": {
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622",
+      "name": "Johannes",
+      "image": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "url": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "contentUrl": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "caption": "Johannes"
+      },
+      "url": "https://fruchtfolge.live/author/johannes/"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/1",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/types/post"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/comments?post=1"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 0,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/1/revisions"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/media?parent=1"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "category",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/categories?post=1"
+    },
+    {
+     "taxonomy": "post_tag",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/tags?post=1"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 3805,
+  "date": "2021-12-29T13:45:24",
+  "date_gmt": "2021-12-29T13:45:24",
+  "guid": {
+   "rendered": "https://qi132.qodeinteractive.com/?p=3805"
+  },
+  "modified": "2021-12-29T13:45:24",
+  "modified_gmt": "2021-12-29T13:45:24",
+  "slug": "professional-tips-for-quality-photos",
+  "status": "publish",
+  "type": "post",
+  "link": "https://fruchtfolge.live/professional-tips-for-quality-photos/",
+  "title": {
+   "rendered": "Professional tips for quality photos"
+  },
+  "content": {
+   "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"3805\" class=\"elementor elementor-3805\">\n\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-ce7460c qodef-elementor-content-grid qodef-extended-grid qodef-extended-grid--left elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"ce7460c\" data-element_type=\"section\" data-e-type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-20d96d8 qodef-sticky-column--no\" data-id=\"20d96d8\" data-element_type=\"column\" data-e-type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t<div class=\"elementor-element elementor-element-9d6286d elementor-widget elementor-widget-text-editor\" data-id=\"9d6286d\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-2838638 elementor-widget elementor-widget-qi_addons_for_elementor_blockquote\" data-id=\"2838638\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"qi_addons_for_elementor_blockquote.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"qodef-shortcode qodef-m qodef-qi-blockquote qodef-layout--inline qodef--custom-icon\">\n\t\t\t<h4 class=\"qodef-m-text\">\n\t\t\t\t\t\t\t<span class=\"qodef-m-icon\">\n\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"74\" height=\"177\" viewBox=\"0 0 74 177\"><text transform=\"translate(0 134)\" font-size=\"120\" font-family=\"SpaceMono-Bold, Space Mono\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">\"</tspan></text></svg>\t\t\t\t</span>\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna.\t\t</h4>\n\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-71a213a elementor-widget elementor-widget-text-editor\" data-id=\"71a213a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t</div>\n\t\t",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]</p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+   "nf_dc_page": "",
+   "content-type": "",
+   "_monsterinsights_skip_tracking": false,
+   "nfd_image_url": "",
+   "nfd_onboarding_generated": "",
+   "footnotes": ""
+  },
+  "categories": [
+   6
+  ],
+  "tags": [
+   7,
+   8,
+   9
+  ],
+  "class_list": [
+   "post-3805",
+   "post",
+   "type-post",
+   "status-publish",
+   "format-standard",
+   "hentry",
+   "category-conferences",
+   "tag-design",
+   "tag-digital",
+   "tag-lecture"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.9 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Professional tips for quality photos - Fruchtfolgefestival</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://fruchtfolge.live/professional-tips-for-quality-photos/\" />\n<meta property=\"og:locale\" content=\"de_DE\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Professional tips for quality photos - Fruchtfolgefestival\" />\n<meta property=\"og:description\" content=\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]\" />\n<meta property=\"og:url\" content=\"https://fruchtfolge.live/professional-tips-for-quality-photos/\" />\n<meta property=\"og:site_name\" content=\"Fruchtfolgefestival\" />\n<meta property=\"article:published_time\" content=\"2021-12-29T13:45:24+00:00\" />\n<meta name=\"author\" content=\"Johannes\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Verfasst von\" />\n\t<meta name=\"twitter:data1\" content=\"Johannes\" />\n\t<meta name=\"twitter:label2\" content=\"Geschätzte Lesezeit\" />\n\t<meta name=\"twitter:data2\" content=\"2 Minuten\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/professional-tips-for-quality-photos\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/professional-tips-for-quality-photos\\/\"},\"author\":{\"name\":\"Johannes\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\"},\"headline\":\"Professional tips for quality photos\",\"datePublished\":\"2021-12-29T13:45:24+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/professional-tips-for-quality-photos\\/\"},\"wordCount\":319,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"keywords\":[\"Design\",\"Digital\",\"Lecture\"],\"articleSection\":[\"Conferences\"],\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/professional-tips-for-quality-photos\\/#respond\"]}]},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/professional-tips-for-quality-photos\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/professional-tips-for-quality-photos\\/\",\"name\":\"Professional tips for quality photos - Fruchtfolgefestival\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\"},\"datePublished\":\"2021-12-29T13:45:24+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/professional-tips-for-quality-photos\\/#breadcrumb\"},\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/professional-tips-for-quality-photos\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/professional-tips-for-quality-photos\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/fruchtfolge.live\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Professional tips for quality photos\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"name\":\"Fruchtfolgefestival\",\"description\":\"28.\\/29.08.2026 - Lindach \\/ Fürstenfeldbruck\",\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/fruchtfolge.live\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"de\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\",\"name\":\"Fruchtfolgefestival\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"contentUrl\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"width\":512,\"height\":512,\"caption\":\"Fruchtfolgefestival\"},\"image\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\"}},{\"@type\":\"Person\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\",\"name\":\"Johannes\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"url\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"contentUrl\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"caption\":\"Johannes\"},\"url\":\"https:\\/\\/fruchtfolge.live\\/author\\/johannes\\/\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Professional tips for quality photos - Fruchtfolgefestival",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://fruchtfolge.live/professional-tips-for-quality-photos/",
+   "og_locale": "de_DE",
+   "og_type": "article",
+   "og_title": "Professional tips for quality photos - Fruchtfolgefestival",
+   "og_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]",
+   "og_url": "https://fruchtfolge.live/professional-tips-for-quality-photos/",
+   "og_site_name": "Fruchtfolgefestival",
+   "article_published_time": "2021-12-29T13:45:24+00:00",
+   "author": "Johannes",
+   "twitter_card": "summary_large_image",
+   "twitter_misc": {
+    "Verfasst von": "Johannes",
+    "Geschätzte Lesezeit": "2 Minuten"
+   },
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://fruchtfolge.live/professional-tips-for-quality-photos/#article",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/professional-tips-for-quality-photos/"
+      },
+      "author": {
+       "name": "Johannes",
+       "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622"
+      },
+      "headline": "Professional tips for quality photos",
+      "datePublished": "2021-12-29T13:45:24+00:00",
+      "mainEntityOfPage": {
+       "@id": "https://fruchtfolge.live/professional-tips-for-quality-photos/"
+      },
+      "wordCount": 319,
+      "commentCount": 0,
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "keywords": [
+       "Design",
+       "Digital",
+       "Lecture"
+      ],
+      "articleSection": [
+       "Conferences"
+      ],
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "CommentAction",
+        "name": "Comment",
+        "target": [
+         "https://fruchtfolge.live/professional-tips-for-quality-photos/#respond"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://fruchtfolge.live/professional-tips-for-quality-photos/",
+      "url": "https://fruchtfolge.live/professional-tips-for-quality-photos/",
+      "name": "Professional tips for quality photos - Fruchtfolgefestival",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/#website"
+      },
+      "datePublished": "2021-12-29T13:45:24+00:00",
+      "breadcrumb": {
+       "@id": "https://fruchtfolge.live/professional-tips-for-quality-photos/#breadcrumb"
+      },
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://fruchtfolge.live/professional-tips-for-quality-photos/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://fruchtfolge.live/professional-tips-for-quality-photos/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://fruchtfolge.live/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Professional tips for quality photos"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://fruchtfolge.live/#website",
+      "url": "https://fruchtfolge.live/",
+      "name": "Fruchtfolgefestival",
+      "description": "28./29.08.2026 - Lindach / Fürstenfeldbruck",
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://fruchtfolge.live/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "de"
+     },
+     {
+      "@type": "Organization",
+      "@id": "https://fruchtfolge.live/#organization",
+      "name": "Fruchtfolgefestival",
+      "url": "https://fruchtfolge.live/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/",
+       "url": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "contentUrl": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "width": 512,
+       "height": 512,
+       "caption": "Fruchtfolgefestival"
+      },
+      "image": {
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622",
+      "name": "Johannes",
+      "image": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "url": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "contentUrl": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "caption": "Johannes"
+      },
+      "url": "https://fruchtfolge.live/author/johannes/"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3805",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/types/post"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/comments?post=3805"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 0,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3805/revisions"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/media?parent=3805"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "category",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/categories?post=3805"
+    },
+    {
+     "taxonomy": "post_tag",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/tags?post=3805"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 3909,
+  "date": "2021-12-28T12:10:26",
+  "date_gmt": "2021-12-28T12:10:26",
+  "guid": {
+   "rendered": "https://qi132.qodeinteractive.com/?p=3909"
+  },
+  "modified": "2021-12-28T12:10:26",
+  "modified_gmt": "2021-12-28T12:10:26",
+  "slug": "building-your-own-business-network",
+  "status": "publish",
+  "type": "post",
+  "link": "https://fruchtfolge.live/building-your-own-business-network/",
+  "title": {
+   "rendered": "Building your own business network"
+  },
+  "content": {
+   "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"3909\" class=\"elementor elementor-3909\">\n\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-ce7460c qodef-elementor-content-grid qodef-extended-grid qodef-extended-grid--left elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"ce7460c\" data-element_type=\"section\" data-e-type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-20d96d8 qodef-sticky-column--no\" data-id=\"20d96d8\" data-element_type=\"column\" data-e-type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t<div class=\"elementor-element elementor-element-9d6286d elementor-widget elementor-widget-text-editor\" data-id=\"9d6286d\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-2838638 elementor-widget elementor-widget-qi_addons_for_elementor_blockquote\" data-id=\"2838638\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"qi_addons_for_elementor_blockquote.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"qodef-shortcode qodef-m qodef-qi-blockquote qodef-layout--inline qodef--custom-icon\">\n\t\t\t<h4 class=\"qodef-m-text\">\n\t\t\t\t\t\t\t<span class=\"qodef-m-icon\">\n\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"74\" height=\"177\" viewBox=\"0 0 74 177\"><text transform=\"translate(0 134)\" font-size=\"120\" font-family=\"SpaceMono-Bold, Space Mono\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">\"</tspan></text></svg>\t\t\t\t</span>\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna.\t\t</h4>\n\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-71a213a elementor-widget elementor-widget-text-editor\" data-id=\"71a213a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t</div>\n\t\t",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]</p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+   "nf_dc_page": "",
+   "content-type": "",
+   "_monsterinsights_skip_tracking": false,
+   "nfd_image_url": "",
+   "nfd_onboarding_generated": "",
+   "footnotes": ""
+  },
+  "categories": [
+   6
+  ],
+  "tags": [
+   7,
+   8,
+   9
+  ],
+  "class_list": [
+   "post-3909",
+   "post",
+   "type-post",
+   "status-publish",
+   "format-standard",
+   "hentry",
+   "category-conferences",
+   "tag-design",
+   "tag-digital",
+   "tag-lecture"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.9 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Building your own business network - Fruchtfolgefestival</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://fruchtfolge.live/building-your-own-business-network/\" />\n<meta property=\"og:locale\" content=\"de_DE\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Building your own business network - Fruchtfolgefestival\" />\n<meta property=\"og:description\" content=\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]\" />\n<meta property=\"og:url\" content=\"https://fruchtfolge.live/building-your-own-business-network/\" />\n<meta property=\"og:site_name\" content=\"Fruchtfolgefestival\" />\n<meta property=\"article:published_time\" content=\"2021-12-28T12:10:26+00:00\" />\n<meta name=\"author\" content=\"Johannes\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Verfasst von\" />\n\t<meta name=\"twitter:data1\" content=\"Johannes\" />\n\t<meta name=\"twitter:label2\" content=\"Geschätzte Lesezeit\" />\n\t<meta name=\"twitter:data2\" content=\"2 Minuten\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/building-your-own-business-network\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/building-your-own-business-network\\/\"},\"author\":{\"name\":\"Johannes\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\"},\"headline\":\"Building your own business network\",\"datePublished\":\"2021-12-28T12:10:26+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/building-your-own-business-network\\/\"},\"wordCount\":319,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"keywords\":[\"Design\",\"Digital\",\"Lecture\"],\"articleSection\":[\"Conferences\"],\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/building-your-own-business-network\\/#respond\"]}]},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/building-your-own-business-network\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/building-your-own-business-network\\/\",\"name\":\"Building your own business network - Fruchtfolgefestival\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\"},\"datePublished\":\"2021-12-28T12:10:26+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/building-your-own-business-network\\/#breadcrumb\"},\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/building-your-own-business-network\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/building-your-own-business-network\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/fruchtfolge.live\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Building your own business network\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"name\":\"Fruchtfolgefestival\",\"description\":\"28.\\/29.08.2026 - Lindach \\/ Fürstenfeldbruck\",\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/fruchtfolge.live\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"de\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\",\"name\":\"Fruchtfolgefestival\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"contentUrl\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"width\":512,\"height\":512,\"caption\":\"Fruchtfolgefestival\"},\"image\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\"}},{\"@type\":\"Person\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\",\"name\":\"Johannes\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"url\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"contentUrl\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"caption\":\"Johannes\"},\"url\":\"https:\\/\\/fruchtfolge.live\\/author\\/johannes\\/\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Building your own business network - Fruchtfolgefestival",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://fruchtfolge.live/building-your-own-business-network/",
+   "og_locale": "de_DE",
+   "og_type": "article",
+   "og_title": "Building your own business network - Fruchtfolgefestival",
+   "og_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]",
+   "og_url": "https://fruchtfolge.live/building-your-own-business-network/",
+   "og_site_name": "Fruchtfolgefestival",
+   "article_published_time": "2021-12-28T12:10:26+00:00",
+   "author": "Johannes",
+   "twitter_card": "summary_large_image",
+   "twitter_misc": {
+    "Verfasst von": "Johannes",
+    "Geschätzte Lesezeit": "2 Minuten"
+   },
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://fruchtfolge.live/building-your-own-business-network/#article",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/building-your-own-business-network/"
+      },
+      "author": {
+       "name": "Johannes",
+       "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622"
+      },
+      "headline": "Building your own business network",
+      "datePublished": "2021-12-28T12:10:26+00:00",
+      "mainEntityOfPage": {
+       "@id": "https://fruchtfolge.live/building-your-own-business-network/"
+      },
+      "wordCount": 319,
+      "commentCount": 0,
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "keywords": [
+       "Design",
+       "Digital",
+       "Lecture"
+      ],
+      "articleSection": [
+       "Conferences"
+      ],
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "CommentAction",
+        "name": "Comment",
+        "target": [
+         "https://fruchtfolge.live/building-your-own-business-network/#respond"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://fruchtfolge.live/building-your-own-business-network/",
+      "url": "https://fruchtfolge.live/building-your-own-business-network/",
+      "name": "Building your own business network - Fruchtfolgefestival",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/#website"
+      },
+      "datePublished": "2021-12-28T12:10:26+00:00",
+      "breadcrumb": {
+       "@id": "https://fruchtfolge.live/building-your-own-business-network/#breadcrumb"
+      },
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://fruchtfolge.live/building-your-own-business-network/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://fruchtfolge.live/building-your-own-business-network/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://fruchtfolge.live/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Building your own business network"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://fruchtfolge.live/#website",
+      "url": "https://fruchtfolge.live/",
+      "name": "Fruchtfolgefestival",
+      "description": "28./29.08.2026 - Lindach / Fürstenfeldbruck",
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://fruchtfolge.live/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "de"
+     },
+     {
+      "@type": "Organization",
+      "@id": "https://fruchtfolge.live/#organization",
+      "name": "Fruchtfolgefestival",
+      "url": "https://fruchtfolge.live/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/",
+       "url": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "contentUrl": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "width": 512,
+       "height": 512,
+       "caption": "Fruchtfolgefestival"
+      },
+      "image": {
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622",
+      "name": "Johannes",
+      "image": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "url": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "contentUrl": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "caption": "Johannes"
+      },
+      "url": "https://fruchtfolge.live/author/johannes/"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3909",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/types/post"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/comments?post=3909"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 0,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3909/revisions"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/media?parent=3909"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "category",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/categories?post=3909"
+    },
+    {
+     "taxonomy": "post_tag",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/tags?post=3909"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 3907,
+  "date": "2021-12-23T12:10:10",
+  "date_gmt": "2021-12-23T12:10:10",
+  "guid": {
+   "rendered": "https://qi132.qodeinteractive.com/?p=3907"
+  },
+  "modified": "2021-12-23T12:10:10",
+  "modified_gmt": "2021-12-23T12:10:10",
+  "slug": "new-space-for-all-your-work-needs",
+  "status": "publish",
+  "type": "post",
+  "link": "https://fruchtfolge.live/new-space-for-all-your-work-needs/",
+  "title": {
+   "rendered": "New space for all your work needs"
+  },
+  "content": {
+   "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"3907\" class=\"elementor elementor-3907\">\n\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-ce7460c qodef-elementor-content-grid qodef-extended-grid qodef-extended-grid--left elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"ce7460c\" data-element_type=\"section\" data-e-type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-20d96d8 qodef-sticky-column--no\" data-id=\"20d96d8\" data-element_type=\"column\" data-e-type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t<div class=\"elementor-element elementor-element-9d6286d elementor-widget elementor-widget-text-editor\" data-id=\"9d6286d\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-2838638 elementor-widget elementor-widget-qi_addons_for_elementor_blockquote\" data-id=\"2838638\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"qi_addons_for_elementor_blockquote.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"qodef-shortcode qodef-m qodef-qi-blockquote qodef-layout--inline qodef--custom-icon\">\n\t\t\t<h4 class=\"qodef-m-text\">\n\t\t\t\t\t\t\t<span class=\"qodef-m-icon\">\n\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"74\" height=\"177\" viewBox=\"0 0 74 177\"><text transform=\"translate(0 134)\" font-size=\"120\" font-family=\"SpaceMono-Bold, Space Mono\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">\"</tspan></text></svg>\t\t\t\t</span>\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna.\t\t</h4>\n\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-71a213a elementor-widget elementor-widget-text-editor\" data-id=\"71a213a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t</div>\n\t\t",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]</p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+   "nf_dc_page": "",
+   "content-type": "",
+   "_monsterinsights_skip_tracking": false,
+   "nfd_image_url": "",
+   "nfd_onboarding_generated": "",
+   "footnotes": ""
+  },
+  "categories": [
+   6
+  ],
+  "tags": [
+   7,
+   8,
+   9
+  ],
+  "class_list": [
+   "post-3907",
+   "post",
+   "type-post",
+   "status-publish",
+   "format-standard",
+   "hentry",
+   "category-conferences",
+   "tag-design",
+   "tag-digital",
+   "tag-lecture"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.9 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>New space for all your work needs - Fruchtfolgefestival</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://fruchtfolge.live/new-space-for-all-your-work-needs/\" />\n<meta property=\"og:locale\" content=\"de_DE\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"New space for all your work needs - Fruchtfolgefestival\" />\n<meta property=\"og:description\" content=\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]\" />\n<meta property=\"og:url\" content=\"https://fruchtfolge.live/new-space-for-all-your-work-needs/\" />\n<meta property=\"og:site_name\" content=\"Fruchtfolgefestival\" />\n<meta property=\"article:published_time\" content=\"2021-12-23T12:10:10+00:00\" />\n<meta name=\"author\" content=\"Johannes\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Verfasst von\" />\n\t<meta name=\"twitter:data1\" content=\"Johannes\" />\n\t<meta name=\"twitter:label2\" content=\"Geschätzte Lesezeit\" />\n\t<meta name=\"twitter:data2\" content=\"2 Minuten\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/new-space-for-all-your-work-needs\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/new-space-for-all-your-work-needs\\/\"},\"author\":{\"name\":\"Johannes\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\"},\"headline\":\"New space for all your work needs\",\"datePublished\":\"2021-12-23T12:10:10+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/new-space-for-all-your-work-needs\\/\"},\"wordCount\":321,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"keywords\":[\"Design\",\"Digital\",\"Lecture\"],\"articleSection\":[\"Conferences\"],\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/new-space-for-all-your-work-needs\\/#respond\"]}]},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/new-space-for-all-your-work-needs\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/new-space-for-all-your-work-needs\\/\",\"name\":\"New space for all your work needs - Fruchtfolgefestival\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\"},\"datePublished\":\"2021-12-23T12:10:10+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/new-space-for-all-your-work-needs\\/#breadcrumb\"},\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/new-space-for-all-your-work-needs\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/new-space-for-all-your-work-needs\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/fruchtfolge.live\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"New space for all your work needs\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"name\":\"Fruchtfolgefestival\",\"description\":\"28.\\/29.08.2026 - Lindach \\/ Fürstenfeldbruck\",\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/fruchtfolge.live\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"de\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\",\"name\":\"Fruchtfolgefestival\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"contentUrl\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"width\":512,\"height\":512,\"caption\":\"Fruchtfolgefestival\"},\"image\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\"}},{\"@type\":\"Person\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\",\"name\":\"Johannes\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"url\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"contentUrl\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"caption\":\"Johannes\"},\"url\":\"https:\\/\\/fruchtfolge.live\\/author\\/johannes\\/\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "New space for all your work needs - Fruchtfolgefestival",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://fruchtfolge.live/new-space-for-all-your-work-needs/",
+   "og_locale": "de_DE",
+   "og_type": "article",
+   "og_title": "New space for all your work needs - Fruchtfolgefestival",
+   "og_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]",
+   "og_url": "https://fruchtfolge.live/new-space-for-all-your-work-needs/",
+   "og_site_name": "Fruchtfolgefestival",
+   "article_published_time": "2021-12-23T12:10:10+00:00",
+   "author": "Johannes",
+   "twitter_card": "summary_large_image",
+   "twitter_misc": {
+    "Verfasst von": "Johannes",
+    "Geschätzte Lesezeit": "2 Minuten"
+   },
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://fruchtfolge.live/new-space-for-all-your-work-needs/#article",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/new-space-for-all-your-work-needs/"
+      },
+      "author": {
+       "name": "Johannes",
+       "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622"
+      },
+      "headline": "New space for all your work needs",
+      "datePublished": "2021-12-23T12:10:10+00:00",
+      "mainEntityOfPage": {
+       "@id": "https://fruchtfolge.live/new-space-for-all-your-work-needs/"
+      },
+      "wordCount": 321,
+      "commentCount": 0,
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "keywords": [
+       "Design",
+       "Digital",
+       "Lecture"
+      ],
+      "articleSection": [
+       "Conferences"
+      ],
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "CommentAction",
+        "name": "Comment",
+        "target": [
+         "https://fruchtfolge.live/new-space-for-all-your-work-needs/#respond"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://fruchtfolge.live/new-space-for-all-your-work-needs/",
+      "url": "https://fruchtfolge.live/new-space-for-all-your-work-needs/",
+      "name": "New space for all your work needs - Fruchtfolgefestival",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/#website"
+      },
+      "datePublished": "2021-12-23T12:10:10+00:00",
+      "breadcrumb": {
+       "@id": "https://fruchtfolge.live/new-space-for-all-your-work-needs/#breadcrumb"
+      },
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://fruchtfolge.live/new-space-for-all-your-work-needs/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://fruchtfolge.live/new-space-for-all-your-work-needs/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://fruchtfolge.live/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "New space for all your work needs"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://fruchtfolge.live/#website",
+      "url": "https://fruchtfolge.live/",
+      "name": "Fruchtfolgefestival",
+      "description": "28./29.08.2026 - Lindach / Fürstenfeldbruck",
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://fruchtfolge.live/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "de"
+     },
+     {
+      "@type": "Organization",
+      "@id": "https://fruchtfolge.live/#organization",
+      "name": "Fruchtfolgefestival",
+      "url": "https://fruchtfolge.live/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/",
+       "url": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "contentUrl": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "width": 512,
+       "height": 512,
+       "caption": "Fruchtfolgefestival"
+      },
+      "image": {
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622",
+      "name": "Johannes",
+      "image": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "url": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "contentUrl": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "caption": "Johannes"
+      },
+      "url": "https://fruchtfolge.live/author/johannes/"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3907",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/types/post"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/comments?post=3907"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 0,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3907/revisions"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/media?parent=3907"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "category",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/categories?post=3907"
+    },
+    {
+     "taxonomy": "post_tag",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/tags?post=3907"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 3904,
+  "date": "2021-12-13T12:09:25",
+  "date_gmt": "2021-12-13T12:09:25",
+  "guid": {
+   "rendered": "https://qi132.qodeinteractive.com/?p=3904"
+  },
+  "modified": "2021-12-13T12:09:25",
+  "modified_gmt": "2021-12-13T12:09:25",
+  "slug": "10-tips-for-higher-productivity",
+  "status": "publish",
+  "type": "post",
+  "link": "https://fruchtfolge.live/10-tips-for-higher-productivity/",
+  "title": {
+   "rendered": "10 Tips for higher productivity"
+  },
+  "content": {
+   "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"3904\" class=\"elementor elementor-3904\">\n\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-ce7460c qodef-elementor-content-grid qodef-extended-grid qodef-extended-grid--left elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"ce7460c\" data-element_type=\"section\" data-e-type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-20d96d8 qodef-sticky-column--no\" data-id=\"20d96d8\" data-element_type=\"column\" data-e-type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t<div class=\"elementor-element elementor-element-9d6286d elementor-widget elementor-widget-text-editor\" data-id=\"9d6286d\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-2838638 elementor-widget elementor-widget-qi_addons_for_elementor_blockquote\" data-id=\"2838638\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"qi_addons_for_elementor_blockquote.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"qodef-shortcode qodef-m qodef-qi-blockquote qodef-layout--inline qodef--custom-icon\">\n\t\t\t<h4 class=\"qodef-m-text\">\n\t\t\t\t\t\t\t<span class=\"qodef-m-icon\">\n\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"74\" height=\"177\" viewBox=\"0 0 74 177\"><text transform=\"translate(0 134)\" font-size=\"120\" font-family=\"SpaceMono-Bold, Space Mono\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">\"</tspan></text></svg>\t\t\t\t</span>\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna.\t\t</h4>\n\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-71a213a elementor-widget elementor-widget-text-editor\" data-id=\"71a213a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t</div>\n\t\t",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]</p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+   "nf_dc_page": "",
+   "content-type": "",
+   "_monsterinsights_skip_tracking": false,
+   "nfd_image_url": "",
+   "nfd_onboarding_generated": "",
+   "footnotes": ""
+  },
+  "categories": [
+   6
+  ],
+  "tags": [
+   7,
+   8,
+   9
+  ],
+  "class_list": [
+   "post-3904",
+   "post",
+   "type-post",
+   "status-publish",
+   "format-standard",
+   "hentry",
+   "category-conferences",
+   "tag-design",
+   "tag-digital",
+   "tag-lecture"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.9 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>10 Tips for higher productivity - Fruchtfolgefestival</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://fruchtfolge.live/10-tips-for-higher-productivity/\" />\n<meta property=\"og:locale\" content=\"de_DE\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"10 Tips for higher productivity - Fruchtfolgefestival\" />\n<meta property=\"og:description\" content=\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]\" />\n<meta property=\"og:url\" content=\"https://fruchtfolge.live/10-tips-for-higher-productivity/\" />\n<meta property=\"og:site_name\" content=\"Fruchtfolgefestival\" />\n<meta property=\"article:published_time\" content=\"2021-12-13T12:09:25+00:00\" />\n<meta name=\"author\" content=\"Johannes\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Verfasst von\" />\n\t<meta name=\"twitter:data1\" content=\"Johannes\" />\n\t<meta name=\"twitter:label2\" content=\"Geschätzte Lesezeit\" />\n\t<meta name=\"twitter:data2\" content=\"2 Minuten\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/10-tips-for-higher-productivity\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/10-tips-for-higher-productivity\\/\"},\"author\":{\"name\":\"Johannes\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\"},\"headline\":\"10 Tips for higher productivity\",\"datePublished\":\"2021-12-13T12:09:25+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/10-tips-for-higher-productivity\\/\"},\"wordCount\":318,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"keywords\":[\"Design\",\"Digital\",\"Lecture\"],\"articleSection\":[\"Conferences\"],\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/10-tips-for-higher-productivity\\/#respond\"]}]},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/10-tips-for-higher-productivity\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/10-tips-for-higher-productivity\\/\",\"name\":\"10 Tips for higher productivity - Fruchtfolgefestival\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\"},\"datePublished\":\"2021-12-13T12:09:25+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/10-tips-for-higher-productivity\\/#breadcrumb\"},\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/10-tips-for-higher-productivity\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/10-tips-for-higher-productivity\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/fruchtfolge.live\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"10 Tips for higher productivity\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"name\":\"Fruchtfolgefestival\",\"description\":\"28.\\/29.08.2026 - Lindach \\/ Fürstenfeldbruck\",\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/fruchtfolge.live\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"de\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\",\"name\":\"Fruchtfolgefestival\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"contentUrl\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"width\":512,\"height\":512,\"caption\":\"Fruchtfolgefestival\"},\"image\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\"}},{\"@type\":\"Person\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\",\"name\":\"Johannes\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"url\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"contentUrl\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"caption\":\"Johannes\"},\"url\":\"https:\\/\\/fruchtfolge.live\\/author\\/johannes\\/\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "10 Tips for higher productivity - Fruchtfolgefestival",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://fruchtfolge.live/10-tips-for-higher-productivity/",
+   "og_locale": "de_DE",
+   "og_type": "article",
+   "og_title": "10 Tips for higher productivity - Fruchtfolgefestival",
+   "og_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]",
+   "og_url": "https://fruchtfolge.live/10-tips-for-higher-productivity/",
+   "og_site_name": "Fruchtfolgefestival",
+   "article_published_time": "2021-12-13T12:09:25+00:00",
+   "author": "Johannes",
+   "twitter_card": "summary_large_image",
+   "twitter_misc": {
+    "Verfasst von": "Johannes",
+    "Geschätzte Lesezeit": "2 Minuten"
+   },
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://fruchtfolge.live/10-tips-for-higher-productivity/#article",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/10-tips-for-higher-productivity/"
+      },
+      "author": {
+       "name": "Johannes",
+       "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622"
+      },
+      "headline": "10 Tips for higher productivity",
+      "datePublished": "2021-12-13T12:09:25+00:00",
+      "mainEntityOfPage": {
+       "@id": "https://fruchtfolge.live/10-tips-for-higher-productivity/"
+      },
+      "wordCount": 318,
+      "commentCount": 0,
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "keywords": [
+       "Design",
+       "Digital",
+       "Lecture"
+      ],
+      "articleSection": [
+       "Conferences"
+      ],
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "CommentAction",
+        "name": "Comment",
+        "target": [
+         "https://fruchtfolge.live/10-tips-for-higher-productivity/#respond"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://fruchtfolge.live/10-tips-for-higher-productivity/",
+      "url": "https://fruchtfolge.live/10-tips-for-higher-productivity/",
+      "name": "10 Tips for higher productivity - Fruchtfolgefestival",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/#website"
+      },
+      "datePublished": "2021-12-13T12:09:25+00:00",
+      "breadcrumb": {
+       "@id": "https://fruchtfolge.live/10-tips-for-higher-productivity/#breadcrumb"
+      },
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://fruchtfolge.live/10-tips-for-higher-productivity/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://fruchtfolge.live/10-tips-for-higher-productivity/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://fruchtfolge.live/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "10 Tips for higher productivity"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://fruchtfolge.live/#website",
+      "url": "https://fruchtfolge.live/",
+      "name": "Fruchtfolgefestival",
+      "description": "28./29.08.2026 - Lindach / Fürstenfeldbruck",
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://fruchtfolge.live/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "de"
+     },
+     {
+      "@type": "Organization",
+      "@id": "https://fruchtfolge.live/#organization",
+      "name": "Fruchtfolgefestival",
+      "url": "https://fruchtfolge.live/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/",
+       "url": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "contentUrl": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "width": 512,
+       "height": 512,
+       "caption": "Fruchtfolgefestival"
+      },
+      "image": {
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622",
+      "name": "Johannes",
+      "image": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "url": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "contentUrl": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "caption": "Johannes"
+      },
+      "url": "https://fruchtfolge.live/author/johannes/"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3904",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/types/post"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/comments?post=3904"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 0,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3904/revisions"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/media?parent=3904"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "category",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/categories?post=3904"
+    },
+    {
+     "taxonomy": "post_tag",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/tags?post=3904"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 3901,
+  "date": "2021-05-26T12:09:07",
+  "date_gmt": "2021-05-26T12:09:07",
+  "guid": {
+   "rendered": "https://qi132.qodeinteractive.com/?p=3901"
+  },
+  "modified": "2021-05-26T12:09:07",
+  "modified_gmt": "2021-05-26T12:09:07",
+  "slug": "the-importance-of-social-interactions",
+  "status": "publish",
+  "type": "post",
+  "link": "https://fruchtfolge.live/the-importance-of-social-interactions/",
+  "title": {
+   "rendered": "The importance of social interactions"
+  },
+  "content": {
+   "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"3901\" class=\"elementor elementor-3901\">\n\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-ce7460c qodef-elementor-content-grid qodef-extended-grid qodef-extended-grid--left elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"ce7460c\" data-element_type=\"section\" data-e-type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-20d96d8 qodef-sticky-column--no\" data-id=\"20d96d8\" data-element_type=\"column\" data-e-type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t<div class=\"elementor-element elementor-element-9d6286d elementor-widget elementor-widget-text-editor\" data-id=\"9d6286d\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-2838638 elementor-widget elementor-widget-qi_addons_for_elementor_blockquote\" data-id=\"2838638\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"qi_addons_for_elementor_blockquote.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"qodef-shortcode qodef-m qodef-qi-blockquote qodef-layout--inline qodef--custom-icon\">\n\t\t\t<h4 class=\"qodef-m-text\">\n\t\t\t\t\t\t\t<span class=\"qodef-m-icon\">\n\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"74\" height=\"177\" viewBox=\"0 0 74 177\"><text transform=\"translate(0 134)\" font-size=\"120\" font-family=\"SpaceMono-Bold, Space Mono\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">\"</tspan></text></svg>\t\t\t\t</span>\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna.\t\t</h4>\n\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-71a213a elementor-widget elementor-widget-text-editor\" data-id=\"71a213a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t</div>\n\t\t",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]</p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+   "nf_dc_page": "",
+   "content-type": "",
+   "_monsterinsights_skip_tracking": false,
+   "nfd_image_url": "",
+   "nfd_onboarding_generated": "",
+   "footnotes": ""
+  },
+  "categories": [
+   6
+  ],
+  "tags": [
+   7,
+   8,
+   9
+  ],
+  "class_list": [
+   "post-3901",
+   "post",
+   "type-post",
+   "status-publish",
+   "format-standard",
+   "hentry",
+   "category-conferences",
+   "tag-design",
+   "tag-digital",
+   "tag-lecture"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.9 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>The importance of social interactions - Fruchtfolgefestival</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://fruchtfolge.live/the-importance-of-social-interactions/\" />\n<meta property=\"og:locale\" content=\"de_DE\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"The importance of social interactions - Fruchtfolgefestival\" />\n<meta property=\"og:description\" content=\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]\" />\n<meta property=\"og:url\" content=\"https://fruchtfolge.live/the-importance-of-social-interactions/\" />\n<meta property=\"og:site_name\" content=\"Fruchtfolgefestival\" />\n<meta property=\"article:published_time\" content=\"2021-05-26T12:09:07+00:00\" />\n<meta name=\"author\" content=\"Johannes\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Verfasst von\" />\n\t<meta name=\"twitter:data1\" content=\"Johannes\" />\n\t<meta name=\"twitter:label2\" content=\"Geschätzte Lesezeit\" />\n\t<meta name=\"twitter:data2\" content=\"2 Minuten\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/the-importance-of-social-interactions\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/the-importance-of-social-interactions\\/\"},\"author\":{\"name\":\"Johannes\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\"},\"headline\":\"The importance of social interactions\",\"datePublished\":\"2021-05-26T12:09:07+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/the-importance-of-social-interactions\\/\"},\"wordCount\":319,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"keywords\":[\"Design\",\"Digital\",\"Lecture\"],\"articleSection\":[\"Conferences\"],\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/the-importance-of-social-interactions\\/#respond\"]}]},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/the-importance-of-social-interactions\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/the-importance-of-social-interactions\\/\",\"name\":\"The importance of social interactions - Fruchtfolgefestival\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\"},\"datePublished\":\"2021-05-26T12:09:07+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/the-importance-of-social-interactions\\/#breadcrumb\"},\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/the-importance-of-social-interactions\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/the-importance-of-social-interactions\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/fruchtfolge.live\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"The importance of social interactions\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"name\":\"Fruchtfolgefestival\",\"description\":\"28.\\/29.08.2026 - Lindach \\/ Fürstenfeldbruck\",\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/fruchtfolge.live\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"de\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\",\"name\":\"Fruchtfolgefestival\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"contentUrl\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"width\":512,\"height\":512,\"caption\":\"Fruchtfolgefestival\"},\"image\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\"}},{\"@type\":\"Person\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\",\"name\":\"Johannes\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"url\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"contentUrl\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"caption\":\"Johannes\"},\"url\":\"https:\\/\\/fruchtfolge.live\\/author\\/johannes\\/\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "The importance of social interactions - Fruchtfolgefestival",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://fruchtfolge.live/the-importance-of-social-interactions/",
+   "og_locale": "de_DE",
+   "og_type": "article",
+   "og_title": "The importance of social interactions - Fruchtfolgefestival",
+   "og_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]",
+   "og_url": "https://fruchtfolge.live/the-importance-of-social-interactions/",
+   "og_site_name": "Fruchtfolgefestival",
+   "article_published_time": "2021-05-26T12:09:07+00:00",
+   "author": "Johannes",
+   "twitter_card": "summary_large_image",
+   "twitter_misc": {
+    "Verfasst von": "Johannes",
+    "Geschätzte Lesezeit": "2 Minuten"
+   },
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://fruchtfolge.live/the-importance-of-social-interactions/#article",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/the-importance-of-social-interactions/"
+      },
+      "author": {
+       "name": "Johannes",
+       "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622"
+      },
+      "headline": "The importance of social interactions",
+      "datePublished": "2021-05-26T12:09:07+00:00",
+      "mainEntityOfPage": {
+       "@id": "https://fruchtfolge.live/the-importance-of-social-interactions/"
+      },
+      "wordCount": 319,
+      "commentCount": 0,
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "keywords": [
+       "Design",
+       "Digital",
+       "Lecture"
+      ],
+      "articleSection": [
+       "Conferences"
+      ],
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "CommentAction",
+        "name": "Comment",
+        "target": [
+         "https://fruchtfolge.live/the-importance-of-social-interactions/#respond"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://fruchtfolge.live/the-importance-of-social-interactions/",
+      "url": "https://fruchtfolge.live/the-importance-of-social-interactions/",
+      "name": "The importance of social interactions - Fruchtfolgefestival",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/#website"
+      },
+      "datePublished": "2021-05-26T12:09:07+00:00",
+      "breadcrumb": {
+       "@id": "https://fruchtfolge.live/the-importance-of-social-interactions/#breadcrumb"
+      },
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://fruchtfolge.live/the-importance-of-social-interactions/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://fruchtfolge.live/the-importance-of-social-interactions/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://fruchtfolge.live/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "The importance of social interactions"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://fruchtfolge.live/#website",
+      "url": "https://fruchtfolge.live/",
+      "name": "Fruchtfolgefestival",
+      "description": "28./29.08.2026 - Lindach / Fürstenfeldbruck",
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://fruchtfolge.live/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "de"
+     },
+     {
+      "@type": "Organization",
+      "@id": "https://fruchtfolge.live/#organization",
+      "name": "Fruchtfolgefestival",
+      "url": "https://fruchtfolge.live/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/",
+       "url": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "contentUrl": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "width": 512,
+       "height": 512,
+       "caption": "Fruchtfolgefestival"
+      },
+      "image": {
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622",
+      "name": "Johannes",
+      "image": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "url": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "contentUrl": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "caption": "Johannes"
+      },
+      "url": "https://fruchtfolge.live/author/johannes/"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3901",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/types/post"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/comments?post=3901"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 0,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3901/revisions"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/media?parent=3901"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "category",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/categories?post=3901"
+    },
+    {
+     "taxonomy": "post_tag",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/tags?post=3901"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 3903,
+  "date": "2021-04-16T12:09:19",
+  "date_gmt": "2021-04-16T12:09:19",
+  "guid": {
+   "rendered": "https://qi132.qodeinteractive.com/?p=3903"
+  },
+  "modified": "2021-04-16T12:09:19",
+  "modified_gmt": "2021-04-16T12:09:19",
+  "slug": "tech-conferences-you-must-visit",
+  "status": "publish",
+  "type": "post",
+  "link": "https://fruchtfolge.live/tech-conferences-you-must-visit/",
+  "title": {
+   "rendered": "Tech conferences you must visit"
+  },
+  "content": {
+   "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"3903\" class=\"elementor elementor-3903\">\n\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-ce7460c qodef-elementor-content-grid qodef-extended-grid qodef-extended-grid--left elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"ce7460c\" data-element_type=\"section\" data-e-type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-20d96d8 qodef-sticky-column--no\" data-id=\"20d96d8\" data-element_type=\"column\" data-e-type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t<div class=\"elementor-element elementor-element-9d6286d elementor-widget elementor-widget-text-editor\" data-id=\"9d6286d\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-2838638 elementor-widget elementor-widget-qi_addons_for_elementor_blockquote\" data-id=\"2838638\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"qi_addons_for_elementor_blockquote.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"qodef-shortcode qodef-m qodef-qi-blockquote qodef-layout--inline qodef--custom-icon\">\n\t\t\t<h4 class=\"qodef-m-text\">\n\t\t\t\t\t\t\t<span class=\"qodef-m-icon\">\n\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"74\" height=\"177\" viewBox=\"0 0 74 177\"><text transform=\"translate(0 134)\" font-size=\"120\" font-family=\"SpaceMono-Bold, Space Mono\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">\"</tspan></text></svg>\t\t\t\t</span>\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna.\t\t</h4>\n\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-71a213a elementor-widget elementor-widget-text-editor\" data-id=\"71a213a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t</div>\n\t\t",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]</p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+   "nf_dc_page": "",
+   "content-type": "",
+   "_monsterinsights_skip_tracking": false,
+   "nfd_image_url": "",
+   "nfd_onboarding_generated": "",
+   "footnotes": ""
+  },
+  "categories": [
+   6
+  ],
+  "tags": [
+   7,
+   8,
+   9
+  ],
+  "class_list": [
+   "post-3903",
+   "post",
+   "type-post",
+   "status-publish",
+   "format-standard",
+   "hentry",
+   "category-conferences",
+   "tag-design",
+   "tag-digital",
+   "tag-lecture"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.9 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Tech conferences you must visit - Fruchtfolgefestival</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://fruchtfolge.live/tech-conferences-you-must-visit/\" />\n<meta property=\"og:locale\" content=\"de_DE\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Tech conferences you must visit - Fruchtfolgefestival\" />\n<meta property=\"og:description\" content=\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]\" />\n<meta property=\"og:url\" content=\"https://fruchtfolge.live/tech-conferences-you-must-visit/\" />\n<meta property=\"og:site_name\" content=\"Fruchtfolgefestival\" />\n<meta property=\"article:published_time\" content=\"2021-04-16T12:09:19+00:00\" />\n<meta name=\"author\" content=\"Johannes\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Verfasst von\" />\n\t<meta name=\"twitter:data1\" content=\"Johannes\" />\n\t<meta name=\"twitter:label2\" content=\"Geschätzte Lesezeit\" />\n\t<meta name=\"twitter:data2\" content=\"2 Minuten\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/tech-conferences-you-must-visit\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/tech-conferences-you-must-visit\\/\"},\"author\":{\"name\":\"Johannes\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\"},\"headline\":\"Tech conferences you must visit\",\"datePublished\":\"2021-04-16T12:09:19+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/tech-conferences-you-must-visit\\/\"},\"wordCount\":319,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"keywords\":[\"Design\",\"Digital\",\"Lecture\"],\"articleSection\":[\"Conferences\"],\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/tech-conferences-you-must-visit\\/#respond\"]}]},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/tech-conferences-you-must-visit\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/tech-conferences-you-must-visit\\/\",\"name\":\"Tech conferences you must visit - Fruchtfolgefestival\",\"isPartOf\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\"},\"datePublished\":\"2021-04-16T12:09:19+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/tech-conferences-you-must-visit\\/#breadcrumb\"},\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/fruchtfolge.live\\/tech-conferences-you-must-visit\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/tech-conferences-you-must-visit\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/fruchtfolge.live\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Tech conferences you must visit\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#website\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"name\":\"Fruchtfolgefestival\",\"description\":\"28.\\/29.08.2026 - Lindach \\/ Fürstenfeldbruck\",\"publisher\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/fruchtfolge.live\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"de\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#organization\",\"name\":\"Fruchtfolgefestival\",\"url\":\"https:\\/\\/fruchtfolge.live\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"contentUrl\":\"https:\\/\\/fruchtfolge.live\\/wp-content\\/uploads\\/2026\\/02\\/cropped-Logo-53.png\",\"width\":512,\"height\":512,\"caption\":\"Fruchtfolgefestival\"},\"image\":{\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/logo\\/image\\/\"}},{\"@type\":\"Person\",\"@id\":\"https:\\/\\/fruchtfolge.live\\/#\\/schema\\/person\\/65ce9c62d7951f7c9b9a248f3b91f622\",\"name\":\"Johannes\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"de\",\"@id\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"url\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"contentUrl\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g\",\"caption\":\"Johannes\"},\"url\":\"https:\\/\\/fruchtfolge.live\\/author\\/johannes\\/\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Tech conferences you must visit - Fruchtfolgefestival",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://fruchtfolge.live/tech-conferences-you-must-visit/",
+   "og_locale": "de_DE",
+   "og_type": "article",
+   "og_title": "Tech conferences you must visit - Fruchtfolgefestival",
+   "og_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolor magna aliqua. Ut enim ad minim. Sveniam, quis nostrudrtes exercitation ullamco laboris nisi ut aliquip ex ea commodo. consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Opariatur. Excepteur sint [&hellip;]",
+   "og_url": "https://fruchtfolge.live/tech-conferences-you-must-visit/",
+   "og_site_name": "Fruchtfolgefestival",
+   "article_published_time": "2021-04-16T12:09:19+00:00",
+   "author": "Johannes",
+   "twitter_card": "summary_large_image",
+   "twitter_misc": {
+    "Verfasst von": "Johannes",
+    "Geschätzte Lesezeit": "2 Minuten"
+   },
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://fruchtfolge.live/tech-conferences-you-must-visit/#article",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/tech-conferences-you-must-visit/"
+      },
+      "author": {
+       "name": "Johannes",
+       "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622"
+      },
+      "headline": "Tech conferences you must visit",
+      "datePublished": "2021-04-16T12:09:19+00:00",
+      "mainEntityOfPage": {
+       "@id": "https://fruchtfolge.live/tech-conferences-you-must-visit/"
+      },
+      "wordCount": 319,
+      "commentCount": 0,
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "keywords": [
+       "Design",
+       "Digital",
+       "Lecture"
+      ],
+      "articleSection": [
+       "Conferences"
+      ],
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "CommentAction",
+        "name": "Comment",
+        "target": [
+         "https://fruchtfolge.live/tech-conferences-you-must-visit/#respond"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://fruchtfolge.live/tech-conferences-you-must-visit/",
+      "url": "https://fruchtfolge.live/tech-conferences-you-must-visit/",
+      "name": "Tech conferences you must visit - Fruchtfolgefestival",
+      "isPartOf": {
+       "@id": "https://fruchtfolge.live/#website"
+      },
+      "datePublished": "2021-04-16T12:09:19+00:00",
+      "breadcrumb": {
+       "@id": "https://fruchtfolge.live/tech-conferences-you-must-visit/#breadcrumb"
+      },
+      "inLanguage": "de",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://fruchtfolge.live/tech-conferences-you-must-visit/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://fruchtfolge.live/tech-conferences-you-must-visit/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://fruchtfolge.live/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tech conferences you must visit"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://fruchtfolge.live/#website",
+      "url": "https://fruchtfolge.live/",
+      "name": "Fruchtfolgefestival",
+      "description": "28./29.08.2026 - Lindach / Fürstenfeldbruck",
+      "publisher": {
+       "@id": "https://fruchtfolge.live/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://fruchtfolge.live/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "de"
+     },
+     {
+      "@type": "Organization",
+      "@id": "https://fruchtfolge.live/#organization",
+      "name": "Fruchtfolgefestival",
+      "url": "https://fruchtfolge.live/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/",
+       "url": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "contentUrl": "https://fruchtfolge.live/wp-content/uploads/2026/02/cropped-Logo-53.png",
+       "width": 512,
+       "height": 512,
+       "caption": "Fruchtfolgefestival"
+      },
+      "image": {
+       "@id": "https://fruchtfolge.live/#/schema/logo/image/"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://fruchtfolge.live/#/schema/person/65ce9c62d7951f7c9b9a248f3b91f622",
+      "name": "Johannes",
+      "image": {
+       "@type": "ImageObject",
+       "inLanguage": "de",
+       "@id": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "url": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "contentUrl": "https://secure.gravatar.com/avatar/b1f0d0a24eb7101129a847d571af969659b38af6ede718a15a8f5384567fc41a?s=96&d=mm&r=g",
+       "caption": "Johannes"
+      },
+      "url": "https://fruchtfolge.live/author/johannes/"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3903",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/types/post"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/comments?post=3903"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 0,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/posts/3903/revisions"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/media?parent=3903"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "category",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/categories?post=3903"
+    },
+    {
+     "taxonomy": "post_tag",
+     "embeddable": true,
+     "href": "https://fruchtfolge.live/wp-json/wp/v2/tags?post=3903"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ }
+]
