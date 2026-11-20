@@ -1,0 +1,33 @@
+// Cloudflare-Konfiguration der Webseite (Workers mit Static Assets, kein eigener Worker-Code).
+// Deployt wird ausschließlich über Workers Builds (Git-Integration im Cloudflare-Dashboard):
+//   Branch main  -> "npx wrangler deploy"  -> Produktion
+//   andere Branches -> "npx wrangler preview" -> Vorschau, z. B. https://dev-fruchtfolge.technik-7e1.workers.dev
+// Siehe docs/betrieb.md und docs/einrichtung.md.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "fruchtfolge",
+  // Stand der Workers-Laufzeit. Nur beim Aktualisieren von Wrangler mit anheben (siehe docs/betrieb.md).
+  "compatibility_date": "2026-11-18",
+
+  "assets": {
+    // Hier legt Hugo (./build.sh) die fertige Seite ab.
+    "directory": "./public",
+    // Unbekannte Adressen bekommen unsere eigene 404-Seite (public/404.html) mit Status 404.
+    "not_found_handling": "404-page"
+  },
+
+  // Die workers.dev-Adresse bleibt an: Sie ist die Produktions-Adresse bis zum DNS-Umzug
+  // (https://fruchtfolge.technik-7e1.workers.dev) und die Grundlage für die Vorschau-Adressen.
+  "workers_dev": true,
+  // Vorschau-Adressen (<branch>-fruchtfolge.technik-7e1.workers.dev) einschalten.
+  "preview_urls": true,
+
+  // Bewusst KEINE "routes" oder Custom Domains hier:
+  // Die Domain fruchtfolge.live wird im Cloudflare-Dashboard als Custom Domain am Worker eingetragen.
+  // Stünden Routen hier, würde jedes Deploy die Einstellungen aus dem Dashboard überschreiben.
+  // Ohne "routes" verwaltet ausschließlich das Dashboard die Domain.
+
+  // Worker Previews (seit Sept. 2026) brauchen diesen Block, auch wenn er leer ist.
+  // Vorschauen haben keine eigenen Variablen oder Bindings, weil die Seite rein statisch ist.
+  "previews": {}
+}

@@ -1,0 +1,32 @@
+# HTTP-Header für alle Antworten (Cloudflare Static Assets).
+# Doku: https://developers.cloudflare.com/workers/static-assets/headers/
+# Achtung: Passen mehrere Regeln, werden die Header zusammengefügt.
+# Mit "! Header-Name" wird ein Header aus einer allgemeineren Regel entfernt.
+# build.sh hängt in der Vorschau zusätzlich "X-Robots-Tag: noindex" an.
+
+# --- Ganze Seite: keine externen Quellen erlaubt ---
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# --- CMS (/admin): Sveltia CMS braucht GitHub, den Login-Worker und einige CDN-Quellen ---
+# Grundlage: https://sveltiacms.app/en/docs/security#setting-up-content-security-policy
+/admin/*
+  ! Content-Security-Policy
+  ! Cross-Origin-Opener-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' blob: data: https://*.githubusercontent.com; media-src blob:; frame-src blob:; connect-src 'self' blob: data: https://unpkg.com https://api.github.com https://www.githubstatus.com https://sveltia-cms-auth.technik-7e1.workers.dev; manifest-src blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+  Cache-Control: no-cache
+
+# --- Lange Cache-Zeiten für Dateien mit Prüfsumme im Namen ---
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000

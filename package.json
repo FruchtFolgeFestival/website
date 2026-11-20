@@ -1,0 +1,17 @@
+{
+  "name": "fruchtfolge-website",
+  "private": true,
+  "description": "Webseite des Fruchtfolgefestival Förderfreunde e.V. (Hugo + Cloudflare Workers). Node/npm wird nur für Wrangler gebraucht.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "./build.sh",
+    "dev": "wrangler dev",
+    "check:wrangler": "wrangler --version"
+  },
+  "devDependencies": {
+    "wrangler": "4.165.0"
+  }
+}
