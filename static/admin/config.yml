@@ -1,0 +1,478 @@
+# =============================================================================
+# Sveltia CMS – Konfiguration der Redaktion (https://fruchtfolge.live/admin)
+# -----------------------------------------------------------------------------
+# WICHTIG für Entwickler:innen und KI-Agents:
+#   Diese Datei muss zu den Daten-Dateien und Templates passen. Wer ein Feld in
+#   content/ oder data/ einführt, umbenennt oder löscht, ändert es HIER mit
+#   (und umgekehrt). Siehe AGENTS.md.
+# Doku: https://sveltiacms.app/en/docs
+# Die Sprache der Oberfläche richtet sich automatisch nach dem Browser
+# (die Option "locale" wird von Sveltia ignoriert).
+# =============================================================================
+
+backend:
+  name: github
+  repo: FruchtFolgeFestival/website
+  # Die Redaktion speichert IMMER auf "dev" (Vorschau). Veröffentlichen = Pull Request dev -> main durch einen Admin.
+  branch: dev
+  # Login-Worker (Cloudflare Worker "sveltia-cms-auth", GitHub App)
+  base_url: https://sveltia-cms-auth.technik-7e1.workers.dev
+  commit_messages:
+    create: "CMS: {{collection}} „{{slug}}“ angelegt"
+    update: "CMS: {{collection}} „{{slug}}“ geändert"
+    delete: "CMS: {{collection}} „{{slug}}“ gelöscht"
+    uploadMedia: "CMS: Datei „{{path}}“ hochgeladen"
+    deleteMedia: "CMS: Datei „{{path}}“ gelöscht"
+
+# Kein "publish_mode: editorial_workflow": Änderungen gehen direkt nach dev.
+
+# Vorschau-Links im CMS zeigen auf die dev-Vorschau, weil das CMS dort speichert.
+site_url: https://dev-fruchtfolge.technik-7e1.workers.dev
+display_url: https://dev-fruchtfolge.technik-7e1.workers.dev
+app_title: Fruchtfolge · Redaktion
+
+# Bilder landen in assets/ (nicht static/), damit Hugo sie verkleinert und als WebP ausliefert.
+# Im Text/Front Matter steht der Pfad als /images/uploads/… (so findet Hugo die Datei).
+media_folder: assets/images/uploads
+public_folder: /images/uploads
+
+media_libraries:
+  default:
+    config:
+      # Große Fotos werden beim Hochladen automatisch verkleinert (max. 2500 px) und in WebP umgewandelt.
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 2500
+          height: 2500
+        svg:
+          optimize: true
+      # Dateien über 20 MB werden abgelehnt
+      max_file_size: 20000000
+
+# Dateinamen: Umlaute umschreiben (ä -> ae), nur a–z, 0–9 und Bindestrich
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+
+  # ---------------------------------------------------------------------------
+  - name: einstellungen
+    label: "Einstellungen"
+    description: "Termin auf der Startseite, Tickets, Anfahrt, Kontakt und Social Media."
+    icon: settings
+    files:
+      - name: festival
+        label: "Allgemeine Einstellungen"
+        file: data/festival.yaml
+        fields:
+          - name: aktueller_jahrgang
+            label: "Aktueller Jahrgang"
+            widget: relation
+            collection: festivals
+            value_field: "{{slug}}"
+            search_fields: [title, jahr]
+            display_fields: [title]
+            hint: "Dieser Jahrgang erscheint auf der Startseite (Termin, Line-up, Unterstützer). Für ein neues Jahr zuerst unter „Festival-Jahrgänge“ anlegen."
+          - name: startseite
+            label: "Startbereich der Startseite"
+            widget: object
+            collapsed: false
+            fields:
+              - { name: ueberschrift, label: Überschrift, widget: string, hint: "Große Überschrift ganz oben, z. B. „Nach dem Festival ist vor dem Festival“." }
+              - { name: text, label: Text, widget: markdown, minimal: true, buttons: [bold, italic, link], editor_components: [], required: false, hint: "Ein bis zwei Sätze unter der Überschrift. **Fett** für das Datum." }
+              - { name: titelbild, label: Hintergrundfoto, widget: image, required: false, hint: "Querformat. Wird automatisch eingefärbt. Nur Fotos, auf denen erkennbare Personen einverstanden sind." }
+              - { name: titelbild_alt, label: Bildbeschreibung (Alt-Text), widget: string, required: false, hint: "Was ist auf dem Foto zu sehen? Für Menschen, die das Bild nicht sehen können." }
+          - name: tickets
+            label: "Tickets"
+            widget: object
+            fields:
+              - name: status
+                label: "Ticket-Status"
+                widget: select
+                options:
+                  - { label: "Bald erhältlich", value: bald }
+                  - { label: "Jetzt erhältlich (Knopf „Tickets kaufen“ wird angezeigt)", value: verfuegbar }
+                  - { label: "Ausverkauft", value: ausverkauft }
+                  - { label: "Keine Tickets nötig", value: keine }
+                default: bald
+              - { name: url, label: Ticket-Link (z. B. Eventfrog), widget: string, required: false, pattern: ['^$|^https://', 'Bitte mit https:// beginnen'], hint: "Nur nötig, wenn der Status „Jetzt erhältlich“ ist." }
+              - { name: hinweis, label: Hinweis, widget: string, required: false, hint: "Kurzer Hinweis unter den Knöpfen, z. B. „Einlass ab 18 Jahren.“" }
+          - name: anfahrt
+            label: "Anfahrt"
+            widget: object
+            fields:
+              - { name: text, label: Text, widget: markdown, minimal: true, buttons: [bold, italic, link], editor_components: [], required: false }
+              - { name: karten_link, label: Link zum Kartendienst, widget: string, required: false, pattern: ['^$|^https://', 'Bitte mit https:// beginnen'], hint: "Normaler Link (z. B. Google Maps). Karten werden nicht eingebettet (Datenschutz)." }
+              - { name: karten_link_text, label: Linktext, widget: string, required: false }
+          - name: kontakt
+            label: "Kontakt und Verein"
+            widget: object
+            fields:
+              - { name: verein, label: Vereinsname, widget: string }
+              - { name: strasse, label: Straße und Hausnummer, widget: string }
+              - { name: ort, label: PLZ und Ort, widget: string }
+              - { name: email, label: E-Mail-Adresse, widget: string, pattern: ['^[^@\s]+@[^@\s]+$', 'Bitte eine gültige E-Mail-Adresse eintragen'] }
+          - name: social
+            label: "Social Media"
+            widget: object
+            hint: "Leer lassen, wenn es den Kanal nicht gibt."
+            fields:
+              - { name: instagram, label: Instagram, widget: string, required: false }
+              - { name: youtube, label: YouTube, widget: string, required: false }
+              - { name: facebook, label: Facebook, widget: string, required: false }
+          - { name: beschreibung, label: Beschreibung für Suchmaschinen, widget: text, hint: "Etwa 150 Zeichen. Erscheint z. B. bei Google unter dem Titel." }
+
+  # ---------------------------------------------------------------------------
+  - name: festivals
+    label: "Festival-Jahrgänge"
+    label_singular: Jahrgang
+    description: "Ein Eintrag pro Jahr mit Line-up, Timetable, Fotos und Unterstützern. Neues Jahr anlegen: siehe Anleitung in docs/redaktion.md."
+    icon: festival
+    folder: content/festivals
+    create: true
+    slug: "{{jahr}}"
+    identifier_field: title
+    summary: "{{jahr}} · {{title}} ({{status}})"
+    sortable_fields:
+      fields: [jahr, title]
+      default: { field: jahr, direction: descending }
+    preview_path: /festivals/{{slug}}/
+    fields:
+      - { name: title, label: Titel, widget: string, hint: "z. B. „Fruchtfolge Festival 2027“" }
+      - { name: jahr, label: Jahr, widget: number, value_type: int, min: 2020, max: 2100, hint: "Wird auch als Dateiname benutzt (z. B. 2027)." }
+      - name: art
+        label: "Art"
+        widget: select
+        options:
+          - { label: "Festival", value: festival }
+          - { label: "Vorgeschichte (z. B. Geburtstagsfeier 2025)", value: vorgeschichte }
+        default: festival
+      - name: status
+        label: "Status"
+        widget: select
+        options:
+          - { label: "Geplant (kommt noch)", value: geplant }
+          - { label: "Vorbei (erscheint im Archiv)", value: vorbei }
+        default: geplant
+      - { name: datum_von, label: Erster Tag, widget: datetime, type: date, required: false }
+      - { name: datum_bis, label: Letzter Tag, widget: datetime, type: date, required: false }
+      - { name: ort, label: Ort, widget: string, default: "Lindach bei Fürstenfeldbruck" }
+      - { name: untertitel, label: Untertitel, widget: string, required: false, hint: "Kurze Zeile unter dem Titel, z. B. „Das erste offizielle Fruchtfolge Festival“." }
+      - { name: description, label: Beschreibung für Suchmaschinen, widget: text, required: false, hint: "Etwa 150 Zeichen." }
+      - { name: titelbild, label: Titelbild, widget: image, required: false, hint: "Wird im Archiv und beim Teilen in sozialen Netzwerken gezeigt." }
+      - { name: titelbild_alt, label: Bildbeschreibung Titelbild, widget: string, required: false }
+      - { name: aftermovie, label: Aftermovie-Link, widget: string, required: false, pattern: ['^$|^https://', 'Bitte mit https:// beginnen'], hint: "Link zu YouTube o. Ä. Das Video wird nur verlinkt, nicht eingebettet (Datenschutz)." }
+      - name: lineup
+        label: "Line-up und Timetable"
+        label_singular: Eintrag
+        widget: list
+        required: false
+        collapsed: true
+        summary: "{{fields.name}} · {{fields.tag}} {{fields.von}}"
+        fields:
+          - { name: name, label: Name, widget: string }
+          - name: art
+            label: "Art"
+            widget: select
+            options:
+              - { label: "Act (Band, Künstler:in, DJ)", value: act }
+              - { label: "Programmpunkt (nur im Timetable, z. B. Einlass)", value: programmpunkt }
+            default: act
+          - name: herkunft
+            label: "Herkunft"
+            widget: select
+            multiple: true
+            required: false
+            hint: "Land oder Länder, aus denen der Act kommt."
+            options:
+                  - { label: "Australien (AU)", value: "AU" }
+                  - { label: "Belgien (BE)", value: "BE" }
+                  - { label: "Brasilien (BR)", value: "BR" }
+                  - { label: "Deutschland (DE)", value: "DE" }
+                  - { label: "Dänemark (DK)", value: "DK" }
+                  - { label: "Finnland (FI)", value: "FI" }
+                  - { label: "Frankreich (FR)", value: "FR" }
+                  - { label: "Griechenland (GR)", value: "GR" }
+                  - { label: "Irland (IE)", value: "IE" }
+                  - { label: "Island (IS)", value: "IS" }
+                  - { label: "Italien (IT)", value: "IT" }
+                  - { label: "Japan (JP)", value: "JP" }
+                  - { label: "Kanada (CA)", value: "CA" }
+                  - { label: "Kroatien (HR)", value: "HR" }
+                  - { label: "Luxemburg (LU)", value: "LU" }
+                  - { label: "Mexiko (MX)", value: "MX" }
+                  - { label: "Niederlande (NL)", value: "NL" }
+                  - { label: "Norwegen (NO)", value: "NO" }
+                  - { label: "Österreich (AT)", value: "AT" }
+                  - { label: "Polen (PL)", value: "PL" }
+                  - { label: "Portugal (PT)", value: "PT" }
+                  - { label: "Schweden (SE)", value: "SE" }
+                  - { label: "Schweiz (CH)", value: "CH" }
+                  - { label: "Slowakei (SK)", value: "SK" }
+                  - { label: "Slowenien (SI)", value: "SI" }
+                  - { label: "Spanien (ES)", value: "ES" }
+                  - { label: "Tschechien (CZ)", value: "CZ" }
+                  - { label: "USA (US)", value: "US" }
+                  - { label: "Ukraine (UA)", value: "UA" }
+                  - { label: "Ungarn (HU)", value: "HU" }
+                  - { label: "Vereinigtes Königreich (GB)", value: "GB" }
+          - { name: genre, label: Genre, widget: string, required: false, hint: "z. B. Stoner Rock" }
+          - { name: beschreibung, label: Kurzbeschreibung, widget: string, required: false, hint: "Ein kurzer Satz. Bei Programmpunkten erscheint er im Timetable." }
+          - { name: bild, label: Bild, widget: image, required: false, hint: "Bandfoto (wird automatisch auf 4:3 zugeschnitten). Nur Acts mit Bild bekommen eine große Karte." }
+          - { name: bild_alt, label: Bildbeschreibung, widget: string, required: false }
+          - { name: bild_credit, label: Foto von, widget: string, required: false }
+          - name: links
+            label: "Links"
+            label_singular: Link
+            widget: list
+            required: false
+            summary: "{{fields.typ}}: {{fields.url}}"
+            fields:
+              - name: typ
+                label: "Art"
+                widget: select
+                options:
+                  - { label: Spotify, value: spotify }
+                  - { label: YouTube, value: youtube }
+                  - { label: Bandcamp, value: bandcamp }
+                  - { label: Instagram, value: instagram }
+                  - { label: Facebook, value: facebook }
+                  - { label: Website, value: website }
+                  - { label: Sonstiges, value: sonstiges }
+              - { name: url, label: Adresse, widget: string, pattern: ['^https://', 'Bitte mit https:// beginnen'] }
+          - { name: tag, label: Tag, widget: datetime, type: date, required: false, hint: "Leer lassen, solange die Spielzeit noch nicht feststeht." }
+          - { name: von, label: Beginn, widget: datetime, type: time, format: "HH:mm", required: false }
+          - { name: bis, label: Ende, widget: datetime, type: time, format: "HH:mm", required: false }
+          - { name: buehne, label: Bühne, widget: string, required: false, hint: "Nur nötig, wenn es mehrere Bühnen gibt." }
+      - name: galerie
+        label: "Fotos"
+        label_singular: Foto
+        widget: list
+        required: false
+        collapsed: true
+        summary: "{{fields.alt}}"
+        fields:
+          - { name: bild, label: Foto, widget: image }
+          - { name: alt, label: Bildbeschreibung (Alt-Text), widget: string, hint: "Pflicht: Was ist zu sehen? z. B. „Publikum vor der Bühne am Abend“." }
+          - { name: credit, label: Foto von, widget: string, hint: "Pflicht: Name der Fotografin / des Fotografen." }
+      - name: unterstuetzer
+        label: "Unterstützer"
+        label_singular: Unterstützer
+        widget: list
+        required: false
+        summary: "{{fields.name}}"
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: logo, label: Logo, widget: image, hint: "Am besten SVG oder PNG mit transparentem Hintergrund." }
+          - { name: link, label: Link, widget: string, required: false, pattern: ['^$|^https://', 'Bitte mit https:// beginnen'] }
+      - { name: body, label: Einleitungstext, widget: markdown, required: false }
+
+  # ---------------------------------------------------------------------------
+  - name: news
+    label: "Neuigkeiten"
+    label_singular: Neuigkeit
+    description: "Die Startseite zeigt die drei neuesten. Beiträge mit „Entwurf“ erscheinen nur in der Vorschau."
+    icon: newspaper
+    folder: content/news
+    create: true
+    slug: "{{slug}}"
+    summary: "{{date | date('DD.MM.YYYY')}} · {{title}}"
+    sortable_fields:
+      fields: [date, title]
+      default: { field: date, direction: descending }
+    preview_path: /news/{{slug}}/
+    fields:
+      - { name: title, label: Titel, widget: string }
+      - { name: date, label: Datum, widget: datetime, type: date, default: "{{now}}" }
+      - { name: draft, label: Entwurf, widget: boolean, default: false, required: false, hint: "An = erscheint nur in der Vorschau, nicht auf der echten Seite." }
+      - { name: bild, label: Teaserbild, widget: image, required: false }
+      - { name: bild_alt, label: Bildbeschreibung, widget: string, required: false, hint: "Pflicht, wenn ein Teaserbild gewählt ist." }
+      - { name: kurztext, label: Kurztext, widget: text, hint: "Ein bis zwei Sätze für die Übersicht und die Startseite." }
+      - { name: body, label: Text, widget: markdown }
+
+  # ---------------------------------------------------------------------------
+  - name: abc
+    label: "Festival-ABC"
+    description: "Häufige Fragen von A bis Z. Die Seite sortiert alphabetisch und baut die Sprungmarken selbst."
+    icon: sort_by_alpha
+    files:
+      - name: abc
+        label: "Festival-ABC (Einträge)"
+        file: data/abc.yaml
+        fields:
+          - name: eintraege
+            label: "Einträge"
+            label_singular: Eintrag
+            widget: list
+            collapsed: true
+            summary: "{{fields.begriff}}"
+            fields:
+              - { name: begriff, label: Begriff, widget: string, hint: "Ohne „A wie …“, das wird automatisch ergänzt. z. B. „Anreise mit dem Auto“." }
+              - { name: text, label: Text, widget: markdown }
+
+  # ---------------------------------------------------------------------------
+  - name: presse
+    label: "Presse"
+    description: "Artikel über das Festival. Jeder Artikel erscheint auf der Seite seines Jahrgangs."
+    icon: feed
+    files:
+      - name: presse
+        label: "Presseberichte"
+        file: data/presse.yaml
+        fields:
+          - name: artikel
+            label: "Artikel"
+            label_singular: Artikel
+            widget: list
+            summary: "{{fields.medium}}: {{fields.titel}}"
+            fields:
+              - { name: titel, label: Titel des Artikels, widget: string }
+              - { name: medium, label: Zeitung / Medium, widget: string }
+              - { name: datum, label: Erscheinungsdatum, widget: datetime, type: date, required: false }
+              - name: jahrgang
+                label: "Jahrgang"
+                widget: relation
+                collection: festivals
+                value_field: "{{slug}}"
+                search_fields: [title, jahr]
+                display_fields: [title]
+              - { name: link, label: Link, widget: string, pattern: ['^https://', 'Bitte mit https:// beginnen'] }
+
+  # ---------------------------------------------------------------------------
+  - name: sponsoring
+    label: "Sponsoring"
+    description: "Sponsoring-Pakete und PDF. Den Einleitungstext der Seite findest du unter „Seiten“."
+    icon: savings
+    files:
+      - name: sponsoring
+        label: "Sponsoring-Pakete"
+        file: data/sponsoring.yaml
+        fields:
+          - name: pakete
+            label: "Pakete"
+            label_singular: Paket
+            widget: list
+            summary: "{{fields.name}} ({{fields.preis}})"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: preis, label: Preis, widget: string, hint: "z. B. „500 €“ oder „nach Absprache“" }
+              - name: symbol
+                label: "Symbol"
+                widget: select
+                options:
+                  - { label: Samen, value: samen }
+                  - { label: Keimling, value: keimling }
+                  - { label: Setzling, value: setzling }
+                  - { label: Baum, value: baum }
+                  - { label: Individuell (Plus), value: individuell }
+              - { name: kurz, label: Beschreibung, widget: text, required: false }
+              - { name: leistungen, label: Leistungen, label_singular: Leistung, widget: list, required: false, field: { name: leistung, label: Leistung, widget: string } }
+          - name: pdf
+            label: "PDF zum Herunterladen"
+            widget: file
+            required: false
+            media_folder: /static/dokumente
+            public_folder: /dokumente
+            hint: "Leer lassen, wenn es kein PDF gibt."
+          - { name: pdf_titel, label: Titel des PDFs, widget: string, required: false }
+          - { name: mail_betreff, label: Betreff der Anfrage-Mail, widget: string, required: false }
+
+  # ---------------------------------------------------------------------------
+  - name: seiten
+    label: "Seiten"
+    description: "Texte der normalen Seiten. Neue Seiten bitte über einen Admin anlegen lassen (sie brauchen einen Menüeintrag)."
+    icon: description
+    files:
+      - name: startseite
+        label: "Startseite (nur Beschreibung – Texte im Startbereich: siehe Einstellungen)"
+        file: content/_index.md
+        fields:
+          - { name: title, label: Titel, widget: string }
+          - { name: description, label: Beschreibung für Suchmaschinen, widget: text }
+      - name: ueber-uns
+        label: "Über uns"
+        file: content/ueber-uns.md
+        preview_path: /ueber-uns/
+        fields: &seitenfelder
+          - { name: title, label: Titel, widget: string }
+          - { name: description, label: Kurzbeschreibung, widget: text, required: false, hint: "Erscheint unter dem Titel und bei Suchmaschinen (ca. 150 Zeichen)." }
+          - { name: body, label: Text, widget: markdown }
+      - name: kontakt
+        label: "Kontakt (Adresse, E-Mail, Anfahrt: siehe Einstellungen)"
+        file: content/kontakt.md
+        preview_path: /kontakt/
+        fields: *seitenfelder
+      - name: mitmachen
+        label: "Mitmachen"
+        file: content/mitmachen.md
+        preview_path: /mitmachen/
+        fields:
+          - { name: title, label: Titel, widget: string }
+          - { name: description, label: Kurzbeschreibung, widget: text, required: false }
+          - { name: helfer_teaser, label: Kurztext Helfer:innen (Startseite), widget: text }
+          - { name: mitglied_teaser, label: Kurztext Mitgliedschaft (Startseite), widget: text }
+          - { name: helfer_betreff, label: Mail-Betreff Helfer:innen, widget: string }
+          - { name: mitglied_betreff, label: Mail-Betreff Mitgliedschaft, widget: string }
+          - { name: body, label: Text, widget: markdown, hint: "Die Überschriften „Helfer:in werden“ und „Mitglied werden“ bitte nicht umbenennen: Die Startseite verlinkt darauf." }
+      - name: festival-abc
+        label: "Festival-ABC (Einleitung – Einträge: siehe Festival-ABC)"
+        file: content/festival-abc.md
+        preview_path: /festival-abc/
+        fields:
+          - { name: title, label: Titel, widget: string }
+          - { name: description, label: Kurzbeschreibung, widget: text, required: false }
+          - { name: body, label: Einleitung, widget: markdown }
+          - { name: schluss, label: Text nach der Liste, widget: markdown, required: false }
+      - name: sponsoring-seite
+        label: "Sponsoring (Einleitung – Pakete: siehe Sponsoring)"
+        file: content/sponsoring.md
+        preview_path: /sponsoring/
+        fields: *seitenfelder
+      - name: galerie
+        label: "Galerie (Einleitung – Fotos: bei den Festival-Jahrgängen)"
+        file: content/galerie.md
+        preview_path: /galerie/
+        fields: *seitenfelder
+      - name: archiv
+        label: "Archiv (Einleitung)"
+        file: content/festivals/_index.md
+        preview_path: /archiv/
+        fields: *seitenfelder
+
+  # ---------------------------------------------------------------------------
+  - name: rechtliches
+    label: "Rechtliches"
+    description: "Änderungen bitte mit dem Vorstand abstimmen! Impressum, AGB, Satzung und Datenschutz sind rechtlich verbindlich."
+    icon: gavel
+    files:
+      - name: impressum
+        label: "Impressum"
+        file: content/impressum.md
+        preview_path: /impressum/
+        fields: &rechtsfelder
+          - { name: title, label: Titel, widget: string }
+          - { name: description, label: Kurzbeschreibung, widget: text, required: false }
+          - { name: body, label: Text, widget: markdown, hint: "Änderungen bitte mit dem Vorstand abstimmen." }
+      - name: agb
+        label: "AGB"
+        file: content/agb.md
+        preview_path: /agb/
+        fields: *rechtsfelder
+      - name: satzung
+        label: "Satzung"
+        file: content/satzung.md
+        preview_path: /satzung/
+        fields: *rechtsfelder
+      - name: datenschutz
+        label: "Datenschutz"
+        file: content/datenschutz.md
+        preview_path: /datenschutz/
+        fields:
+          - { name: title, label: Titel, widget: string }
+          - { name: description, label: Kurzbeschreibung, widget: text, required: false }
+          - { name: entwurf, label: "Entwurf (noch nicht freigegeben)", widget: boolean, default: true, hint: "Solange das an ist, kann die Seite NICHT veröffentlicht werden (Absicherung). Erst ausschalten, wenn der Vorstand den Text freigegeben hat." }
+          - { name: body, label: Text, widget: markdown, hint: "Änderungen bitte mit dem Vorstand abstimmen." }

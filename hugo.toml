@@ -31,7 +31,8 @@ buildFuture = true
 
 [permalinks]
   [permalinks.page]
-    news = "/news/:slug/"
+    # Adresse = Dateiname (so passt sie immer zu dem, was das CMS anlegt)
+    news = "/news/:contentbasename/"
 
 [markup]
   [markup.goldmark]
