@@ -1,4 +1,7 @@
-{{- /* Kopfzeile mit Logo, Hauptmenü (aus hugo.toml) und Hell/Dunkel-Knopf */ -}}
+{{- /* Kopfzeile mit Logo, Hauptmenü (aus hugo.toml) und Hell/Dunkel-Knopf.
+     Handy: Das Hauptmenü wird zum Blatt von unten, geöffnet über den Knopf unten rechts
+     (morpht beim Scrollen zum runden Hamburger, siehe assets/js/site.js). Knopf und Schleier
+     liegen bewusst INNERHALB von <header>, weil der Kopf eine eigene Stapel-Ebene bildet. */ -}}
 {{- $seite := . }}
 <header class="top">
   <div class="wrap">
@@ -17,11 +20,24 @@
         <li><a href="{{ .URL }}"{{ if $aktiv }} class="aktiv"{{ end }}{{ if $seite.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
         {{- end }}
       </ul>
+      {{- /* Kleine Zeile im Handy-Menü: Fußzeilen-Links, ohne die, die schon oben im Menü stehen */}}
+      {{- $hauptUrls := slice }}{{ range site.Menus.main }}{{ $hauptUrls = $hauptUrls | append .URL }}{{ end }}
+      <ul class="nav-klein">
+        {{- range site.Menus.footer }}
+        {{- if not (in $hauptUrls .URL) }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{- end }}
+        {{- end }}
+      </ul>
     </nav>
     <button class="icon-btn" type="button" id="theme-knopf" aria-label="Dunkles Design einschalten" title="Hell/Dunkel umschalten">
       <svg class="ic-mond" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
       <svg class="ic-sonne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" hidden><circle cx="12" cy="12" r="4.5" fill="currentColor" stroke="none"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
     </button>
-    <button class="menu-btn" type="button" id="menue-knopf" aria-expanded="false" aria-controls="hauptmenue">Menü</button>
   </div>
+  <div class="menue-schleier" id="menue-schleier"></div>
+  <button class="menue-knopf" type="button" id="menue-knopf" aria-expanded="false" aria-controls="hauptmenue" aria-label="Menü öffnen">
+    <span class="mk-text" aria-hidden="true">Menü</span>
+    <span class="mk-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
 </header>

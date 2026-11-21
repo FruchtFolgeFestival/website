@@ -7,7 +7,7 @@ Diese Datei gilt für alle KI-Agents (Claude Code, Codex, Copilot …), die an d
 - **Was:** Webseite des Fruchtfolgefestival Förderfreunde e.V. (kleines Stoner-/Psych-/Punk-Festival in Lindach bei Fürstenfeldbruck). Sprache von Seite, CMS und Doku: **Deutsch**.
 - **Stack:** Hugo (extended, Version in `.hugo-version`) → statische Dateien in `public/` → Cloudflare Workers mit Static Assets (Workers Builds, `wrangler.jsonc`). Redaktion über **Sveltia CMS** unter `/admin` (`static/admin/config.yml`), das direkt auf den Branch `dev` schreibt.
 - **Branches:** `main` = Produktion (<https://fruchtfolge.live>), `dev` = Vorschau (<https://dev-fruchtfolge.technik-7e1.workers.dev>). Veröffentlichen = Pull Request `dev → main` mit Merge-Commit, nur durch Menschen im Team `admins`.
-- **Ausführliche Doku:** `README.md`, `docs/betrieb.md` (Betrieb, Updates, Troubleshooting), `docs/entscheidungen.md` (warum es so ist), `docs/redaktion.md` (Bedienung des CMS).
+- **Ausführliche Doku:** `README.md`, `docs/betrieb.md` (Betrieb, Updates, Troubleshooting), `docs/entscheidungen.md` (warum es so ist), `docs/redaktion.md` (Bedienung des CMS), `docs/cms-aufgaben.md` (offene Inhalts-Aufgaben für die Redaktion, bei Änderungen an Inhalten mitpflegen).
 
 ## Befehle
 
@@ -60,7 +60,7 @@ Hugo muss **genau** die Version aus `.hugo-version` haben, sonst bricht `build.s
 
 - [ ] Änderung liegt auf `dev` oder einem Feature-Branch (nicht `main`), Commit-Message auf Deutsch und aussagekräftig.
 - [ ] `./build.sh` läuft ohne Warnungen; bei Template-Änderungen zusätzlich der Produktions-Build geprüft (ggf. mit vorübergehend `entwurf: false`, **nicht** committen).
-- [ ] Keine externen Ressourcen in `public/` (außer `/admin`): `grep -rhoE '<(script|link|img|iframe)[^>]*>' public --include=*.html --exclude-dir=admin | grep -E '(src|href)=("|)?(https?:)?//' | grep -v canonical` ist leer.
+- [ ] Keine externen Ressourcen in `public/` (außer `/admin`): `grep -rhoE '<(script|link|img|iframe)[^>]*>' public --include=*.html --exclude-dir=admin | grep -E '(src|href)=("|)?(https?:)?//' | grep -vE 'rel=("|)?(canonical|alternate)'` ist leer (canonical und der eigene RSS-Feed sind erlaubt).
 - [ ] Datenstruktur geändert? → `static/admin/config.yml` angepasst und gegen das Sveltia-Schema geprüft.
 - [ ] Seite auf Handy- (390 px) und Desktop-Breite angesehen, hell und dunkel, ohne horizontales Scrollen.
 - [ ] Bilder haben Alt-Text; neue Fotos haben Credit.

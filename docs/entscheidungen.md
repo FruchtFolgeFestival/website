@@ -120,3 +120,15 @@ Stand: 20.11.2026
   - Startbereich **Foto-Duoton**, Trenner **Welle** (die Welle ist die Kante zwischen den Abschnitten), Ecken **„Lavalampe“** (organisch), Schatten **„Regenbogen-Stapel“**, Papier-Körnung, schräger Datums-Sticker.
   - Referenzen: Siebdruck-Gigposter der Desert-Rock-Szene, risografierte Dorffest-Flyer, Saatgut-Tüten (Sponsoring-Stufen Samen → Baum).
 - **Folgen:** Alle Varianten bleiben in der Vorschau über die **Design-Werkstatt** ausprobierbar (nur Vorschau, siehe [betrieb.md](betrieb.md#design-werkstatt-nur-vorschau)).
+
+## ADR-13: Handy-Menü unten, Design-Werkstatt im Vorschau-Banner (Nov. 2026)
+
+- **Kontext:** Auf dem Handy war das Menü oben im Kopf, schlecht mit dem Daumen erreichbar. Der Knopf der Design-Werkstatt schwebte unten rechts über der Seite und hätte sich mit einem Menü-Knopf dort überschnitten.
+- **Entscheidung** (nach Mockup, Nov. 2026):
+  - **Handy (unter 960 px):** Unten rechts steht ein Knopf **„Menü“**. Sobald gescrollt wird, morpht er zu einem **runden Kreis mit Hamburger-Symbol**; ganz oben zeigt er wieder „Menü“. Antippen öffnet das Hauptmenü als **Blatt von unten**, der Knopf wird zum **X**. Schließen auch über den Schleier, Esc oder einen Link. Die Fußzeilen-Links (Impressum, Datenschutz …) stehen klein unter dem Menü.
+  - **Desktop:** unverändert, Menü im Kopf.
+  - **Design-Werkstatt:** Knopf im Vorschau-Banner, Leiste klappt darunter auf (Handy und Desktop).
+- **Umsetzung:** `layouts/_partials/kopf.html` (Knopf und Schleier liegen im `<header>`, weil der Kopf eine eigene Stapel-Ebene bildet), CSS in `assets/css/main.css` (Abschnitt „Handy: Menü-Knopf …“), Verhalten in `assets/js/site.js` (Funktion `menue`).
+- **Barrierefreiheit:** Der Knopf hat immer eine Beschriftung für Screenreader („Menü öffnen/schließen“) und `aria-expanded`, ist mindestens 56 px groß, der Fokus springt ins Menü und bleibt darin, bis es geschlossen wird. Ohne JavaScript steht das Menü normal im Kopf, und es gibt keinen schwebenden Knopf.
+- **Verworfen:** Menü als ganzer Bildschirm (im Mockup ausprobierbar), Menü oben ausklappend (bisherige Lösung).
+

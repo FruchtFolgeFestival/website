@@ -187,12 +187,12 @@ Jedes Galerie-Foto erzeugt beim Build 3–4 Dateien (Vorschaubilder + Großansic
 
 ## Design-Werkstatt (nur Vorschau)
 
-In allen Vorschau-Builds (und lokal) gibt es unten rechts den Knopf **„Design-Werkstatt“**. Damit lassen sich Design-Varianten (dunkles Farbschema, Schrift, Startbereich, Trenner, Ecken, Schatten, Fotos, Körnung, Sticker) live auf allen Seiten ausprobieren. Die Auswahl gilt nur im eigenen Browser (`localStorage`).
+In allen Vorschau-Builds (und lokal) steht im gestreiften **Vorschau-Banner** oben der Knopf **„Design-Werkstatt“**. Die Leiste klappt direkt unter dem Banner auf und schwebt nicht über der Seite. Damit lassen sich Design-Varianten (dunkles Farbschema, Schrift, Startbereich, Trenner, Ecken, Schatten, Fotos, Körnung, Sticker) live auf allen Seiten ausprobieren. Die Auswahl gilt nur im eigenen Browser (`localStorage`).
 
-- Dateien: `assets/css/werkstatt.css`, `assets/js/werkstatt.js`, `layouts/_partials/werkstatt-kopf.html`, Schriften in `static/fonts/werkstatt/`.
+- Dateien: `assets/css/werkstatt.css`, `assets/js/werkstatt.js`, `layouts/_partials/werkstatt-kopf.html`, der Knopf in `layouts/_partials/vorschau-banner.html`, Schriften in `static/fonts/werkstatt/`.
 - In der Produktion wird nichts davon geladen (`if not hugo.IsProduction` in `layouts/_partials/head.html`).
 - **Eine Variante dauerhaft übernehmen:** Die entsprechenden Tokens aus `werkstatt.css` in `assets/css/main.css` übertragen (der Standard steht dort in `:root`). In `werkstatt.js` den neuen Standard als ersten Wert der Option eintragen. Danach diese Datei und [entscheidungen.md](entscheidungen.md) aktualisieren.
-- **Werkstatt ganz entfernen:** die Zeile mit `werkstatt-kopf.html` in `layouts/_partials/head.html` löschen, dazu die drei Dateien und `static/fonts/werkstatt/`.
+- **Werkstatt ganz entfernen:** die Zeile mit `werkstatt-kopf.html` in `layouts/_partials/head.html` und den Knopf `ws-knopf` in `layouts/_partials/vorschau-banner.html` löschen, dazu die drei Dateien und `static/fonts/werkstatt/`.
 
 ---
 

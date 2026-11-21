@@ -156,8 +156,10 @@ h3, .karten-titel { font-size: calc(var(--d-scale) * 1.6rem); line-height: 1.05;
 
 /* ---------- Vorschau-Banner (nur Vorschau-Builds) ---------- */
 .preview-banner { position: sticky; top: 0; z-index: 90; background: repeating-linear-gradient(-45deg, var(--pop) 0 14px, var(--dark) 14px 28px); padding: 6px 12px; box-shadow: 0 2px 10px rgba(0,0,0,.35); }
-.preview-banner p { margin: 0 auto; width: fit-content; max-width: 100%; background: var(--dark); color: var(--on-dark); font-weight: 700; font-size: .85rem; padding: 4px 12px; display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 10px; text-align: center; border-radius: 4px; }
+.preview-banner .pb-inner { position: relative; margin: 0 auto; width: fit-content; max-width: 100%; display: flex; align-items: center; gap: 10px; background: var(--dark); color: var(--on-dark); border-radius: 6px; padding: 4px 5px 4px 12px; }
+.preview-banner p { margin: 0; font-weight: 700; font-size: .85rem; display: flex; flex-wrap: wrap; gap: 0 10px; min-width: 0; line-height: 1.3; }
 .preview-banner small { font-weight: 400; color: var(--on-dark-muted); font-size: .78rem; }
+@media (max-width: 599px) { .preview-banner { padding: 6px 8px; } .preview-banner .pb-inner { width: 100%; justify-content: space-between; } .preview-banner p { flex-direction: column; } }
 .bild-fehlt { display: grid; place-items: center; min-height: 120px; padding: 12px; background: #b3261e; color: #fff; font-weight: 700; font-size: .85rem; text-align: center; }
 .hinweis { margin: 0 0 24px; padding: 14px 18px; border-radius: 10px; background: var(--pop); color: var(--pop-ink); font-weight: 700; }
 
@@ -171,20 +173,68 @@ h3, .karten-titel { font-size: calc(var(--d-scale) * 1.6rem); line-height: 1.05;
 .nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
 .nav a { text-decoration: none; font-weight: 700; font-size: .95rem; padding-block: 4px; border-bottom: 2px solid transparent; }
 .nav a:hover, .nav a[aria-current="page"], .nav a.aktiv { border-bottom-color: var(--pop); }
-.icon-btn, .menu-btn { font: inherit; font-weight: 700; background: transparent; color: inherit; border: 2px solid currentColor; border-radius: var(--r-btn); cursor: pointer; }
-.icon-btn { width: 42px; height: 42px; display: grid; place-items: center; padding: 0; flex: none; }
+.icon-btn { font: inherit; font-weight: 700; background: transparent; color: inherit; border: 2px solid currentColor; border-radius: var(--r-btn); cursor: pointer; width: 42px; height: 42px; display: grid; place-items: center; padding: 0; flex: none; }
 .icon-btn svg { width: 20px; height: 20px; }
-.menu-btn { display: none; padding: 8px 14px; }
+.nav .nav-klein { display: none; }
+
+/* ---------- Handy: Menü-Knopf unten rechts + Menü als Blatt von unten ----------
+   Nach dem Laden: Knopf mit "Menü". Beim Scrollen (Klasse .rund, gesetzt von site.js):
+   runder Kreis mit Hamburger. Offen (aria-expanded="true"): X. Desktop: unverändert. */
+.menue-knopf, .menue-schleier { display: none; }
 @media (max-width: 959px) {
-  .menu-btn { display: inline-block; }
-  .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--dark); color: var(--on-dark); padding: 8px max(20px, env(safe-area-inset-right, 0px)) 20px max(20px, env(safe-area-inset-left, 0px)); border-top: 2px solid var(--pop); box-shadow: 0 12px 24px rgba(0,0,0,.3); }
-  .nav.offen { display: block; }
-  .nav ul { flex-direction: column; gap: 2px; }
-  .nav a { display: block; font-size: 1.15rem; padding-block: 9px; }
+  .top .nav { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 75;
+    max-height: 82vh; max-height: 82dvh; overflow-y: auto; overscroll-behavior: contain;
+    background: var(--dark); color: var(--on-dark); border-top: 3px solid var(--pop); border-radius: 26px 26px 0 0;
+    padding: 18px max(20px, env(safe-area-inset-right, 0px)) calc(env(safe-area-inset-bottom, 0px) + 96px) max(20px, env(safe-area-inset-left, 0px));
+    box-shadow: 0 -12px 30px rgba(0,0,0,.35);
+    transform: translateY(105%); visibility: hidden; transition: transform .32s cubic-bezier(.3,.7,.2,1), visibility 0s linear .32s; }
+  .top .nav.offen { transform: none; visibility: visible; transition: transform .32s cubic-bezier(.3,.7,.2,1), visibility 0s; }
+  .top .nav::before { content: ""; display: block; width: 44px; height: 5px; border-radius: 5px; background: var(--on-dark-muted); opacity: .6; margin: 0 auto 12px; }
+  .nav ul { flex-direction: column; gap: 0; }
+  .nav li a { display: flex; justify-content: space-between; align-items: center; min-height: 50px; font-family: var(--f-display); font-weight: var(--d-weight); text-transform: var(--d-case); letter-spacing: var(--d-track); font-size: calc(var(--d-scale) * 1.8rem); padding: 0 4px; border-bottom: 1px solid color-mix(in srgb, var(--on-dark) 15%, transparent); }
+  .nav li a::after { content: "→"; font-family: var(--f-text); font-size: 1rem; opacity: .5; }
+  .nav a[aria-current="page"], .nav a.aktiv { color: var(--pop); border-bottom-color: color-mix(in srgb, var(--on-dark) 15%, transparent); }
+  .nav .nav-klein { display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px 16px; margin-top: 16px; }
+  .nav .nav-klein a { display: inline; min-height: 0; font-family: var(--f-text); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: .88rem; color: var(--on-dark-muted); border: 0; padding: 0; text-decoration: underline; }
+  .nav .nav-klein a::after { content: none; }
+
+  .menue-schleier { display: block; position: fixed; inset: 0; z-index: 70; background: rgba(12, 10, 8, .55); opacity: 0; pointer-events: none; transition: opacity .25s; }
+  .menue-schleier.an { opacity: 1; pointer-events: auto; }
+  html.menue-offen { overflow: hidden; }
+
+  .menue-knopf {
+    display: grid; place-items: center; position: fixed; z-index: 80; padding: 0;
+    right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
+    width: 116px; height: 56px; border-radius: 999px; cursor: pointer;
+    font: inherit; font-weight: 700; font-size: 1rem; letter-spacing: .02em;
+    background: var(--dark); color: var(--on-dark); border: 3px solid var(--pop);
+    box-shadow: 0 6px 18px rgba(0,0,0,.35);
+    transition: width .32s cubic-bezier(.3,.7,.2,1), background-color .2s, color .2s, border-color .2s;
+  }
+  .menue-knopf:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .mk-text { grid-area: 1 / 1; white-space: nowrap; transition: opacity .18s, transform .25s; }
+  .mk-burger { grid-area: 1 / 1; position: relative; width: 24px; height: 18px; opacity: 0; transform: scale(.6); transition: opacity .2s .08s, transform .25s .05s; }
+  .mk-burger i { position: absolute; left: 0; right: 0; height: 3px; border-radius: 3px; background: currentColor; transition: transform .25s, opacity .2s, top .25s; }
+  .mk-burger i:nth-child(1) { top: 0; }
+  .mk-burger i:nth-child(2) { top: 7.5px; }
+  .mk-burger i:nth-child(3) { top: 15px; }
+  .menue-knopf.rund, .menue-knopf[aria-expanded="true"] { width: 56px; }
+  .menue-knopf.rund .mk-text, .menue-knopf[aria-expanded="true"] .mk-text { opacity: 0; transform: scale(.7); }
+  .menue-knopf.rund .mk-burger, .menue-knopf[aria-expanded="true"] .mk-burger { opacity: 1; transform: none; }
+  .menue-knopf[aria-expanded="true"] { background: var(--pop); color: var(--pop-ink); border-color: var(--dark); }
+  .menue-knopf[aria-expanded="true"] .mk-burger i:nth-child(1) { top: 7.5px; transform: rotate(45deg); }
+  .menue-knopf[aria-expanded="true"] .mk-burger i:nth-child(2) { opacity: 0; }
+  .menue-knopf[aria-expanded="true"] .mk-burger i:nth-child(3) { top: 7.5px; transform: rotate(-45deg); }
+
+  /* Platz, damit der Knopf am Seitenende nichts verdeckt */
+  .foot { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 96px); }
 }
-/* Ohne JavaScript ist das Menü immer offen */
-.no-js .menu-btn { display: none; }
-.no-js .nav { display: block; position: static; box-shadow: none; border: 0; padding: 0; background: transparent; }
+/* Ohne JavaScript: Menü steht normal im Kopf, kein schwebender Knopf */
+.no-js .menue-knopf, .no-js .menue-schleier { display: none !important; }
+.no-js .top .nav { position: static; transform: none; visibility: visible; box-shadow: none; border: 0; border-radius: 0; padding: 0; background: transparent; max-height: none; }
+.no-js .top .nav::before { content: none; }
+.no-js .top .wrap { flex-wrap: wrap; }
+.no-js .top .nav { order: 3; width: 100%; }
 
 /* ---------- Startbereich (Hero) ---------- */
 .hero { position: relative; background: var(--hero-bg); color: var(--on-dark); overflow: hidden; }

@@ -1,6 +1,7 @@
 // Design-Werkstatt – NUR in der Vorschau (dev) und lokal, nie in Produktion.
-// Setzt Design-Varianten als Attribute an <html> (data-w-…), merkt sie sich im Browser
-// und zeigt unten rechts eine Leiste zum Umschalten. Ohne Auswahl gilt das freigegebene Design.
+// Setzt Design-Varianten als Attribute an <html> (data-w-…) und merkt sie sich im Browser.
+// Der Knopf sitzt im Vorschau-Banner (layouts/_partials/vorschau-banner.html), die Leiste
+// klappt direkt darunter auf. Ohne Auswahl gilt das freigegebene Design.
 (function () {
   var html = document.documentElement;
   var KEY = 'fff-werkstatt';
@@ -65,12 +66,9 @@
   }
 
   function bauen() {
-    var start = document.createElement('button');
-    start.type = 'button';
-    start.className = 'ws-start';
-    start.textContent = 'Design-Werkstatt';
-    start.setAttribute('aria-expanded', 'false');
-    start.setAttribute('aria-controls', 'ws-panel');
+    var start = document.getElementById('ws-knopf');
+    var banner = document.querySelector('.preview-banner');
+    if (!start || !banner) return;
 
     var panel = document.createElement('div');
     panel.className = 'ws-panel';
@@ -101,8 +99,7 @@
     teile.push('</div>');
     panel.innerHTML = teile.join('');
 
-    document.body.appendChild(start);
-    document.body.appendChild(panel);
+    (banner.querySelector('.pb-inner') || banner).appendChild(panel);
 
     var text = panel.querySelector('#ws-text');
     var status = panel.querySelector('.ws-status');
@@ -110,14 +107,17 @@
     function aktualisieren() { text.value = zusammenfassung(); }
     aktualisieren();
 
-    function oeffnen(auf) {
+    function oeffnen(auf, fokus) {
       panel.hidden = !auf;
-      start.hidden = auf;
       start.setAttribute('aria-expanded', String(auf));
-      if (auf) panel.querySelector('[data-ws="zu"]').focus(); else start.focus();
+      if (auf) panel.querySelector('[data-ws="zu"]').focus(); else if (fokus) start.focus();
     }
-    start.addEventListener('click', function () { oeffnen(true); });
-    panel.addEventListener('keydown', function (e) { if (e.key === 'Escape') oeffnen(false); });
+    start.addEventListener('click', function () { oeffnen(panel.hidden, false); });
+    panel.addEventListener('keydown', function (e) { if (e.key === 'Escape') oeffnen(false, true); });
+    // Klick außerhalb schließt die Leiste
+    document.addEventListener('click', function (e) {
+      if (!panel.hidden && !panel.contains(e.target) && !start.contains(e.target)) oeffnen(false, false);
+    });
 
     form.addEventListener('change', function (e) {
       var name = e.target.name.replace('ws-', '');
@@ -144,7 +144,7 @@
 
     panel.addEventListener('click', function (e) {
       var aktion = e.target.getAttribute && e.target.getAttribute('data-ws');
-      if (aktion === 'zu') oeffnen(false);
+      if (aktion === 'zu') oeffnen(false, true);
       if (aktion === 'zurueck') {
         stand = {}; speichern(stand); anwenden(stand);
         OPTIONEN.forEach(function (o) { var el = form.querySelector('#ws-' + o.name + '-' + o.werte[0][0]); if (el) el.checked = true; });

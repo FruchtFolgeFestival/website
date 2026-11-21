@@ -29,22 +29,57 @@
   }
   window.fffSetzeTheme = setzeTheme; // wird von der Design-Werkstatt (nur Vorschau) genutzt
 
-  // ---------- 2. Menü ----------
+  // ---------- 2. Menü (Handy) ----------
+  // Knopf unten rechts: oben auf der Seite "Menü", nach dem Scrollen ein runder Hamburger
+  // (Klasse .rund), ganz oben wieder "Menü". Öffnet das Hauptmenü als Blatt von unten.
+  // Am Desktop ist der Knopf per CSS ausgeblendet und das Menü steht normal im Kopf.
   function menue() {
     var knopf = document.getElementById('menue-knopf');
     var nav = document.getElementById('hauptmenue');
+    var schleier = document.getElementById('menue-schleier');
     if (!knopf || !nav) return;
-    knopf.addEventListener('click', function () {
-      var offen = nav.classList.toggle('offen');
+    var handy = window.matchMedia ? window.matchMedia('(max-width: 959px)') : null;
+
+    function istOffen() { return knopf.getAttribute('aria-expanded') === 'true'; }
+    function setze(offen, fokusZurueck) {
       knopf.setAttribute('aria-expanded', String(offen));
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && nav.classList.contains('offen')) {
-        nav.classList.remove('offen');
-        knopf.setAttribute('aria-expanded', 'false');
+      knopf.setAttribute('aria-label', offen ? 'Menü schließen' : 'Menü öffnen');
+      nav.classList.toggle('offen', offen);
+      if (schleier) schleier.classList.toggle('an', offen);
+      html.classList.toggle('menue-offen', offen);
+      if (offen) {
+        var erster = nav.querySelector('a');
+        if (erster) erster.focus({ preventScroll: true });
+      } else if (fokusZurueck) {
         knopf.focus();
       }
+    }
+    knopf.addEventListener('click', function () { setze(!istOffen(), false); });
+    if (schleier) schleier.addEventListener('click', function () { setze(false, true); });
+    nav.addEventListener('click', function (e) { if (e.target.closest('a') && istOffen()) setze(false, false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && istOffen()) setze(false, true);
+      // Tab-Taste bleibt im offenen Menü (Menü-Links + Schließen-Knopf)
+      if (e.key === 'Tab' && istOffen()) {
+        var ziele = Array.prototype.slice.call(nav.querySelectorAll('a')).concat([knopf]);
+        var i = ziele.indexOf(document.activeElement);
+        if (e.shiftKey && i <= 0) { e.preventDefault(); ziele[ziele.length - 1].focus(); }
+        else if (!e.shiftKey && i === ziele.length - 1) { e.preventDefault(); ziele[0].focus(); }
+      }
     });
+    // Wechsel auf Desktop-Breite: Menü schließen
+    if (handy && handy.addEventListener) handy.addEventListener('change', function (ev) { if (!ev.matches && istOffen()) setze(false, false); });
+
+    // Morphen beim Scrollen
+    var geplant = false;
+    function form() {
+      geplant = false;
+      knopf.classList.toggle('rund', window.scrollY > 40);
+    }
+    window.addEventListener('scroll', function () {
+      if (!geplant) { geplant = true; window.requestAnimationFrame(form); }
+    }, { passive: true });
+    form();
   }
 
   // ---------- 3. Lightbox ----------

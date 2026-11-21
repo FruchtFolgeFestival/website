@@ -130,17 +130,21 @@
 /* =====================================================================
    Die Werkstatt-Leiste selbst (feste Farben, unabhängig vom Design)
    ===================================================================== */
-.ws-start {
-  position: fixed; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); z-index: 200;
-  font: 700 15px/1.2 "Atkinson Hyperlegible Next", system-ui, sans-serif; color: #14110e; background: #7cff3a;
-  border: 2px solid #14110e; border-radius: 999px; padding: 11px 16px; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.35);
+/* Knopf im Vorschau-Banner (layouts/_partials/vorschau-banner.html) */
+.ws-knopf {
+  flex: none; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  font: 700 13px/1.2 "Atkinson Hyperlegible Next", system-ui, sans-serif; color: #14110e; background: #7cff3a;
+  border: 0; border-radius: 999px; padding: 7px 12px;
 }
-.ws-start:focus-visible, .ws-panel :focus-visible { outline: 3px solid #7cff3a; outline-offset: 2px; }
+.ws-knopf svg { width: 15px; height: 15px; }
+.ws-knopf[aria-expanded="true"] { background: #efe6d4; }
+.ws-knopf:focus-visible, .ws-panel :focus-visible { outline: 3px solid #7cff3a; outline-offset: 2px; }
+/* Leiste klappt direkt unter dem Banner auf (das Banner ist sticky, die Leiste wandert mit) */
 .ws-panel {
-  position: fixed; z-index: 210; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px));
-  width: min(380px, calc(100vw - 28px)); max-height: min(80vh, 760px); overflow: auto; overscroll-behavior: contain;
+  position: absolute; z-index: 1; top: calc(100% + 10px); right: 0;
+  width: min(380px, calc(100vw - 16px)); max-height: min(75vh, 720px); overflow: auto; overscroll-behavior: contain;
   background: #1e1914; color: #efe6d4; border: 1px solid #3b3229; border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,.5);
-  font: 400 14px/1.45 "Atkinson Hyperlegible Next", system-ui, sans-serif; color-scheme: dark;
+  font: 400 14px/1.45 "Atkinson Hyperlegible Next", system-ui, sans-serif; color-scheme: dark; text-align: left;
 }
 .ws-panel[hidden] { display: none; }
 .ws-head { position: sticky; top: 0; background: #1e1914; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border-bottom: 1px solid #3b3229; z-index: 1; }
@@ -162,4 +166,4 @@
 .ws-btn { font: 700 13px/1.2 "Atkinson Hyperlegible Next", system-ui, sans-serif; padding: 8px 11px; border-radius: 7px; border: 1px solid #3b3229; background: #29221b; color: #efe6d4; cursor: pointer; }
 .ws-btn.ws-primary { background: #7cff3a; color: #14110e; border-color: #7cff3a; }
 .ws-status { margin: 0; min-height: 1.2em; color: #7cff3a; font-size: 12px; }
-@media print { .ws-start, .ws-panel { display: none !important; } }
+@media print { .ws-knopf, .ws-panel { display: none !important; } }

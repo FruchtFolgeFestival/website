@@ -62,6 +62,8 @@ Unveränderte Adressen: `/`, `/sponsoring/`, `/impressum/`.
 
 Alle Platzhalter sind im Text mit **`[BITTE ERGÄNZEN: …]`** oder **`[BITTE PRÜFEN: …]`** markiert. Suche im Repo: `grep -rn "BITTE" content data`.
 
+**Für die Redaktion** gibt es dieselben Punkte als Schritt-für-Schritt-Liste mit den genauen Stellen im CMS: [cms-aufgaben.md](cms-aufgaben.md).
+
 **Muss vor dem Go-live erledigt sein:**
 
 - [ ] **Datenschutzerklärung** (`content/datenschutz.md`): Platzhalter füllen, vom Vorstand freigeben, dann `entwurf: false`. Vorher geht die Produktion absichtlich nicht live.

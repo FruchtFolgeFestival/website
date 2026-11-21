@@ -64,6 +64,8 @@ Links siehst du die **Bereiche**:
 
 **Speichern:** Knopf **„Speichern“** oben rechts oder `Strg + S` (Mac: `⌘ + S`).
 
+**Was gerade noch fehlt**, steht als Aufgabenliste in **[cms-aufgaben.md](cms-aufgaben.md)**.
+
 **Pflichtfelder** sind markiert. Unter vielen Feldern steht ein grauer **Hinweis**, was hineingehört.
 
 `[Screenshot: CMS-Übersicht mit den Bereichen links]`
@@ -169,7 +171,7 @@ Beispiel: Das Festival 2027 ist vorbei, jetzt kommt 2028.
 - Nach dem Speichern dauert es **etwa 1–3 Minuten**, bis die Änderung dort zu sehen ist. Lade die Seite dann neu (bei Bedarf mit `Strg + Umschalt + R` bzw. `⌘ + Umschalt + R`).
 - Oben steht ein gestreiftes Banner **„Vorschau – nicht die echte Seite“** mit **Stand** (Datum und Uhrzeit des letzten Builds). Steht dort eine ältere Uhrzeit als dein Speichern, ist die Vorschau noch nicht fertig. Kurz warten.
 - Die Vorschau zeigt auch **Entwürfe** (z. B. News mit „Entwurf an“). Die echte Seite zeigt sie nicht.
-- Unten rechts gibt es die **Design-Werkstatt**: Dort kannst du Farben, Schriften und Formen ausprobieren. Das betrifft nur deinen Browser und ändert nichts an der echten Seite. Wenn ihr euch auf etwas einigt: **„Auswahl kopieren“** und an einen Admin schicken.
+- Im gestreiften Banner oben gibt es den Knopf **Design-Werkstatt**: Dort kannst du Farben, Schriften und Formen ausprobieren. Das betrifft nur deinen Browser und ändert nichts an der echten Seite. Wenn ihr euch auf etwas einigt: **„Auswahl kopieren“** und an einen Admin schicken.
 - Die Vorschau ist öffentlich erreichbar, wird aber nicht von Suchmaschinen erfasst. Bitte nicht als Link teilen.
 
 ## 6. Veröffentlichen

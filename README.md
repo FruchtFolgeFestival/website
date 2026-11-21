@@ -75,6 +75,7 @@ Voraussetzungen: [Hugo extended](https://gohugo.io/installation/) in der Version
 | Datei | Für wen | Inhalt |
 |---|---|---|
 | [docs/redaktion.md](docs/redaktion.md) | Redaktion | Anmelden, Inhalte ändern, Vorschau, Veröffentlichen |
+| [docs/cms-aufgaben.md](docs/cms-aufgaben.md) | Redaktion | Was im CMS noch fehlt oder überarbeitet werden muss |
 | [docs/betrieb.md](docs/betrieb.md) | Admins | Konten, Cloudflare-Einstellungen, DNS, Updates, Störungen |
 | [docs/einrichtung.md](docs/einrichtung.md) | Admins | Einmalige Ersteinrichtung als Checkliste |
 | [docs/entscheidungen.md](docs/entscheidungen.md) | alle Technik-Leute | Warum die Technik so ist, wie sie ist |
