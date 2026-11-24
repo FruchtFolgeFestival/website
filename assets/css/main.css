@@ -72,6 +72,7 @@
   --r-tile: 30px 10px 26px 14px / 14px 28px 12px 24px;
   /* Regenbogen-Stapel */
   --shadow: 4px 4px 0 var(--accent), 8px 8px 0 var(--second), 12px 12px 0 var(--stripe3);
+  --shadow-reach: 12px;   /* so weit ragt --shadow nach rechts/unten über das Element hinaus */
   --tilt: -5deg;
 
   --wrap: 1120px;
@@ -255,7 +256,8 @@ html.lade-logo .top .brand img { visibility: hidden; animation: lader-logo-da 0s
 .lead { font-size: 1.18rem; max-width: 44ch; margin: 18px 0 0; color: var(--on-dark); }
 .lead p { margin: 0 0 .6em; }
 .lead strong { color: var(--on-dark); }
-.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 26px; }
+/* Knopfzeile: Abstände und Platz darunter berücksichtigen den Schatten des Hauptknopfs */
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: calc(10px + var(--shadow-reach)) calc(8px + var(--shadow-reach)); margin-top: 26px; padding-bottom: var(--shadow-reach); }
 .btn { display: inline-block; text-decoration: none; font-weight: 700; padding: 12px 22px; border: 3px solid var(--on-dark); border-radius: var(--r-btn); color: var(--on-dark); line-height: 1.2; }
 .btn-primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); box-shadow: var(--shadow); }
 .btn:hover { text-decoration: underline; }
@@ -483,7 +485,7 @@ html.lade-logo .top .brand img { visibility: hidden; animation: lader-logo-da 0s
 .abstand { height: 34px; }
 .sponsor-cta { margin-top: 40px; }
 .sponsor-cta .btn-ghost, .prose .btn-ghost { color: var(--ink); border-color: var(--ink); }
-.prose .cta { margin-top: 30px; }
+.prose .cta { margin-top: 30px; margin-bottom: 14px; }
 .prose .btn-primary { text-decoration: none; }
 .abc-schluss { margin-top: 40px; }
 .align-right { text-align: right; }

@@ -56,10 +56,10 @@
 :root[data-w-corners="bogen"] .seed ul { text-align: left; }
 
 /* ---------- Schatten (Standard: Regenbogen-Stapel) ---------- */
-:root[data-w-shadow="flach"] { --shadow: none; }
-:root[data-w-shadow="versatz"] { --shadow: 6px 6px 0 var(--line); }
+:root[data-w-shadow="flach"] { --shadow: none; --shadow-reach: 0px; }
+:root[data-w-shadow="versatz"] { --shadow: 6px 6px 0 var(--line); --shadow-reach: 6px; }
 :root[data-w-shadow="versatz"] .hero .btn-primary { box-shadow: 5px 5px 0 var(--pop); }
-:root[data-w-shadow="neon"] { --shadow: 0 0 0 3px var(--accent), 0 0 28px 2px color-mix(in srgb, var(--accent) 55%, transparent); }
+:root[data-w-shadow="neon"] { --shadow: 0 0 0 3px var(--accent), 0 0 28px 2px color-mix(in srgb, var(--accent) 55%, transparent); --shadow-reach: 14px; }
 
 /* ---------- Details ---------- */
 :root[data-w-grain="aus"] .page::after { display: none; }
