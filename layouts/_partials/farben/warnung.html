@@ -1,0 +1,10 @@
+{{- /* Nur Vorschau: roter Kasten, wenn die Design-Farben fehlerhaft sind oder zu wenig Kontrast haben.
+     In Produktion bricht stattdessen der Build ab (assets/css/farben.css). */ -}}
+{{- with partialCached "farben/pruefung.html" "farben" }}
+<div class="farb-warnung" role="alert">
+  <div class="wrap">
+    <p><strong>Design-Farben: so nicht veröffentlichbar.</strong> Die echte Seite lässt sich erst wieder bauen, wenn das im CMS unter „Design-Farben“ behoben ist:</p>
+    <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+  </div>
+</div>
+{{- end }}

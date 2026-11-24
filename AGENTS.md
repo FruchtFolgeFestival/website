@@ -29,14 +29,15 @@ Hugo muss **genau** die Version aus `.hugo-version` haben, sonst bricht `build.s
 | `lineup[]` | `name`, `art` (act/programmpunkt), `herkunft[]` (ISO-Codes, siehe `data/laender.yaml`), `genre`, `beschreibung`, `bild`, `bild_alt`, `bild_credit`, `links[]` (`typ`, `url`), `tag`, `von`, `bis`, `buehne`. **Eine** Liste für Line-up **und** Timetable. | |
 | `content/festivals/_index.md` | Archiv-Übersicht, erreichbar unter `/archiv/` (`url: /archiv/`) | Seiten → Archiv |
 | `content/news/*.md` | `title`, `date`, `draft`, `bild`, `bild_alt`, `kurztext`, Text. URL = Dateiname. | Neuigkeiten |
+| `data/design.yaml` | Farben `hell`/`dunkel` (je 14 Felder, `#rrggbb`). Zuordnung Feld → CSS-Variable und Kontrast-Paare in `layouts/_partials/farben/liste.html`. Zu wenig Kontrast (< 4,5:1) = roter Kasten in der Vorschau, Abbruch in Produktion. | Design-Farben |
 | `data/abc.yaml` | `eintraege[]`: `begriff`, `text` (Markdown) | Festival-ABC |
 | `data/presse.yaml` | `artikel[]`: `titel`, `medium`, `datum`, `jahrgang`, `link` | Presse |
 | `data/sponsoring.yaml` | `pakete[]` (`name`, `preis`, `symbol`, `kurz`, `leistungen[]`), `pdf`, `pdf_titel`, `mail_betreff` | Sponsoring |
 | `data/laender.yaml` | ISO-Code → Ländername (Codes in Anführungszeichen, wegen `NO`) | (nur im Repo; Liste in `config.yml` synchron halten) |
-| `content/*.md` | normale Seiten (`title`, `description`, optional `layout`) | Seiten / Rechtliches |
+| `content/*.md` | normale Seiten (`title`, `description`, optional `layout`; bei *Seiten* außerdem `in_arbeit` + `in_arbeit_text` = „Seite wird überarbeitet“, ausgewertet in `_partials/abschnitte.html`) | Seiten / Rechtliches |
 | `assets/images/uploads/` | alle Bilder, Pfad in Inhalten `/images/uploads/…` | Medien |
 | `layouts/` | eigenes Theme (Hugo ≥ 0.146-Struktur: `baseof.html`, `home.html`, `page.html`, `_partials/`, `_shortcodes/`, `_markup/`) | |
-| `assets/css/main.css` | Design (Tokens in `:root`, dunkle Variante doppelt: Media-Query + `[data-theme="dark"]`) | |
+| `assets/css/main.css` | Design (Tokens in `:root`, dunkle Variante doppelt: Media-Query + `[data-theme="dark"]`). **Keine Farbwerte**, die kommen aus `data/design.yaml` über die Vorlage `assets/css/farben.css`. | |
 | `assets/css/werkstatt.css`, `assets/js/werkstatt.js` | Design-Werkstatt, **nur** in Nicht-Produktion | |
 | `static/_headers`, `static/_redirects` | Sicherheits-Header/CSP, 301-Weiterleitungen | |
 | `archiv-alt/` | Originaldaten der alten WordPress-Seite, wird nicht ausgeliefert | |

@@ -132,3 +132,24 @@ Stand: 20.11.2026
 - **Barrierefreiheit:** Der Knopf hat immer eine Beschriftung für Screenreader („Menü öffnen/schließen“) und `aria-expanded`, ist mindestens 56 px groß, der Fokus springt ins Menü und bleibt darin, bis es geschlossen wird. Ohne JavaScript steht das Menü normal im Kopf, und es gibt keinen schwebenden Knopf.
 - **Verworfen:** Menü als ganzer Bildschirm (im Mockup ausprobierbar), Menü oben ausklappend (bisherige Lösung).
 
+## ADR-14: Schalter „Seite wird überarbeitet“ statt Entwurf (Nov. 2026)
+
+- **Kontext:** Die Redaktion will Seiten (z. B. das Festival-ABC vor einem neuen Jahrgang) zeitweise ausblenden, in Ruhe überarbeiten und dann wieder zeigen.
+- **Entscheidung:** CMS-Feld `in_arbeit` (Schalter) plus optional `in_arbeit_text` bei den normalen Seiten (Sammlung *Seiten*, außer Startseite). Ausgewertet zentral in `layouts/_partials/abschnitte.html`:
+  - **Produktion:** Statt der Abschnitte steht nur der Hinweis und ein Knopf „Zur Startseite“. Adresse, Menü und Sitemap bleiben.
+  - **Vorschau:** voller Inhalt, darüber ein deutlicher Hinweis.
+- **Verworfen:**
+  - `draft: true`: Die Seite wäre in der Produktion eine 404, Menü und interne Links (z. B. Kontakt → ABC) würden ins Leere zeigen.
+  - Einzelne ABC-Einträge ausblenden: feiner, aber mehr Klicks und leicht zu vergessen. Kann später ergänzt werden.
+- **Nicht für Rechtstexte:** Impressum, Datenschutz usw. müssen immer erreichbar sein.
+
+## ADR-15: Farben als Daten (`data/design.yaml`), im CMS änderbar, mit Kontrast-Prüfung (Nov. 2026)
+
+- **Kontext:** Die Farben sollen ohne Code-Änderung anpassbar sein, in der Design-Werkstatt ausprobierbar und im CMS dauerhaft einstellbar. Gleichzeitig gilt: Kontrast ≥ 4,5 : 1 in beiden Farbschemata (AGENTS.md, Regel 11).
+- **Entscheidung:**
+  - Die 14 Farbwerte je Schema (hell/dunkel) stehen **nur** in `data/design.yaml` (CMS: *Design-Farben*, Farbwähler). `assets/css/farben.css` ist eine Hugo-Vorlage, die daraus CSS-Variablen macht. `head.html` hängt sie vor `main.css` (eine Datei, keine Inline-Styles, CSP bleibt streng). `main.css` enthält keine Farbwerte mehr, nur abgeleitete Tokens (`--line: var(--ink)` usw.).
+  - Zuordnung Feld → CSS-Variable und die Kontrast-Paare stehen an **einer** Stelle: `layouts/_partials/farben/liste.html`. Template, Prüfung und Werkstatt lesen sie von dort.
+  - **Prüfung** (`farben/pruefung.html`, Formel nach WCAG 2 in `farben/kontrast.html`): fehlende/ungültige Farben und zu wenig Kontrast. **Vorschau:** roter Kasten oben auf jeder Seite. **Produktion:** Build bricht mit Liste der Probleme ab (wie bei der Datenschutzerklärung). Der PR-Check „Produktion probebauen“ zeigt das schon vor dem Merge.
+  - **Werkstatt:** Farbwähler für das gerade sichtbare Schema, setzt die Variablen per CSSOM an `<html>` (`style.setProperty`, von der CSP erlaubt), zeigt Kontrast live und schreibt geänderte Werte in den Kopiertext.
+- **Folgen:** Wer eine neue Farbe einführt, ändert `farben/liste.html`, `data/design.yaml` (hell + dunkel) und `static/admin/config.yml` (Anker `&farbfelder`). Die dunklen Werkstatt-Mischungen (Glut, Aubergine) bleiben feste Vorlagen in `werkstatt.css`.
+

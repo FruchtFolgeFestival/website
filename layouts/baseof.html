@@ -6,7 +6,7 @@
 <body>
 <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 <div class="page">
-  {{- if not hugo.IsProduction }}{{ partial "vorschau-banner.html" . }}{{ end }}
+  {{- if not hugo.IsProduction }}{{ partial "vorschau-banner.html" . }}{{ partial "farben/warnung.html" . }}{{ end }}
   {{ partial "kopf.html" . }}
   <main id="inhalt" tabindex="-1">
     {{ block "main" . }}{{ end }}

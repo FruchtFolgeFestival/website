@@ -139,6 +139,31 @@ Die Galerie sammelt automatisch die Fotos aller Jahrgänge.
 
 **Rechtliches** (Impressum, AGB, Satzung, Datenschutz) bitte **nur nach Absprache mit dem Vorstand** ändern.
 
+### Eine Seite vorübergehend ausblenden („Seite wird überarbeitet“)
+
+Beispiel: Das Festival-ABC soll für 2027 überarbeitet werden, aber die alten Infos sollen solange nicht online stehen.
+
+1. **Seiten** → Seite öffnen (z. B. **Festival-ABC**).
+2. Schalter **„Seite wird überarbeitet“** anmachen.
+3. Optional ein kurzer **„Hinweis während der Überarbeitung“**, z. B. „Das Festival-ABC für 2027 kommt bald.“ Leer lassen ergibt „Diese Seite wird gerade überarbeitet. Schau bald wieder vorbei!“.
+4. **Speichern** und einem Admin Bescheid geben (damit es auch auf der echten Seite ankommt).
+
+Was dann passiert:
+
+- **Echte Seite:** Die Adresse bleibt erreichbar und im Menü. Statt des Inhalts steht nur der kurze Hinweis und ein Knopf „Zur Startseite“.
+- **Vorschau:** Zeigt den **vollen** Inhalt, darüber einen grünen Hinweis „Wird überarbeitet“. So könnt ihr in Ruhe weiterarbeiten.
+- **Fertig?** Schalter wieder **aus**, speichern, einem Admin Bescheid geben.
+
+Den Schalter gibt es bei: Über uns, Kontakt, Mitmachen, Festival-ABC, Sponsoring, Galerie und Archiv. Nicht bei der Startseite und nicht bei den Rechtstexten.
+
+### Farben der Seite ändern
+
+1. **Ausprobieren** in der Vorschau: Knopf **Design-Werkstatt** im gestreiften Banner → Abschnitt **Farben**. Jede Farbe hat einen Farbwähler. Darunter steht, ob der **Kontrast** reicht (✓) oder nicht (✗). Bearbeitet wird immer das gerade sichtbare Schema; für das andere oben auf **Hell** bzw. **Dunkel** stellen.
+2. Wenn es passt: **„Auswahl kopieren“**. Im kopierten Text steht unter „Farben Hell“ bzw. „Farben Dunkel“, welche Farbe welchen Wert bekommt.
+3. **Übernehmen** im CMS: **Design-Farben** → **Farben** → bei **Hell** oder **Dunkel** die Werte eintragen (Feld anklicken, Farbe wählen oder den Wert wie `#a3286b` eintippen). **Speichern.**
+
+> **Kontrast:** Text muss sich deutlich vom Hintergrund abheben (mindestens 4,5 : 1), damit alle ihn lesen können. Ist das nicht so, zeigt die Vorschau oben einen **roten Kasten** mit den betroffenen Farben, und die echte Seite lässt sich **nicht veröffentlichen**, bis es korrigiert ist.
+
 ### Presseartikel eintragen
 
 1. **Presse** → **Presseberichte** → **„Artikel hinzufügen“**.
@@ -171,7 +196,7 @@ Beispiel: Das Festival 2027 ist vorbei, jetzt kommt 2028.
 - Nach dem Speichern dauert es **etwa 1–3 Minuten**, bis die Änderung dort zu sehen ist. Lade die Seite dann neu (bei Bedarf mit `Strg + Umschalt + R` bzw. `⌘ + Umschalt + R`).
 - Oben steht ein gestreiftes Banner **„Vorschau – nicht die echte Seite“** mit **Stand** (Datum und Uhrzeit des letzten Builds). Steht dort eine ältere Uhrzeit als dein Speichern, ist die Vorschau noch nicht fertig. Kurz warten.
 - Die Vorschau zeigt auch **Entwürfe** (z. B. News mit „Entwurf an“). Die echte Seite zeigt sie nicht.
-- Im gestreiften Banner oben gibt es den Knopf **Design-Werkstatt**: Dort kannst du Farben, Schriften und Formen ausprobieren. Das betrifft nur deinen Browser und ändert nichts an der echten Seite. Wenn ihr euch auf etwas einigt: **„Auswahl kopieren“** und an einen Admin schicken.
+- Im gestreiften Banner oben gibt es den Knopf **Design-Werkstatt**: Dort kannst du Farben (mit Kontrast-Prüfung), Schriften und Formen ausprobieren. Das betrifft nur deinen Browser und ändert nichts an der echten Seite. Wenn ihr euch auf etwas einigt: **„Auswahl kopieren“** und an einen Admin schicken.
 - Die Vorschau ist öffentlich erreichbar, wird aber nicht von Suchmaschinen erfasst. Bitte nicht als Link teilen.
 
 ## 6. Veröffentlichen
@@ -210,6 +235,7 @@ Veröffentlichen heißt: Ein **Pull Request** von `dev` nach `main` wird **gemer
 | Ich habe etwas Falsches **gespeichert** | Einfach korrigieren und erneut speichern. Alles ist versioniert: Jeder alte Stand bleibt bei GitHub erhalten. Ein Admin kann ältere Stände zurückholen. |
 | Ich habe etwas **gelöscht** | Einem Admin Bescheid geben. Gelöschtes lässt sich über die Versionsgeschichte wiederherstellen. |
 | Die **Vorschau** zeigt meine Änderung nach 5 Minuten noch nicht | Seite hart neu laden (`Strg + Umschalt + R`). Steht im Banner immer noch ein alter Stand, ist der Build wohl fehlgeschlagen. Einem Admin Bescheid geben. |
+| In der Vorschau steht oben ein **roter Kasten „Design-Farben“** | Eine Farbe hat zu wenig Kontrast oder fehlt. Im Kasten steht, welche. Im CMS unter **Design-Farben** korrigieren (in der Design-Werkstatt kannst du vorher ausprobieren, welche Farbe passt). |
 | In der Vorschau steht ein **rotes Feld „Bild fehlt“** | Ein Bild wurde gelöscht oder umbenannt, ist aber noch irgendwo eingetragen. Das Bild im betreffenden Feld neu auswählen. |
 | Ich komme **nicht ins CMS** | Prüfen, ob du die Einladung in die GitHub-Organisation angenommen hast. Sonst einem Admin Bescheid geben. |
 | Ich bin **unsicher** | Lieber fragen: technik@fruchtfolge.live |

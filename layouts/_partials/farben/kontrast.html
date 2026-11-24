@@ -1,0 +1,16 @@
+{{- /* Kontrastverhältnis nach WCAG 2 zwischen zwei Farben im Format #rrggbb.
+     Aufruf: partial "farben/kontrast.html" (slice "#231a12" "#f4ecda") → Zahl zwischen 1 und 21 */ -}}
+{{- $helligkeiten := slice }}
+{{- range . }}
+  {{- $hex := strings.TrimPrefix "#" . }}
+  {{- $summe := 0.0 }}
+  {{- range $i, $gewicht := slice 0.2126 0.7152 0.0722 }}
+    {{- $c := div (float (int (printf "0x%s" (substr $hex (mul $i 2) 2)))) 255.0 }}
+    {{- if le $c 0.04045 }}{{ $c = div $c 12.92 }}{{ else }}{{ $c = math.Pow (div (add $c 0.055) 1.055) 2.4 }}{{ end }}
+    {{- $summe = add $summe (mul $c $gewicht) }}
+  {{- end }}
+  {{- $helligkeiten = $helligkeiten | append $summe }}
+{{- end }}
+{{- $a := index $helligkeiten 0 }}
+{{- $b := index $helligkeiten 1 }}
+{{- return div (add (math.Max $a $b) 0.05) (add (math.Min $a $b) 0.05) }}

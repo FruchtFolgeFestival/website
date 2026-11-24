@@ -1,5 +1,6 @@
 // Design-Werkstatt – NUR in der Vorschau (dev) und lokal, nie in Produktion.
-// Setzt Design-Varianten als Attribute an <html> (data-w-…) und merkt sie sich im Browser.
+// Setzt Design-Varianten als Attribute an <html> (data-w-…) und eigene Farben als CSS-Variablen
+// (inline an <html>, das erlaubt die CSP) und merkt sich beides im Browser.
 // Der Knopf sitzt im Vorschau-Banner (layouts/_partials/vorschau-banner.html), die Leiste
 // klappt direkt darunter auf. Ohne Auswahl gilt das freigegebene Design.
 (function () {
@@ -36,6 +37,41 @@
   var stand = lesen();
   anwenden(stand); // sofort, damit nichts flackert
 
+  // ---------- Farben ----------
+  // Liste aus layouts/_partials/farben/liste.html (im <head> als JSON). Eigene Farben gelten nur
+  // für das gerade sichtbare Schema (hell/dunkel) und werden inline an <html> gesetzt.
+  var FARBEN = null;
+  try { FARBEN = JSON.parse(document.getElementById('ws-farben-daten').textContent); } catch (e) {}
+  var HEX = /^#[0-9a-f]{6}$/;
+  function schemaJetzt() { return istDunkel() ? 'dunkel' : 'hell'; }
+  function eigeneFarben(schema) { return (stand.farben && stand.farben[schema]) || {}; }
+  function farbenAnwenden() {
+    if (!FARBEN) return;
+    var eigene = eigeneFarben(schemaJetzt());
+    FARBEN.farben.forEach(function (f) {
+      if (eigene[f.feld]) html.style.setProperty(f.token, eigene[f.feld]);
+      else html.style.removeProperty(f.token);
+    });
+  }
+  // Aktueller Wert einer Farbe (eigene Wahl oder das, was das Stylesheet gerade setzt)
+  function farbWert(f) {
+    var v = (getComputedStyle(html).getPropertyValue(f.token) || '').trim().toLowerCase();
+    if (/^#[0-9a-f]{3}$/.test(v)) v = '#' + v[1] + v[1] + v[2] + v[2] + v[3] + v[3];
+    return HEX.test(v) ? v : '#000000';
+  }
+  function helligkeit(hex) {
+    return [1, 3, 5].reduce(function (summe, pos, i) {
+      var c = parseInt(hex.substr(pos, 2), 16) / 255;
+      c = c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+      return summe + c * [0.2126, 0.7152, 0.0722][i];
+    }, 0);
+  }
+  function kontrast(a, b) {
+    var la = helligkeit(a), lb = helligkeit(b);
+    return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+  }
+  farbenAnwenden();
+
   function themeJetzt() {
     var t = html.getAttribute('data-theme');
     return t === 'dark' ? 'dunkel' : t === 'light' ? 'hell' : 'geraet';
@@ -55,6 +91,15 @@
       var paar = o.werte.filter(function (w) { return w[0] === wert; })[0] || o.werte[0];
       zeilen.push(o.titel + ': ' + paar[1] + (wert === o.werte[0][0] ? ' ★' : ''));
     });
+    if (FARBEN) {
+      ['hell', 'dunkel'].forEach(function (schema) {
+        var eigene = eigeneFarben(schema);
+        var namen = Object.keys(eigene);
+        if (!namen.length) return;
+        zeilen.push('Farben ' + (schema === 'hell' ? 'Hell' : 'Dunkel') + ' (CMS → Design-Farben → ' + (schema === 'hell' ? 'Hell' : 'Dunkel') + '):');
+        FARBEN.farben.forEach(function (f) { if (eigene[f.feld]) zeilen.push('  ' + f.label + ': ' + eigene[f.feld]); });
+      });
+    }
     zeilen.push('Seite: ' + location.pathname);
     return zeilen.join('\n');
   }
@@ -93,6 +138,19 @@
       teile.push('<fieldset><legend>' + o.titel + '</legend><div class="ws-chips">' + chips + '</div></fieldset>');
     });
     teile.push('</form>');
+    if (FARBEN) {
+      teile.push('<div class="ws-farben" role="group" aria-labelledby="ws-farben-titel">');
+      teile.push('<p class="ws-legend" id="ws-farben-titel">Farben – <span data-ws-schema></span></p>');
+      teile.push('<p class="ws-intro">Ändert nur das gerade sichtbare Schema. Oben auf Hell oder Dunkel stellen, um das andere zu bearbeiten. Übernehmen: kopieren und im CMS unter „Design-Farben“ eintragen.</p>');
+      teile.push('<div class="ws-farbliste">');
+      FARBEN.farben.forEach(function (f) {
+        teile.push('<label class="ws-farbe"><input type="color" data-feld="' + f.feld + '"><span>' + f.label + '</span><code data-ws-code="' + f.feld + '"></code></label>');
+      });
+      teile.push('</div>');
+      teile.push('<ul class="ws-kontrast" aria-live="polite"></ul>');
+      teile.push('<div class="ws-actions"><button type="button" class="ws-btn" data-ws="farben-zurueck">Farben zurücksetzen</button></div>');
+      teile.push('</div>');
+    }
     teile.push('<label class="ws-intro" for="ws-text">Deine Auswahl</label><textarea id="ws-text" readonly></textarea>');
     teile.push('<div class="ws-actions"><button type="button" class="ws-btn ws-primary" data-ws="kopieren">Auswahl kopieren</button><button type="button" class="ws-btn" data-ws="zurueck">Freigegebenes Design</button></div>');
     teile.push('<p class="ws-status" role="status"></p>');
@@ -104,8 +162,50 @@
     var text = panel.querySelector('#ws-text');
     var status = panel.querySelector('.ws-status');
     var form = panel.querySelector('.ws-form');
-    function aktualisieren() { text.value = zusammenfassung(); }
+    var farbBox = panel.querySelector('.ws-farben');
+    function farbenZeigen() {
+      if (!farbBox) return;
+      var schema = schemaJetzt();
+      var eigene = eigeneFarben(schema);
+      farbBox.querySelector('[data-ws-schema]').textContent = schema === 'hell' ? 'Hell' : 'Dunkel';
+      var werte = {};
+      FARBEN.farben.forEach(function (f) {
+        werte[f.feld] = farbWert(f);
+        var input = farbBox.querySelector('input[data-feld="' + f.feld + '"]');
+        input.value = werte[f.feld];
+        var code = farbBox.querySelector('[data-ws-code="' + f.feld + '"]');
+        code.textContent = werte[f.feld] + (eigene[f.feld] ? ' ✎' : '');
+      });
+      var namen = {};
+      FARBEN.farben.forEach(function (f) { namen[f.feld] = f.label; });
+      var probleme = FARBEN.paare.map(function (p) {
+        var k = kontrast(werte[p[0]], werte[p[1]]);
+        return k < FARBEN.minimum ? '<li class="ws-schlecht">✗ ' + namen[p[0]] + ' auf ' + namen[p[1]] + ': ' + k.toFixed(1).replace('.', ',') + ' : 1</li>' : '';
+      }).join('');
+      farbBox.querySelector('.ws-kontrast').innerHTML = probleme ||
+        '<li class="ws-gut">✓ Alle Kontraste mindestens 4,5 : 1</li>';
+    }
+    function aktualisieren() { text.value = zusammenfassung(); farbenZeigen(); }
     aktualisieren();
+    if (farbBox) {
+      farbBox.addEventListener('input', function (e) {
+        var feld = e.target.getAttribute('data-feld');
+        if (!feld) return;
+        var schema = schemaJetzt();
+        stand.farben = stand.farben || {};
+        stand.farben[schema] = stand.farben[schema] || {};
+        stand.farben[schema][feld] = e.target.value.toLowerCase();
+        speichern(stand);
+        farbenAnwenden();
+        status.textContent = '';
+        aktualisieren();
+      });
+    }
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var beiWechsel = function () { farbenAnwenden(); aktualisieren(); };
+      if (mq.addEventListener) mq.addEventListener('change', beiWechsel); else if (mq.addListener) mq.addListener(beiWechsel);
+    }
 
     function oeffnen(auf, fokus) {
       panel.hidden = !auf;
@@ -139,14 +239,21 @@
     });
     document.addEventListener('fff-theme', function () {
       var el = form.querySelector('#ws-theme-' + themeJetzt()); if (el) el.checked = true;
+      farbenAnwenden();
       aktualisieren();
     });
 
     panel.addEventListener('click', function (e) {
       var aktion = e.target.getAttribute && e.target.getAttribute('data-ws');
       if (aktion === 'zu') oeffnen(false, true);
+      if (aktion === 'farben-zurueck') {
+        if (stand.farben) delete stand.farben[schemaJetzt()];
+        speichern(stand); farbenAnwenden();
+        status.textContent = 'Farben zurückgesetzt (' + (schemaJetzt() === 'hell' ? 'Hell' : 'Dunkel') + ').';
+        aktualisieren();
+      }
       if (aktion === 'zurueck') {
-        stand = {}; speichern(stand); anwenden(stand);
+        stand = {}; speichern(stand); anwenden(stand); farbenAnwenden();
         OPTIONEN.forEach(function (o) { var el = form.querySelector('#ws-' + o.name + '-' + o.werte[0][0]); if (el) el.checked = true; });
         status.textContent = 'Zurück auf dem freigegebenen Design.';
         aktualisieren();

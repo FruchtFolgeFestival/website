@@ -3,6 +3,8 @@
 {{- with resources.Get "css/werkstatt.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
 {{- end }}
+{{- /* Farben für den Abschnitt „Farben“ der Werkstatt: Feld → CSS-Variable, Kontrast-Paare (kein ausführbares Skript) */}}
+<script type="application/json" id="ws-farben-daten">{{ partial "farben/liste.html" | jsonify | safeJS }}</script>
 {{- with resources.Get "js/werkstatt.js" | js.Build (dict "minify" true) | fingerprint }}
 <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
 {{- end }}

@@ -1,0 +1,29 @@
+{{- /* Welche Farbe aus data/design.yaml welche CSS-Variable setzt, und welche Paare genug Kontrast
+     brauchen. Genutzt von assets/css/farben.css, farben/pruefung.html und der Design-Werkstatt.
+     Neue Farbe? Hier eintragen, in data/design.yaml (hell + dunkel) und in static/admin/config.yml. */ -}}
+{{- $farben := slice
+  (dict "feld" "hintergrund" "token" "--bg" "label" "Hintergrund")
+  (dict "feld" "hintergrund_2" "token" "--bg2" "label" "Hintergrund 2 (jeder zweite Abschnitt)")
+  (dict "feld" "karten" "token" "--card" "label" "Karten und Kästen")
+  (dict "feld" "text" "token" "--ink" "label" "Text und Linien")
+  (dict "feld" "text_leise" "token" "--muted" "label" "Leiser Text")
+  (dict "feld" "akzent" "token" "--accent" "label" "Akzent")
+  (dict "feld" "text_auf_akzent" "token" "--accent-ink" "label" "Text auf Akzent")
+  (dict "feld" "zweitfarbe" "token" "--second" "label" "Zweitfarbe")
+  (dict "feld" "drittfarbe" "token" "--stripe3" "label" "Drittfarbe")
+  (dict "feld" "kopf_fuss" "token" "--dark" "label" "Kopf und Fuß")
+  (dict "feld" "text_auf_kopf_fuss" "token" "--on-dark" "label" "Text auf Kopf und Fuß")
+  (dict "feld" "text_leise_auf_kopf_fuss" "token" "--on-dark-muted" "label" "Leiser Text auf Kopf und Fuß")
+  (dict "feld" "leuchtfarbe" "token" "--pop" "label" "Leuchtfarbe")
+  (dict "feld" "text_auf_leuchtfarbe" "token" "--pop-ink" "label" "Text auf Leuchtfarbe")
+}}
+{{- /* [Vordergrund, Hintergrund]: beides Felder von oben, jeweils mindestens 4,5:1 */}}
+{{- $paare := slice
+  (slice "text" "hintergrund") (slice "text" "hintergrund_2") (slice "text" "karten")
+  (slice "text_leise" "hintergrund") (slice "text_leise" "hintergrund_2") (slice "text_leise" "karten")
+  (slice "akzent" "hintergrund") (slice "akzent" "hintergrund_2") (slice "akzent" "karten")
+  (slice "text_auf_akzent" "akzent")
+  (slice "text_auf_kopf_fuss" "kopf_fuss") (slice "text_leise_auf_kopf_fuss" "kopf_fuss") (slice "leuchtfarbe" "kopf_fuss")
+  (slice "text_auf_leuchtfarbe" "leuchtfarbe")
+}}
+{{- return dict "farben" $farben "paare" $paare "minimum" 4.5 }}

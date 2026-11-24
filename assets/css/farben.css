@@ -1,0 +1,25 @@
+{{- /* Farben aus data/design.yaml (im CMS: „Design-Farben“) als CSS-Variablen.
+     Wird als Vorlage ausgeführt und in layouts/_partials/head.html vor main.css gehängt.
+     Zuordnung Feld → Variable: layouts/_partials/farben/liste.html */ -}}
+{{- $probleme := partialCached "farben/pruefung.html" "farben" }}
+{{- if and $probleme hugo.IsProduction }}
+  {{- errorf "Design-Farben (data/design.yaml) nicht veröffentlichbar:\n- %s\nBitte im CMS unter „Design-Farben“ korrigieren." (delimit $probleme "\n- ") }}
+{{- end }}
+{{- $d := (hugo.Data).design | default dict }}
+{{- $liste := partial "farben/liste.html" }}
+{{- $css := dict }}
+{{- range $schema := slice "hell" "dunkel" }}
+  {{- $f := index $d $schema | default dict }}
+  {{- $zeilen := slice }}
+  {{- range $liste.farben }}
+    {{- $wert := index $f .feld | default "" | string }}
+    {{- if findRE `^#[0-9a-fA-F]{6}$` $wert }}{{ $zeilen = $zeilen | append (printf "%s: %s;" .token (lower $wert)) }}{{ end }}
+  {{- end }}
+  {{- $css = merge $css (dict $schema (delimit $zeilen " ")) }}
+{{- end -}}
+/* Farben aus data/design.yaml – nicht hier ändern, sondern im CMS („Design-Farben“) */
+:root { {{ $css.hell }} }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { {{ $css.dunkel }} }
+}
+:root[data-theme="dark"] { {{ $css.dunkel }} }

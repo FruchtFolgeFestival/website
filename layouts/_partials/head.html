@@ -9,7 +9,10 @@
 <meta name="robots" content="noindex, nofollow">
 {{- end }}
 <link rel="canonical" href="{{ .Permalink }}">
-<meta name="theme-color" content="#231a12">
+{{- with (hugo.Data).design }}
+<meta name="theme-color" content="{{ .hell.kopf_fuss }}">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ .dunkel.kopf_fuss }}">
+{{- end }}
 <meta name="color-scheme" content="light dark">
 
 {{- /* Open Graph / Vorschau beim Teilen */}}
@@ -30,7 +33,9 @@
 {{- with resources.Get "js/theme.js" | js.Build (dict "minify" true) | fingerprint }}
 <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
 {{- end }}
-{{- with resources.Get "css/main.css" | minify | fingerprint }}
+{{- /* Farben aus data/design.yaml (CMS „Design-Farben“) + main.css als eine Datei */}}
+{{- $farben := resources.Get "css/farben.css" | resources.ExecuteAsTemplate "css/farben.css" . }}
+{{- with slice $farben (resources.Get "css/main.css") | resources.Concat "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
 {{- end }}
 {{- with resources.Get "js/site.js" | js.Build (dict "minify" true) | fingerprint }}

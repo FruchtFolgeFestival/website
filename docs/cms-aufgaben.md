@@ -100,6 +100,8 @@ Diese Stellen sind auf der öffentlichen Seite sichtbar oder blockieren die Ver�
 ### C3. Festival-ABC aktualisieren
 **CMS:** Festival-ABC → **Festival-ABC (Einträge)**
 
+> Tipp: Während der Überarbeitung kann das ABC auf der echten Seite ausgeblendet werden: **Seiten → Festival-ABC → „Seite wird überarbeitet“** (siehe [redaktion.md](redaktion.md#eine-seite-vorübergehend-ausblenden-seite-wird-überarbeitet)).
+
 Diese Einträge beziehen sich noch auf 2026 und müssen für 2027 geprüft werden:
 
 - [ ] **Line-up:** nennt die Bands von 2026

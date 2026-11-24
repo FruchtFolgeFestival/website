@@ -7,7 +7,7 @@
 {{- range $i, $p := $sp.pakete }}{{ $karten = printf "%s%s" $karten (partial "saat-karte.html" (dict "paket" $p "nr" (add $i 1) "kurz" false)) }}{{ end }}
 {{- $pdf := "" }}
 {{- with $sp.pdf }}{{ $pdf = printf `<a class="btn btn-ghost" href="%s" download>%s (PDF)</a>` . (htmlEscape ($sp.pdf_titel | default "Übersicht herunterladen")) }}{{ end }}
-{{- $mail := printf `<a class="btn btn-primary" href="mailto:%s?subject=%s">Kontaktieren Sie uns</a>` $email (urlquery ($sp.mail_betreff | default "Sponsoring")) }}
+{{- $mail := printf `<a class="btn btn-primary" href="mailto:%s?subject=%s">Kontaktieren Sie uns</a>` $email (partial "mail-betreff.html" ($sp.mail_betreff | default "Sponsoring")) }}
 {{- $teil1 := printf `<div class="wrap"><div class="prose">%s</div><h2 class="pakete-titel" id="pakete">Die Pakete</h2><div class="seeds">%s</div><div class="cta sponsor-cta">%s%s</div></div>` .Content $karten $mail $pdf }}
 {{- $abschnitte := slice $teil1 }}
 {{- $aktuell := partial "festival/aktuell.html" . }}

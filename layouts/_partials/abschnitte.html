@@ -2,8 +2,21 @@
      und den passenden Wellen-Trennern dazwischen.
      Aufruf: partial "abschnitte.html" (dict "seite" . "abschnitte" (slice html1 html2 …))
      Leere Abschnitte (z. B. keine News) werden vorher weggelassen, die Abfolge bleibt trotzdem sauber. */ -}}
+{{- $abschnitte := .abschnitte }}
+{{- /* Schalter „Seite wird überarbeitet“ (CMS-Feld in_arbeit, optional in_arbeit_text):
+     Produktion zeigt nur einen kurzen Hinweis statt des Inhalts (die Adresse bleibt erreichbar),
+     die Vorschau zeigt den vollen Inhalt mit einem deutlichen Hinweis darüber. */}}
+{{- if .seite.Params.in_arbeit }}
+  {{- $text := .seite.Params.in_arbeit_text | default "Diese Seite wird gerade überarbeitet. Schau bald wieder vorbei!" }}
+  {{- if hugo.IsProduction }}
+    {{- $abschnitte = slice (printf `<div class="wrap"><div class="in-arbeit"><p class="eyebrow">In Arbeit</p><p class="in-arbeit-text">%s</p><p><a class="btn btn-ghost" href="%s">Zur Startseite</a></p></div></div>` ($text | markdownify) ("/" | relURL)) }}
+  {{- else }}
+    {{- $vorschau := printf `<div class="wrap"><p class="hinweis">Wird überarbeitet: Auf der echten Seite ist dieser Inhalt ausgeblendet. Dort steht nur „%s“. Zum Veröffentlichen im CMS den Schalter „Seite wird überarbeitet“ ausschalten.</p></div>` ($text | markdownify | plainify) }}
+    {{- $abschnitte = slice (printf "%s%s" $vorschau (index $abschnitte 0)) | append (after 1 $abschnitte) }}
+  {{- end }}
+{{- end }}
 {{- $vorher := "hero" }}
-{{- range $i, $html := .abschnitte }}
+{{- range $i, $html := $abschnitte }}
   {{- $bg := cond (modBool $i 2) "bg" "alt" }}
   {{- partial "trenner.html" (dict "von" $vorher "nach" $bg) }}
   <section class="sec{{ if eq $bg "alt" }} alt{{ end }}">

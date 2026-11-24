@@ -126,6 +126,39 @@ collections:
           - { name: beschreibung, label: Beschreibung für Suchmaschinen, widget: text, hint: "Etwa 150 Zeichen. Erscheint z. B. bei Google unter dem Titel." }
 
   # ---------------------------------------------------------------------------
+  - name: design
+    label: "Design-Farben"
+    description: "Farben der Webseite für Hell und Dunkel. Vorher in der Vorschau mit der Design-Werkstatt (Abschnitt Farben) ausprobieren. Text braucht genug Kontrast (mindestens 4,5:1). Sonst erscheint in der Vorschau ein roter Kasten, und die echte Seite lässt sich nicht veröffentlichen."
+    icon: palette
+    files:
+      - name: farben
+        label: "Farben"
+        file: data/design.yaml
+        fields:
+          - name: hell
+            label: "Hell (Klee & Acker)"
+            widget: object
+            fields: &farbfelder
+              - { name: hintergrund, label: "Hintergrund", widget: color, allowInput: true }
+              - { name: hintergrund_2, label: "Hintergrund 2", widget: color, allowInput: true, hint: "Jeder zweite Abschnitt, damit sich Abschnitte abheben." }
+              - { name: karten, label: "Karten und Kästen", widget: color, allowInput: true }
+              - { name: text, label: "Text und Linien", widget: color, allowInput: true }
+              - { name: text_leise, label: "Leiser Text", widget: color, allowInput: true, hint: "Untertitel, Bildnachweise, Genres." }
+              - { name: akzent, label: "Akzent", widget: color, allowInput: true, hint: "Knöpfe, Daten, Jahreszahlen, Preise, Buchstaben im ABC." }
+              - { name: text_auf_akzent, label: "Text auf Akzent", widget: color, allowInput: true, hint: "Schrift auf Knöpfen in der Akzentfarbe." }
+              - { name: zweitfarbe, label: "Zweitfarbe", widget: color, allowInput: true, hint: "Zweite Stufe des Regenbogen-Schattens, Symbole bei den Sponsoring-Paketen." }
+              - { name: drittfarbe, label: "Drittfarbe", widget: color, allowInput: true, hint: "Dritte Stufe des Regenbogen-Schattens." }
+              - { name: kopf_fuss, label: "Kopf und Fuß", widget: color, allowInput: true, hint: "Kopfzeile, Seitenkopf, Fußzeile." }
+              - { name: text_auf_kopf_fuss, label: "Text auf Kopf und Fuß", widget: color, allowInput: true }
+              - { name: text_leise_auf_kopf_fuss, label: "Leiser Text auf Kopf und Fuß", widget: color, allowInput: true }
+              - { name: leuchtfarbe, label: "Leuchtfarbe", widget: color, allowInput: true, hint: "Hervorhebungen auf dunklem Grund, Fokus-Rahmen für Tastatur-Nutzer:innen." }
+              - { name: text_auf_leuchtfarbe, label: "Text auf Leuchtfarbe", widget: color, allowInput: true }
+          - name: dunkel
+            label: "Dunkel (Zwielicht)"
+            widget: object
+            fields: *farbfelder
+
+  # ---------------------------------------------------------------------------
   - name: festivals
     label: "Festival-Jahrgänge"
     label_singular: Jahrgang
@@ -399,6 +432,8 @@ collections:
         fields: &seitenfelder
           - { name: title, label: Titel, widget: string }
           - { name: description, label: Kurzbeschreibung, widget: text, required: false, hint: "Erscheint unter dem Titel und bei Suchmaschinen (ca. 150 Zeichen)." }
+          - &in_arbeit { name: in_arbeit, label: "Seite wird überarbeitet (auf der echten Seite ausblenden)", widget: boolean, default: false, required: false, hint: "An: Besucher:innen sehen statt des Inhalts nur den kurzen Hinweis unten. Die Vorschau zeigt weiter alles. Ausschalten, wenn die Seite fertig ist, und einem Admin Bescheid geben." }
+          - &in_arbeit_text { name: in_arbeit_text, label: "Hinweis während der Überarbeitung", widget: text, required: false, hint: "Optional, z. B. „Das Festival-ABC für 2027 kommt bald.“ Leer = „Diese Seite wird gerade überarbeitet. Schau bald wieder vorbei!“" }
           - { name: body, label: Text, widget: markdown }
       - name: kontakt
         label: "Kontakt (Adresse, E-Mail, Anfahrt: siehe Einstellungen)"
@@ -416,6 +451,8 @@ collections:
           - { name: mitglied_teaser, label: Kurztext Mitgliedschaft (Startseite), widget: text }
           - { name: helfer_betreff, label: Mail-Betreff Helfer:innen, widget: string }
           - { name: mitglied_betreff, label: Mail-Betreff Mitgliedschaft, widget: string }
+          - *in_arbeit
+          - *in_arbeit_text
           - { name: body, label: Text, widget: markdown, hint: "Die Überschriften „Helfer:in werden“ und „Mitglied werden“ bitte nicht umbenennen: Die Startseite verlinkt darauf." }
       - name: festival-abc
         label: "Festival-ABC (Einleitung – Einträge: siehe Festival-ABC)"
@@ -424,6 +461,8 @@ collections:
         fields:
           - { name: title, label: Titel, widget: string }
           - { name: description, label: Kurzbeschreibung, widget: text, required: false }
+          - *in_arbeit
+          - *in_arbeit_text
           - { name: body, label: Einleitung, widget: markdown }
           - { name: schluss, label: Text nach der Liste, widget: markdown, required: false }
       - name: sponsoring-seite

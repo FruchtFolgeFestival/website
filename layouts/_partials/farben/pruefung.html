@@ -1,0 +1,28 @@
+{{- /* Prüft data/design.yaml: fehlende/ungültige Farben und zu wenig Kontrast.
+     Gibt eine Liste mit Problemen zurück (leer = alles gut).
+     Die Vorschau zeigt sie als roten Kasten, der Produktions-Build bricht ab (assets/css/farben.css). */ -}}
+{{- $d := (hugo.Data).design | default dict }}
+{{- $liste := partial "farben/liste.html" }}
+{{- $namen := dict }}
+{{- range $liste.farben }}{{ $namen = merge $namen (dict .feld .label) }}{{ end }}
+{{- $probleme := slice }}
+{{- range $schema := slice "hell" "dunkel" }}
+  {{- $titel := cond (eq $schema "hell") "Hell" "Dunkel" }}
+  {{- $f := index $d $schema | default dict }}
+  {{- range $liste.farben }}
+    {{- if not (findRE `^#[0-9a-fA-F]{6}$` (index $f .feld | default "" | string)) }}
+      {{- $probleme = $probleme | append (printf "%s → „%s“ fehlt oder ist keine Farbe im Format #rrggbb." $titel .label) }}
+    {{- end }}
+  {{- end }}
+  {{- range $liste.paare }}
+    {{- $vorne := index $f (index . 0) | default "" | string }}
+    {{- $hinten := index $f (index . 1) | default "" | string }}
+    {{- if and (findRE `^#[0-9a-fA-F]{6}$` $vorne) (findRE `^#[0-9a-fA-F]{6}$` $hinten) }}
+      {{- $k := partial "farben/kontrast.html" (slice $vorne $hinten) }}
+      {{- if lt $k $liste.minimum }}
+        {{- $probleme = $probleme | append (printf "%s → „%s“ auf „%s“ hat nur %s : 1 Kontrast (mindestens 4,5 : 1)." $titel (index $namen (index . 0)) (index $namen (index . 1)) (replace (printf "%.1f" $k) "." ",")) }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- return $probleme }}

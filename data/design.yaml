@@ -1,0 +1,35 @@
+# Farben der Webseite, im CMS unter „Design-Farben“.
+# Die Werte werden über assets/css/farben.css zu CSS-Variablen (siehe layouts/_partials/farben/liste.html).
+# Ausprobieren: in der Vorschau mit der Design-Werkstatt (Abschnitt „Farben“).
+# Kontrast: Text braucht mindestens 4,5:1 zum Hintergrund. Sonst zeigt die Vorschau einen roten
+# Hinweis und der Produktions-Build bricht ab.
+hell:
+  hintergrund: "#f4ecda"
+  hintergrund_2: "#eadfc6"
+  karten: "#fffaf0"
+  text: "#231a12"
+  text_leise: "#5a4a3c"
+  akzent: "#a3286b"
+  text_auf_akzent: "#fff6f0"
+  zweitfarbe: "#5f6f22"
+  drittfarbe: "#6b4423"
+  kopf_fuss: "#231a12"
+  text_auf_kopf_fuss: "#f4ecda"
+  text_leise_auf_kopf_fuss: "#c9bba2"
+  leuchtfarbe: "#7cff3a"
+  text_auf_leuchtfarbe: "#14110e"
+dunkel:
+  hintergrund: "#121510"
+  hintergrund_2: "#1a1f16"
+  karten: "#22291c"
+  text: "#eee6d2"
+  text_leise: "#b8b29a"
+  akzent: "#ffa53d"
+  text_auf_akzent: "#121510"
+  zweitfarbe: "#e35fa6"
+  drittfarbe: "#c9a7ff"
+  kopf_fuss: "#0a0c08"
+  text_auf_kopf_fuss: "#eee6d2"
+  text_leise_auf_kopf_fuss: "#b8b29a"
+  leuchtfarbe: "#c9a7ff"
+  text_auf_leuchtfarbe: "#14110e"

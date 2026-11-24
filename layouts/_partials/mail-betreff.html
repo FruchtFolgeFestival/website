@@ -1,0 +1,5 @@
+{{- /* Betreff für mailto:-Links kodieren. urlquery macht aus Leerzeichen ein "+", das zeigen
+     Mail-Programme wörtlich an. In mailto:-Links muss es "%20" sein. Ein echtes "+" im Text
+     wird von urlquery als "%2B" kodiert und bleibt deshalb erhalten.
+     Aufruf: partial "mail-betreff.html" "Mein Betreff" */ -}}
+{{- return (urlquery . | replaceRE `\+` "%20") -}}

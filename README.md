@@ -53,9 +53,9 @@ Voraussetzungen: [Hugo extended](https://gohugo.io/installation/) in der Version
 ├── content/            Seiten als Markdown (Startseite, Über uns, Rechtstexte …)
 │   ├── festivals/      ein Jahrgang pro Datei (2025.md, 2026.md, 2027.md)
 │   └── news/           Neuigkeiten
-├── data/               strukturierte Daten (Einstellungen, ABC, Presse, Sponsoring, Ländercodes)
+├── data/               strukturierte Daten (Einstellungen, Design-Farben, ABC, Presse, Sponsoring, Ländercodes)
 ├── assets/
-│   ├── css/            main.css (Design) und werkstatt.css (nur Vorschau)
+│   ├── css/            main.css (Design), farben.css (Farben aus data/design.yaml), werkstatt.css (nur Vorschau)
 │   ├── js/             theme.js, site.js (Menü, Hell/Dunkel, Lightbox), werkstatt.js (nur Vorschau)
 │   └── images/         Logo und alle hochgeladenen Bilder (werden von Hugo verkleinert)
 ├── layouts/            eigenes Hugo-Theme (Templates)
