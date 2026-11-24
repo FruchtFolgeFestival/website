@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="{{ site.Language.Locale | default "de-DE" }}" class="no-js">
+<html lang="{{ site.Language.Locale | default "de-DE" }}" class="no-js"{{ if (hugo.Data).festival.lade_logo }} data-lade-logo{{ end }}>
 <head>
 {{ partial "head.html" . }}
 </head>
 <body>
+{{- if (hugo.Data).festival.lade_logo }}{{ partial "lade-logo.html" . }}{{ end }}
 <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 <div class="page">
   {{- if not hugo.IsProduction }}{{ partial "vorschau-banner.html" . }}{{ partial "farben/warnung.html" . }}{{ end }}

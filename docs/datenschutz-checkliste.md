@@ -18,6 +18,8 @@ Stand der Technik: 20.11.2026
 
 **Nicht** im Einsatz (und deshalb nicht in die Datenschutzerklärung): Cookies, Analyse/Tracking (Google Analytics, Matomo …), Werbung, Kontaktformular, Newsletter-Tool, eingebettete Videos/Karten/Player, Google Fonts, Social-Media-Plugins, CDN-Skripte.
 
+**Das Lade-Logo** speichert nichts: Ob es erscheint, entscheidet der Browser vor Ort anhand der Herkunft des Klicks (`document.referrer`, gleiche Adresse oder nicht) und der Art des Aufrufs (neu, neu geladen, zurück). Es wird nichts übertragen oder gemerkt.
+
 **Die Design-Werkstatt** (nur auf der Vorschau-Adresse, `localStorage`-Schlüssel `fff-werkstatt`) betrifft nur das Team und nicht die öffentliche Seite.
 
 ## Fotos

@@ -24,7 +24,7 @@ Hugo muss **genau** die Version aus `.hugo-version` haben, sonst bricht `build.s
 
 | Pfad | Inhalt | Im CMS als |
 |---|---|---|
-| `data/festival.yaml` | aktueller Jahrgang, Startbereich, Tickets, Anfahrt, Kontakt, Social Media, SEO-Beschreibung | Einstellungen |
+| `data/festival.yaml` | aktueller Jahrgang, `lade_logo` (an/aus), Startbereich (`ueberzeile`, `ueberschrift`, `text`, `titelbild`), Tickets, Anfahrt, Kontakt, Social Media, SEO-Beschreibung | Einstellungen |
 | `content/festivals/<jahr>.md` | Jahrgang: `jahr`, `art` (festival/vorgeschichte), `status` (geplant/vorbei), `datum_von`, `datum_bis`, `ort`, `untertitel`, `titelbild(_alt)`, `aftermovie`, `lineup[]`, `galerie[]`, `unterstuetzer[]`, Markdown-Text = Einleitung | Festival-Jahrgänge |
 | `lineup[]` | `name`, `art` (act/programmpunkt), `herkunft[]` (ISO-Codes, siehe `data/laender.yaml`), `genre`, `beschreibung`, `bild`, `bild_alt`, `bild_credit`, `links[]` (`typ`, `url`), `tag`, `von`, `bis`, `buehne`. **Eine** Liste für Line-up **und** Timetable. | |
 | `content/festivals/_index.md` | Archiv-Übersicht, erreichbar unter `/archiv/` (`url: /archiv/`) | Seiten → Archiv |
@@ -39,6 +39,7 @@ Hugo muss **genau** die Version aus `.hugo-version` haben, sonst bricht `build.s
 | `layouts/` | eigenes Theme (Hugo ≥ 0.146-Struktur: `baseof.html`, `home.html`, `page.html`, `_partials/`, `_shortcodes/`, `_markup/`) | |
 | `assets/css/main.css` | Design (Tokens in `:root`, dunkle Variante doppelt: Media-Query + `[data-theme="dark"]`). **Keine Farbwerte**, die kommen aus `data/design.yaml` über die Vorlage `assets/css/farben.css`. | |
 | `assets/css/werkstatt.css`, `assets/js/werkstatt.js` | Design-Werkstatt, **nur** in Nicht-Produktion | |
+| `assets/images/marke/logo-animiert.svg` | Animation für das Lade-Logo (aufbereitet mit `werkzeuge/logo-animiert.py`, Ablauf in `theme.js`/`site.js`, siehe `docs/betrieb.md` → Lade-Logo) | |
 | `static/_headers`, `static/_redirects` | Sicherheits-Header/CSP, 301-Weiterleitungen | |
 | `archiv-alt/` | Originaldaten der alten WordPress-Seite, wird nicht ausgeliefert | |
 

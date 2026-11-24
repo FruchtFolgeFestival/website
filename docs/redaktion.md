@@ -94,7 +94,9 @@ Links siehst du die **Bereiche**:
   - **Ticket-Status** auf „Jetzt erhältlich“ stellen
   - **Ticket-Link** eintragen (z. B. von Eventfrog, beginnt mit `https://`)
   - Dann erscheint auf der Startseite der Knopf **„Tickets kaufen“**.
-- **Text oben auf der Startseite:** **Einstellungen** → **Startbereich der Startseite** (Überschrift, Text, Hintergrundfoto).
+- **Text oben auf der Startseite:** **Einstellungen** → **Startbereich der Startseite** (Überzeile, Überschrift, Text, Hintergrundfoto).
+  - Die **Überzeile** ist die kleine grüne Zeile über der Überschrift. Leer lassen ergibt automatisch „Fruchtfolge Festival · *Ort*“. Der Ort steht beim aktuellen Jahrgang: **Festival-Jahrgänge** → Jahrgang öffnen → **Ort**.
+- **Lade-Logo:** **Einstellungen** → **„Lade-Logo beim Ankommen zeigen“**. Aus = die Seite erscheint ohne Animation. In der Vorschau zeigt der Knopf **„Lade-Logo zeigen“** in der Design-Werkstatt es jederzeit noch einmal.
 
 ### Eintrag im Festival-ABC hinzufügen oder ändern
 

@@ -5,8 +5,13 @@
 # Die Startseite zeigt Termin, Line-up und Unterstützer dieses Jahrgangs.
 aktueller_jahrgang: "2027"
 
+# Lade-Logo: animiertes Klee-Logo beim Ankommen auf der Seite (true = an, false = aus)
+lade_logo: true
+
 # Startbereich der Startseite
 startseite:
+  # Kleine Zeile über der Überschrift. Leer = „Fruchtfolge Festival · <Ort des aktuellen Jahrgangs>“
+  ueberzeile: ""
   ueberschrift: "Nach dem Festival ist vor dem Festival"
   text: "Danke für 2026! Das nächste Fruchtfolge Festival steigt am **Freitag, 3. und Samstag, 4. September 2027** auf dem Acker in Lindach."
   # Hintergrundfoto (wird automatisch eingefärbt, reine Dekoration). Pfad aus dem CMS-Bildupload.

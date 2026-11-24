@@ -81,6 +81,7 @@ Alle Platzhalter sind im Text mit **`[BITTE ERGÄNZEN: …]`** oder **`[BITTE PR
 - [ ] **„Fromage from Arsch“ oder „Fromage vom Arsch“?** Timetable und ABC der alten Seite widersprechen sich. Übernommen wurde „from“ (Timetable).
 - [ ] **Widerspruch AGB ↔ ABC:** AGB § 9 sagt „ausschließlich Barzahlung, keine Kartenzahlung“. Das ABC (B wie Bargeld, K wie Kartenzahlung) sagt „Wir haben jetzt auch Kartenzahlung“. Die AGB wurden **nicht** geändert (Rechtstext). Bitte vom Vorstand klären.
 - [ ] **Widerspruch Über uns ↔ 2025:** Auf „Über uns“ steht „2025 … starteten wir das erste Fruchtfolgefestival in FFB“. Laut Verein war 2025 eine Geburtstagsfeier und 2026 das erste offizielle Festival. Der Text wurde unverändert übernommen. Bitte bei Gelegenheit anpassen.
+- [ ] **Lizenz Lade-Logo (SVGator):** siehe [cms-aufgaben.md, Abschnitt D](cms-aufgaben.md#d-zur-klärung-mit-dem-vorstand).
 - [ ] **Jahrgang 2027**: Line-up, Tickets, Titelbild, Untertitel. Die Startseite zeigt bis dahin den Termin (3./4.9.2027) und den Rückblick auf 2026.
 - [ ] **Startbereich der Startseite**: Hintergrundfoto ist ein Foto der Geburtstagsfeier 2025; bei Bedarf austauschen (*Einstellungen → Startbereich*).
 

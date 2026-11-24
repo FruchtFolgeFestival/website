@@ -126,6 +126,7 @@ Diese Einträge beziehen sich noch auf 2026 und müssen für 2027 geprüft werde
 Diese Punkte bitte **nicht allein** ändern:
 
 - [ ] **AGB § 9 vs. Festival-ABC:** Die AGB sagen „ausschließlich Barzahlung, keine Kartenzahlung“. Das ABC (B wie Bargeld, K wie Kartenzahlung) sagt „Wir haben jetzt auch Kartenzahlung“. Was gilt? → Danach **Rechtliches → AGB** oder das ABC anpassen.
+- [ ] **Lizenz des animierten Logos:** Das Lade-Logo stammt aus SVGator (`LOGO.svg`). Das SVGator-Wasserzeichen ist in der Datei ausgeblendet. Bitte klären, ob der genutzte SVGator-Tarif die Nutzung ohne Wasserzeichen erlaubt. Sonst mit passendem Tarif neu exportieren (Anleitung für Admins: [betrieb.md → Lade-Logo](betrieb.md#lade-logo)) oder bis dahin **Einstellungen → Lade-Logo** ausschalten.
 - [ ] **Über uns:** Dort steht „2025 … starteten wir das erste Fruchtfolgefestival in FFB“. 2025 war aber die Geburtstagsfeier, 2026 das erste offizielle Festival. Soll der Satz angepasst werden? → **Seiten → Über uns**
 
 ---

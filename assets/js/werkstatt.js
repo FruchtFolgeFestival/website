@@ -152,7 +152,8 @@
       teile.push('</div>');
     }
     teile.push('<label class="ws-intro" for="ws-text">Deine Auswahl</label><textarea id="ws-text" readonly></textarea>');
-    teile.push('<div class="ws-actions"><button type="button" class="ws-btn ws-primary" data-ws="kopieren">Auswahl kopieren</button><button type="button" class="ws-btn" data-ws="zurueck">Freigegebenes Design</button></div>');
+    teile.push('<div class="ws-actions"><button type="button" class="ws-btn ws-primary" data-ws="kopieren">Auswahl kopieren</button><button type="button" class="ws-btn" data-ws="zurueck">Freigegebenes Design</button>' +
+      (html.hasAttribute('data-lade-logo') ? '<button type="button" class="ws-btn" data-ws="lade-logo">Lade-Logo zeigen</button>' : '') + '</div>');
     teile.push('<p class="ws-status" role="status"></p>');
     teile.push('</div>');
     panel.innerHTML = teile.join('');
@@ -246,6 +247,10 @@
     panel.addEventListener('click', function (e) {
       var aktion = e.target.getAttribute && e.target.getAttribute('data-ws');
       if (aktion === 'zu') oeffnen(false, true);
+      if (aktion === 'lade-logo') {
+        // Seite neu öffnen, als käme man von außen (theme.js wertet ?lade-logo aus)
+        location.href = location.pathname + '?lade-logo';
+      }
       if (aktion === 'farben-zurueck') {
         if (stand.farben) delete stand.farben[schemaJetzt()];
         speichern(stand); farbenAnwenden();

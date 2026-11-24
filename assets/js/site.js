@@ -1,5 +1,5 @@
 // Fruchtfolge Festival – kleine Helfer ohne externe Bibliotheken:
-// 1. Hell/Dunkel-Knopf  2. Mobiles Menü  3. Lightbox für Galerien
+// 1. Hell/Dunkel-Knopf  2. Mobiles Menü  3. Lightbox für Galerien  4. Lade-Logo
 (function () {
   var html = document.documentElement;
   var dunkelAbfrage = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
@@ -133,7 +133,82 @@
     dlg.addEventListener('close', function () { img.removeAttribute('src'); if (ausloeser) ausloeser.focus(); });
   }
 
+  // ---------- 4. Lade-Logo ----------
+  // Ob es läuft, entscheidet theme.js (Klasse lade-logo an <html>). Ablauf:
+  // Logo wächst (Animation in der SVG-Datei, sichtbar fertig nach ANIMATION ms). Sind Animation
+  // UND Seite fertig, fliegt es auf das Logo im Kopf (FLIP) und der Hintergrund blendet aus.
+  // Dauert das Laden länger, pulsiert das fertige Logo leicht, höchstens bis HOECHSTENS.
+  // Tippen, Klicken, Scrollen oder eine Taste überspringen. Kommt die SVG-Datei zu spät,
+  // blendet nur der Hintergrund aus. Notbremse ohne JavaScript-Ablauf: CSS-Animation in main.css.
+  function ladeLogo() {
+    if (!html.classList.contains('lade-logo')) return;
+    var ANIMATION = 1140, HOECHSTENS = 2500, BILD_BIS = 1200, FLUG = 700;
+    var lader = document.getElementById('lader');
+    var flug = lader && lader.querySelector('.lader-logo');
+    var bild = flug && flug.querySelector('img');
+    var ziel = document.querySelector('.top .brand img');
+    var EREIGNISSE = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
+    var start = null, geladen = document.readyState === 'complete', los = false, uhren = [];
+
+    function aufraeumen() {
+      uhren.forEach(clearTimeout);
+      EREIGNISSE.forEach(function (t) { window.removeEventListener(t, ueberspringen, true); });
+      html.classList.remove('lade-logo');
+    }
+    if (!lader || !bild || !ziel || !lader.animate) { aufraeumen(); return; }
+
+    function ausblenden() {
+      if (los) return;
+      los = true;
+      lader.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 300, fill: 'forwards' }).onfinish = aufraeumen;
+    }
+    function andocken() {
+      if (los) return;
+      los = true;
+      // Abgekürzt? Dann beim Fliegen ins fertige Logo überblenden.
+      if (performance.now() < start + ANIMATION) {
+        var ende = document.createElement('img');
+        ende.className = 'lader-ende';
+        ende.alt = '';
+        ende.src = ziel.currentSrc || ziel.src;
+        flug.appendChild(ende);
+        ende.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 220, fill: 'forwards' });
+      }
+      var von = flug.getBoundingClientRect();
+      var nach = ziel.getBoundingClientRect();
+      var weg = 'translate(' + (nach.left - von.left) + 'px,' + (nach.top - von.top) + 'px) scale(' + (nach.width / von.width) + ')';
+      lader.querySelector('.lader-grund').animate([{ opacity: 1 }, { opacity: 0 }], { duration: 450, delay: 120, easing: 'ease-out', fill: 'forwards' });
+      flug.animate([{ transform: 'none' }, { transform: weg }], { duration: FLUG, easing: 'cubic-bezier(.65,0,.25,1)', fill: 'forwards' }).onfinish = aufraeumen;
+    }
+    function pruefen() {
+      if (los) return;
+      var jetzt = performance.now();
+      if (start === null) { if (jetzt >= BILD_BIS) ausblenden(); return; }
+      var animationFertig = jetzt >= start + ANIMATION;
+      if ((animationFertig && geladen) || jetzt >= HOECHSTENS) andocken();
+      else if (animationFertig) flug.classList.add('atmet');
+    }
+    function spaeter(zeitpunkt) { uhren.push(setTimeout(pruefen, Math.max(0, zeitpunkt - performance.now()) + 5)); }
+    function bildDa() {
+      if (start !== null) return;
+      // War die Datei schon da, bevor dieses Skript lief, läuft die Animation schon etwas.
+      var eintrag = performance.getEntriesByName ? performance.getEntriesByName(bild.currentSrc || bild.src)[0] : null;
+      start = eintrag && eintrag.responseEnd > 0 ? Math.min(eintrag.responseEnd, performance.now()) : performance.now();
+      spaeter(start + ANIMATION);
+      pruefen();
+    }
+    function ueberspringen() { if (start === null) ausblenden(); else andocken(); }
+
+    EREIGNISSE.forEach(function (t) { window.addEventListener(t, ueberspringen, { capture: true, passive: true }); });
+    if (bild.complete && bild.naturalWidth) bildDa(); else bild.addEventListener('load', bildDa);
+    bild.addEventListener('error', ausblenden);
+    if (!geladen) window.addEventListener('load', function () { geladen = true; pruefen(); });
+    spaeter(BILD_BIS);
+    spaeter(HOECHSTENS);
+  }
+
   function start() {
+    ladeLogo();
     var knopf = document.getElementById('theme-knopf');
     if (knopf) knopf.addEventListener('click', function () { setzeTheme(istDunkel() ? 'light' : 'dark'); });
     if (dunkelAbfrage && dunkelAbfrage.addEventListener) dunkelAbfrage.addEventListener('change', knopfAktualisieren);

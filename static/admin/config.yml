@@ -77,11 +77,13 @@ collections:
             search_fields: [title, jahr]
             display_fields: [title]
             hint: "Dieser Jahrgang erscheint auf der Startseite (Termin, Line-up, Unterstützer). Für ein neues Jahr zuerst unter „Festival-Jahrgänge“ anlegen."
+          - { name: lade_logo, label: "Lade-Logo beim Ankommen zeigen", widget: boolean, default: true, required: false, hint: "Das Klee-Logo wächst beim ersten Aufruf in der Mitte und fliegt dann nach oben links. Nicht bei Klicks innerhalb der Seite und nicht, wenn im Gerät „Bewegung reduzieren“ an ist." }
           - name: startseite
             label: "Startbereich der Startseite"
             widget: object
             collapsed: false
             fields:
+              - { name: ueberzeile, label: Überzeile, widget: string, required: false, hint: "Kleine Zeile über der Überschrift. Leer lassen = „Fruchtfolge Festival · Ort des aktuellen Jahrgangs“ (der Ort steht beim Festival-Jahrgang)." }
               - { name: ueberschrift, label: Überschrift, widget: string, hint: "Große Überschrift ganz oben, z. B. „Nach dem Festival ist vor dem Festival“." }
               - { name: text, label: Text, widget: markdown, minimal: true, buttons: [bold, italic, link], editor_components: [], required: false, hint: "Ein bis zwei Sätze unter der Überschrift. **Fett** für das Datum." }
               - { name: titelbild, label: Hintergrundfoto, widget: image, required: false, hint: "Querformat. Wird automatisch eingefärbt. Nur Fotos, auf denen erkennbare Personen einverstanden sind." }

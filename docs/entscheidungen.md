@@ -153,3 +153,16 @@ Stand: 20.11.2026
   - **Werkstatt:** Farbwähler für das gerade sichtbare Schema, setzt die Variablen per CSSOM an `<html>` (`style.setProperty`, von der CSP erlaubt), zeigt Kontrast live und schreibt geänderte Werte in den Kopiertext.
 - **Folgen:** Wer eine neue Farbe einführt, ändert `farben/liste.html`, `data/design.yaml` (hell + dunkel) und `static/admin/config.yml` (Anker `&farbfelder`). Die dunklen Werkstatt-Mischungen (Glut, Aubergine) bleiben feste Vorlagen in `werkstatt.css`.
 
+## ADR-16: Lade-Logo beim Ankommen, dockt ans Kopf-Logo an (Nov. 2026)
+
+- **Kontext:** Der Verein hat eine Animation des Klee-Logos (SVGator-Export). Sie soll beim Laden gezeigt werden und danach ins Logo im Kopf übergehen. Gleichzeitig gilt: keine externen Ressourcen, strenge CSP, barrierearm, die Seite soll schnell bleiben.
+- **Entscheidung** (nach Mockup mit Einstellungen, Standardwerte übernommen):
+  - **Nur beim Ankommen von außen**, nicht bei Klicks innerhalb der Seite, Neuladen oder Zurück. Entschieden in `theme.js` vor dem ersten Zeichnen über `document.referrer` und den Navigationstyp. **Kein Speichern im Browser**, deshalb keine Änderung der Datenschutzerklärung nötig.
+  - **Tempo „schneller“:** Dauer der Datei 2 s statt 3 s, sichtbar fertig nach etwa 1,14 s.
+  - **Andocken**, wenn Animation fertig **und** Seite geladen ist, **spätestens nach 2,5 s**. Danach lädt die Seite sichtbar weiter. Andocken als FLIP (Transform von der Mitte auf das Rechteck des Kopf-Logos), Hintergrund in der Kopf-Farbe (`--dark`).
+  - **Barrierefreiheit:** bei `prefers-reduced-motion` kein Lade-Logo; `aria-hidden`; jede Eingabe überspringt; ohne JavaScript nichts davon.
+  - **Datei:** eigene SVG als `<img loading="lazy">` (das ausgeblendete Bild wird nicht geladen). Das eingebettete CSS wird beim Aufbereiten ausgepackt (`werkzeuge/logo-animiert.py`), weil die CSP keine `data:`-Stylesheets erlaubt; für `/images/marke/*` gilt eine eigene CSP mit `style-src 'unsafe-inline'`.
+  - **Abschaltbar** im CMS (Einstellungen → Lade-Logo).
+- **Folgen:** Lighthouse mobil auf der Startseite etwa 3 Punkte weniger (gemessen 92 → 89, Speed Index 1,3 → 2,5 s), Desktop unverändert hoch. Die Lizenzfrage (SVGator-Wasserzeichen ausgeblendet) ist offen, siehe [cms-aufgaben.md, D](cms-aufgaben.md#d-zur-klärung-mit-dem-vorstand).
+- **Verworfen:** Lade-Logo bei jedem Seitenwechsel (zu oft, kostet jedes Mal Zeit); „Sitzung merken“ per `sessionStorage` (wäre zusätzliche Speicherung).
+

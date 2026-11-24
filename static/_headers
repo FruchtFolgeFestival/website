@@ -21,6 +21,14 @@
   Content-Security-Policy: default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' blob: data: https://*.githubusercontent.com; media-src blob:; frame-src blob:; connect-src 'self' blob: data: https://unpkg.com https://api.github.com https://www.githubstatus.com https://sveltia-cms-auth.technik-7e1.workers.dev; manifest-src blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
   Cache-Control: no-cache
 
+# --- Animiertes Logo (Lade-Logo, assets/images/marke/logo-animiert.svg) ---
+# Die SVG-Datei bringt ihr Animations-CSS selbst mit. Manche Browser wenden die CSP der Datei
+# auch an, wenn sie als Bild geladen wird. Darum hier nur für diesen Ordner: eingebettetes CSS
+# erlaubt, sonst nichts (keine Skripte, keine Nachlade-Quellen).
+/images/marke/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'
+
 # --- Lange Cache-Zeiten für Dateien mit Prüfsumme im Namen ---
 /css/*
   Cache-Control: public, max-age=31536000, immutable

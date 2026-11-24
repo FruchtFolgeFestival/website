@@ -63,6 +63,7 @@ Voraussetzungen: [Hugo extended](https://gohugo.io/installation/) in der Version
 │   └── admin/          Sveltia CMS (index.html, config.yml, sveltia-cms.js)
 ├── archiv-alt/         Originaldaten der alten WordPress-Seite (wird NICHT ausgeliefert)
 ├── docs/               Dokumentation
+├── werkzeuge/          Hilfsskripte (z. B. Lade-Logo aus einem SVGator-Export aufbereiten)
 ├── build.sh            Build-Skript für Cloudflare und lokal
 ├── wrangler.jsonc      Cloudflare-Konfiguration
 ├── hugo.toml           Hugo-Konfiguration und Menüs

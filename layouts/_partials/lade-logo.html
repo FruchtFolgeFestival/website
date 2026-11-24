@@ -1,0 +1,12 @@
+{{- /* Lade-Logo: Das animierte Klee-Logo wächst beim Ankommen in der Mitte und dockt nach dem Laden
+     an das Logo im Kopf an (assets/js/site.js, Funktion ladeLogo).
+     Ob es erscheint, entscheidet assets/js/theme.js vor dem ersten Zeichnen (Klasse lade-logo an <html>):
+     nur beim Ankommen von außen, nie bei „Bewegung reduzieren“, nie ohne JavaScript.
+     Abschalten: CMS → Einstellungen → „Lade-Logo beim Ankommen zeigen“ (data/festival.yaml, lade_logo).
+     Das Bild ist loading="lazy": Solange der Lader ausgeblendet ist (display: none), lädt der Browser es nicht. */ -}}
+{{- with resources.Get "images/marke/logo-animiert.svg" | fingerprint }}
+<div class="lader" id="lader" aria-hidden="true">
+  <div class="lader-grund"></div>
+  <div class="lader-logo"><div class="lader-bild"><img src="{{ .RelPermalink }}" width="1200" height="1200" alt="" loading="lazy" decoding="async"></div></div>
+</div>
+{{- end }}

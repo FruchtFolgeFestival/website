@@ -197,6 +197,32 @@ In allen Vorschau-Builds (und lokal) steht im gestreiften **Vorschau-Banner** ob
 
 ---
 
+## Lade-Logo
+
+Beim **Ankommen** auf der Seite (von Google, Instagram, aus einem Lesezeichen …) wächst das animierte Klee-Logo in der Mitte. Sobald die Animation fertig **und** die Seite geladen ist, fliegt es genau auf das Logo im Kopf, der Hintergrund blendet aus.
+
+- **Nicht** bei Klicks innerhalb der Seite, beim Neuladen, bei Zurück/Vor, ohne JavaScript und wenn im Gerät „Bewegung reduzieren“ an ist.
+- **Zeiten** (in `assets/js/site.js`, Funktion `ladeLogo`): Animation sichtbar fertig nach `ANIMATION` = 1140 ms; lädt die Seite länger, pulsiert das fertige Logo leicht; spätestens bei `HOECHSTENS` = 2500 ms ab Seitenaufruf dockt es an. Kommt die SVG-Datei nicht bis `BILD_BIS` = 1200 ms, blendet nur der Hintergrund aus. Tippen, Klicken, Scrollen oder eine Taste überspringen.
+- **Notbremse:** Läuft das Skript nicht zu Ende, blendet eine CSS-Animation in `main.css` den Lader nach knapp 4 s aus.
+- **Dateien:**
+  - `layouts/_partials/lade-logo.html` (Markup, nur wenn `lade_logo: true` in `data/festival.yaml`)
+  - `assets/js/theme.js` (Entscheidung vor dem ersten Zeichnen, Klasse `lade-logo` an `<html>`)
+  - `assets/js/site.js` (Ablauf)
+  - `assets/css/main.css` (Abschnitt „Lade-Logo“, inklusive Ausschnitt des Logos)
+  - `assets/images/marke/logo-animiert.svg` (die Animation)
+- **An/aus:** CMS → Einstellungen → „Lade-Logo beim Ankommen zeigen“.
+- **Testen:** Adresse mit `?lade-logo` öffnen (zeigt es immer), in der Vorschau auch über den Knopf „Lade-Logo zeigen“ in der Design-Werkstatt.
+- **Sicherheitsregeln:** Die SVG-Datei bringt ihr Animations-CSS selbst mit. Für `/images/marke/*` gilt deshalb in `static/_headers` eine eigene CSP (`style-src 'unsafe-inline'`, sonst nichts).
+- **Kosten:** 294 KB (übertragen etwa 73 KB), wird nur geladen, wenn das Lade-Logo wirklich erscheint. Lighthouse mobil auf der Startseite: etwa 3 Punkte weniger (Nov. 2026: 92 → 89).
+
+**Neue Animation einbauen** (z. B. neuer SVGator-Export):
+
+1. Export als SVG (CSS-Animation) speichern, z. B. `LOGO.svg`.
+2. `python3 werkzeuge/logo-animiert.py LOGO.svg assets/images/marke/logo-animiert.svg` (packt das CSS aus, setzt die Dauer auf 2 s, entfernt Inkscape-Ballast).
+3. Liegt das Logo auf der Zeichenfläche anders als bisher (bisher x 371–829, y 373–827 von 1200), den Ausschnitt in `main.css` (`.lader-bild img`) anpassen. Ändert sich die sichtbare Dauer, `ANIMATION` in `site.js` anpassen.
+4. Das letzte Bild der Animation muss genau wie `assets/images/marke/logo.png` aussehen, sonst springt es beim Andocken.
+5. `./build.sh`, mit `?lade-logo` ansehen (Handy und Desktop, hell und dunkel).
+
 ## Troubleshooting
 
 | Problem | Ursache / Lösung |
