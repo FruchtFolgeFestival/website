@@ -1,7 +1,7 @@
 ---
 title: Das Fruchtfolge-ABC
 description: 'Alles Wichtige zum Fruchtfolge Festival von A bis Z: Anreise, Camping, Tickets, Essen, Awareness und mehr.'
-in_arbeit: true
+in_arbeit: false
 in_arbeit_text: ''
 schluss: |-
   **Und jetzt: Kommt vorbei, macht euch schmutzig, singt mit und mosht den Acker um.**
