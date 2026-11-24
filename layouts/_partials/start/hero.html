@@ -15,7 +15,7 @@
   {{- end }}
   <div class="wrap hero-inner">
     <div class="hero-text">
-      <p class="eyebrow">{{ with $s.ueberzeile }}{{ . }}{{ else }}Fruchtfolge Festival{{ with $f }}{{ with .Params.ort }} · {{ . }}{{ end }}{{ end }}{{ end }}</p>
+      {{- with $s.ueberzeile }}<p class="eyebrow">{{ . }}</p>{{ end }}
       <h1 id="hero-titel">{{ $s.ueberschrift | default "Fruchtfolge Festival" }}</h1>
       {{- with $s.text }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
       <div class="cta">

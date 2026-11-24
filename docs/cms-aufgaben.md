@@ -80,7 +80,7 @@ Diese Stellen sind auf der öffentlichen Seite sichtbar oder blockieren die Ver�
 ### B4. Neuigkeiten
 **CMS:** Neuigkeiten
 
-- [ ] Den Beispielbeitrag **„So sieht ein News-Beitrag aus“** löschen oder als Vorlage für die erste echte Neuigkeit nutzen (z. B. „Termin 2027 steht“). Er steht auf „Entwurf“ und ist auf der echten Seite nicht sichtbar.
+- [x] Den Beispielbeitrag **„So sieht ein News-Beitrag aus“** löschen (erledigt am 24.11.2026).
 
 ---
 

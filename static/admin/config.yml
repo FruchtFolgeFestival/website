@@ -83,7 +83,7 @@ collections:
             widget: object
             collapsed: false
             fields:
-              - { name: ueberzeile, label: Überzeile, widget: string, required: false, hint: "Kleine Zeile über der Überschrift. Leer lassen = „Fruchtfolge Festival · Ort des aktuellen Jahrgangs“ (der Ort steht beim Festival-Jahrgang)." }
+              - { name: ueberzeile, label: Überzeile, widget: string, required: false, hint: "Kleine Zeile über der Überschrift, z. B. „Fruchtfolge Festival · Lindach bei Fürstenfeldbruck“. Leer lassen = keine Zeile." }
               - { name: ueberschrift, label: Überschrift, widget: string, hint: "Große Überschrift ganz oben, z. B. „Nach dem Festival ist vor dem Festival“." }
               - { name: text, label: Text, widget: markdown, minimal: true, buttons: [bold, italic, link], editor_components: [], required: false, hint: "Ein bis zwei Sätze unter der Überschrift. **Fett** für das Datum." }
               - { name: titelbild, label: Hintergrundfoto, widget: image, required: false, hint: "Querformat. Wird automatisch eingefärbt. Nur Fotos, auf denen erkennbare Personen einverstanden sind." }

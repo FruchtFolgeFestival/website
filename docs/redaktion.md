@@ -95,7 +95,7 @@ Links siehst du die **Bereiche**:
   - **Ticket-Link** eintragen (z. B. von Eventfrog, beginnt mit `https://`)
   - Dann erscheint auf der Startseite der Knopf **„Tickets kaufen“**.
 - **Text oben auf der Startseite:** **Einstellungen** → **Startbereich der Startseite** (Überzeile, Überschrift, Text, Hintergrundfoto).
-  - Die **Überzeile** ist die kleine grüne Zeile über der Überschrift. Leer lassen ergibt automatisch „Fruchtfolge Festival · *Ort*“. Der Ort steht beim aktuellen Jahrgang: **Festival-Jahrgänge** → Jahrgang öffnen → **Ort**.
+  - Die **Überzeile** ist die kleine farbige Zeile über der Überschrift (z. B. „Fruchtfolge Festival · Lindach bei Fürstenfeldbruck“). Text ändern oder das Feld leeren, dann gibt es keine Zeile.
 - **Lade-Logo:** **Einstellungen** → **„Lade-Logo beim Ankommen zeigen“**. Aus = die Seite erscheint ohne Animation. In der Vorschau zeigt der Knopf **„Lade-Logo zeigen“** in der Design-Werkstatt es jederzeit noch einmal.
 
 ### Eintrag im Festival-ABC hinzufügen oder ändern
@@ -128,8 +128,6 @@ Die Galerie sammelt automatisch die Fotos aller Jahrgänge.
 2. **Titel**, **Datum**, **Teaserbild** mit **Bildbeschreibung**, **Kurztext** (1–2 Sätze für die Übersicht) und **Text**.
 3. **Entwurf:** Steht der Schalter auf **an**, erscheint der Beitrag **nur in der Vorschau**. Zum Veröffentlichen ausschalten.
 4. **Speichern.** Die Startseite zeigt immer die drei neuesten Beiträge.
-
-> Es gibt einen Beispielbeitrag „So sieht ein News-Beitrag aus“. Er steht auf Entwurf und erscheint nie auf der echten Seite. Du kannst ihn als Vorlage nehmen oder löschen.
 
 ### Eine Seite ändern (z. B. Über uns, Mitmachen)
 
