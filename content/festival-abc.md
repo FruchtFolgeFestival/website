@@ -1,8 +1,8 @@
 ---
 title: Das Fruchtfolge-ABC
 description: 'Alles Wichtige zum Fruchtfolge Festival von A bis Z: Anreise, Camping, Tickets, Essen, Awareness und mehr.'
-in_arbeit: false
-in_arbeit_text: ''
+in_arbeit: true
+in_arbeit_text: Das Festival-ABC für 2027 kommt bald.
 schluss: |-
   **Und jetzt: Kommt vorbei, macht euch schmutzig, singt mit und mosht den Acker um.**
 
